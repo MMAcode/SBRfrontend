@@ -1,7 +1,8 @@
 import './App.css';
 import HandleAsyncData from "./learningReact/HandleAsyncData";
-import AllInSimple from "./learningReact/hooks/reducer/allInSimple";
-import AllInComplex from "./learningReact/hooks/reducer/allInComplex";
+import SimpleReducer from "./learningReact/hooks/useReducer/SimpleReducer";
+import ComplexReducer from "./learningReact/hooks/useReducer/ComplexReducer";
+import LoginPage from "./Components/LoginPage";
 
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
     <div className="App">
     <h2>ahoj</h2>
       <HandleAsyncData/>
-      <AllInSimple/>
+      <SimpleReducer/>
       <br/>
-      <AllInComplex/>
+      <ComplexReducer/>
+      <LoginPage/>
     </div>
   );
 }

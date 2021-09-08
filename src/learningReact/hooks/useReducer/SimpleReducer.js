@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     }
 }
 
-export default function AllInSimple(props) {
+export default function SimpleReducer(props) {
 
     const [state, actionDispatch] = useReducer(reducer,initialState)
 

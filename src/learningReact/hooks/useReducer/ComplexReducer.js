@@ -11,7 +11,7 @@ const reducer = (state, action) => {
     }
 }
 
-export default function AllInComplex() {
+export default function ComplexReducer() {
 
     const [state, actionDispatch] = useReducer(reducer,initialState)
 
