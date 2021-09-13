@@ -12,6 +12,8 @@ class RESTRequestsService {
     headers = { authorization: 'Basic ' + window.btoa(username+":"+password) };
     authorization = {authorization: 'Basic ' + window.btoa(username+":"+password)};
 
+    async delay(){await new Promise(resolve => setTimeout(resolve, 900));}
+
     getUsers(){
         return axios.get(urlCore+"/users");
     }
@@ -25,7 +27,8 @@ class RESTRequestsService {
     //         .catch(e=>console.log("error users x1:", e))
     // }
 
-    getQuizzes_AllIn() {
+    async getQuizzes_AllIn() {
+        await this.delay();
         return axios.get(`${urlCore}/quizzes`
             // ,{ headers: { authorization: 'Basic ' + window.btoa(username+":"+password) } }
             ,{ headers: this.headers }

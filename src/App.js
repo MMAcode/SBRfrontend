@@ -7,31 +7,39 @@ import TestingQueries from "./Components/TestingQueries";
 import localDataService from "./services/localDataService";
 import React, {useEffect} from "react";
 import appContextSource from "./services/appContextSource";
+import AppENUMS from "./services/EnumsClass";
+import QuizzesWrapper from "./Components/QuizzesWrapper";
 
 
 const defaultAppState = {
     user: {
-        username: "x1",
-        password: 'x1'
+        data: {
+            username: "x1",
+            password: 'x1'
+        },
+        status: AppENUMS.status.loaded
+    },
+    quizzes:{
+        data:{},
+        status: AppENUMS.status.notStarted
     }
 };
 
 function App() {
-    useEffect(()=>{
-        localDataService.setUser(defaultAppState.user.username,defaultAppState.user.password);
+    useEffect(() => {
+        localDataService.setUser(defaultAppState.user.username, defaultAppState.user.password);
         console.log("appState changed");
-    },[])
+    }, [])
 
     const [appState, appStateSet] = React.useState(defaultAppState);
     const stateForContext = {
-        data:appState,
-        setData:appStateSet
+        data: appState,
+        setData: appStateSet
     }
 
-    useEffect(()=>{
-        console.log("Context data updated to: ",stateForContext.data," u:",stateForContext.data?.user?.username )
-    },[stateForContext,appState,defaultAppState])
-
+    useEffect(() => {
+        console.log("Context data updated to: ", stateForContext.data, " u:", stateForContext.data?.user?.data?.username)
+    }, [stateForContext, appState, defaultAppState])
 
 
     return (
@@ -42,7 +50,8 @@ function App() {
                 {/*<br/>*/}
                 {/*<ComplexReducer/>*/}
                 <LoginPage/>
-                <TestingQueries/>
+                {/*<TestingQueries/>*/}
+                <QuizzesWrapper/>
             </appContextSource.Provider>
         </div>
     );

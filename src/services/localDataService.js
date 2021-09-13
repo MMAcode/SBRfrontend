@@ -1,5 +1,19 @@
+import AppENUMS from "./EnumsClass";
+
+
 class LocalDataService {
-    data={};
+    data={
+        user:{
+            data:{},
+            status: AppENUMS.status.notStarted
+        },
+        quizzes:{
+            data:{},
+            status: AppENUMS.status.notStarted
+        },
+
+    };
+
 
     setUser(u,p){
         const user= {username: u, password:p};

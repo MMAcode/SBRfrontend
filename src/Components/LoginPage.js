@@ -3,6 +3,7 @@ import axios from "axios";
 import {urlCore} from "../services/RESTRequestsService";
 import appContextSource from "../services/appContextSource";
 import localDataService from "../services/localDataService";
+import AppENUMS from "../services/EnumsClass";
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);
 
@@ -27,7 +28,9 @@ export default function LoginPage(props) {
 
     const updateUserLoginDetails = (u,p) => {
         localDataService.setUser(u,p);
-        appContext.setData((d)=>({...d,user:localDataService.data.user}))
+        appContext.setData((d)=>({...d,user: {
+            data:localDataService.data.user,
+            status:AppENUMS.status.loaded}}))
     }
 
     const loginAsX2 = ()=> {
