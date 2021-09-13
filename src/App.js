@@ -4,12 +4,12 @@ import SimpleReducer from "./learningReact/hooks/useReducer/SimpleReducer";
 import ComplexReducer from "./learningReact/hooks/useReducer/ComplexReducer";
 import LoginPage from "./Components/LoginPage";
 import TestingQueries from "./Components/TestingQueries";
-import localDataService from "./services/LocalDataService";
+import localDataService from "./services/localDataService";
 import React, {useEffect} from "react";
 import appContextSource from "./services/appContextSource";
 
 
-const appState = {
+const defaultAppState = {
     user: {
         username: "x1",
         password: 'x1'
@@ -18,14 +18,25 @@ const appState = {
 
 function App() {
     useEffect(()=>{
-        localDataService.data = appState;
-        console.log("appState changed")
-    },[appState])
+        localDataService.setUser(defaultAppState.user.username,defaultAppState.user.password);
+        console.log("appState changed");
+    },[])
+
+    const [appState, appStateSet] = React.useState(defaultAppState);
+    const stateForContext = {
+        data:appState,
+        setData:appStateSet
+    }
+
+    useEffect(()=>{
+        console.log("Context data updated to: ",stateForContext.data," u:",stateForContext.data?.user?.username )
+    },[stateForContext,appState,defaultAppState])
+
 
 
     return (
         <div className="App">
-            <appContextSource.Provider value={appState}>
+            <appContextSource.Provider value={stateForContext}>
                 {/*<HandleAsyncData/>*/}
                 {/*<SimpleReducer/>*/}
                 {/*<br/>*/}

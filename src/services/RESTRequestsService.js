@@ -1,5 +1,5 @@
 import axios from 'axios'
-import localDataService from "./LocalDataService";
+import localDataService from "./localDataService";
 export const urlCore = "http://localhost:8080"
 
 const username = localDataService?.data?.user?.username;

@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import axios from "axios";
 import {urlCore} from "../services/RESTRequestsService";
 import appContextSource from "../services/appContextSource";
-import localDataService from "../services/LocalDataService";
+import localDataService from "../services/localDataService";
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);
 
@@ -25,10 +25,13 @@ export default function LoginPage(props) {
             .catch(e=>console.log("error logingin x1:", e))
     }
 
-    const loginAsX2 = ()=> {
-        console.log("ahoj login x2", appContext);
-        localDataService.setUser("x2","x2");
+    const updateUserLoginDetails = (u,p) => {
+        localDataService.setUser(u,p);
+        appContext.setData((d)=>({...d,user:localDataService.data.user}))
+    }
 
+    const loginAsX2 = ()=> {
+        updateUserLoginDetails("x2","x2");
         // axios.get(`${urlCore}/basicauth`
         //     , { headers: { authorization: 'Basic ' + window.btoa("x1:x1") } }
         // )
