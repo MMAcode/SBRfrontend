@@ -12,7 +12,7 @@
 
 // rsf
 import React from 'react';
-export default function AllIn(props) {
+export default function T(props) {
     return (
         <div>
 
