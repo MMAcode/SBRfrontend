@@ -12,7 +12,7 @@ class RESTRequestsService {
     headers = { authorization: 'Basic ' + window.btoa(username+":"+password) };
     authorization = {authorization: 'Basic ' + window.btoa(username+":"+password)};
 
-    async delay(){await new Promise(resolve => setTimeout(resolve, 900));}
+    async delay(){await new Promise(resolve => setTimeout(resolve, 0));}
 
     getUsers(){
         return axios.get(urlCore+"/users");

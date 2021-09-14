@@ -9,6 +9,17 @@ import React, {useEffect} from "react";
 import appContextSource from "./services/appContextSource";
 import AppENUMS from "./services/EnumsClass";
 import QuizzesWrapper from "./Components/QuizzesWrapper";
+import AccodrionMaterial from "./Components/AccodrionMaterial";
+import Collapsable from "./Components/Collapsable"
+// import {Accordion} from "react-bootstrap";
+// import Accordion from 'react-bootstrap/Accordion'
+import {Alert} from "react-bootstrap";
+// import Accordion from "react-bootstrap/cjs/Accordion";
+import AccordionSingle from "./Components/AccordionSingle";
+import bootstrap from 'bootstrap'
+import Button from "react-bootstrap/Button";
+import Accordion from "react-bootstrap/Accordion";
+// import {Toast} from 'bootstrap';
 
 
 const defaultAppState = {
@@ -43,7 +54,7 @@ function App() {
 
 
     return (
-        <div className="App">
+        <div className="App" style={{background:"lightGray", minHeight:"100vh"}}>
             <appContextSource.Provider value={stateForContext}>
                 {/*<HandleAsyncData/>*/}
                 {/*<SimpleReducer/>*/}
@@ -52,6 +63,7 @@ function App() {
                 <LoginPage/>
                 {/*<TestingQueries/>*/}
                 <QuizzesWrapper/>
+
             </appContextSource.Provider>
         </div>
     );
