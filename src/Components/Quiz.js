@@ -2,8 +2,9 @@ import React from 'react';
 import {firstCapital} from "../services/helperMethods";
 import ReactJson from "react-json-view";
 import AppENUMS from "../services/EnumsClass";
+import Question from "./Question";
 
-export default function QuizWrapper({data: quiz}) {
+export default function Quiz({data: quiz}) {
     //1 - check if quiz in context
     // if (quiz.status==AppENUMS.status.loaded) // render data
 
@@ -29,7 +30,8 @@ export default function QuizWrapper({data: quiz}) {
         // </button>
 
         <div>
-            <ReactJson src={quiz}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>
+            {quiz.questions.map((q,position)=><Question data={q} positionFrom1={position+1}/>)}
+            {/*<ReactJson src={quiz}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
         </div>
     );
 }

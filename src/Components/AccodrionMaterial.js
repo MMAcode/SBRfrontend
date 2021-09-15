@@ -24,6 +24,7 @@ export default function AccordionMaterial(props) {
         <div className={classes.root}>
             <Accordion
                 disabled={disabled}
+                defaultExpanded={props.positionFrom0 == 0 ? true : false}
             >
                 <AccordionSummary
                     // expandIcon={<ExpandMoreIcon />}
@@ -38,12 +39,14 @@ export default function AccordionMaterial(props) {
                     // onClick={() => setDisabled(true)}
                     // load data for this specific quiz using props.data -> check context first if loaded already, use RESTService, update context data
                 >
-                    <Typography className={classes.heading}>{props.head}</Typography>
+                    {/*<Typography className={classes.heading}>{props.head}</Typography>*/}
+                    {/*<Typography className={classes.heading}></Typography>*/}
+                    {props.head}
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                    {/*<Typography>*/}
                         {props.body}
-                    </Typography>
+                    {/*</Typography>*/}
                 </AccordionDetails>
             </Accordion>
         </div>

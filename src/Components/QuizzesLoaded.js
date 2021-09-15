@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import QuizWrapper from "./QuizWrapper";
+import Quiz from "./Quiz";
 import AccodrionMaterial from "./AccodrionMaterial";
 import appContextSource from "../services/appContextSource";
 
@@ -9,12 +9,14 @@ export default function QuizzesLoaded({data: allQuizzes}) {
     return (
         <div>
             <h1>Quizzes:</h1>
-            {/*{allQuizzes.map((quiz,position) => <QuizWrapper key={quiz.id} data={quiz}/>)}*/}
+            {/*{allQuizzes.map((quiz,position) => <Quiz key={quiz.id} data={quiz}/>)}*/}
             {allQuizzes.map((quiz, position) =>
                 <AccodrionMaterial
+                    key={position}
                     head={<h2>{quiz.title}</h2>}
-                    body={<QuizWrapper key={quiz.id} data={quiz}/>}
+                    body={<Quiz key={quiz.id} data={quiz}/>}
                     data={quiz}
+                    positionFrom0={position}
                     // disabled={appContext?}
                 />)}
 
