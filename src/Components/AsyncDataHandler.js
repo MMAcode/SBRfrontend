@@ -2,8 +2,9 @@ import React from 'react';
 import AppENUMS from "../services/EnumsClass";
 import Loading from "./Loading";
 import ReactJson from "react-json-view";
+import ErrorInfo from "./ErrorInfo";
 
-export default function AsyncData({status, children}) {
+export default function AsyncDataHandler({status, data, children}) {
     console.log("currentAsyncDataLoadingStatus:",status);
 
     // const after = (time ,x) =>{
@@ -17,12 +18,12 @@ export default function AsyncData({status, children}) {
         <div
             // style={{border:"1px solid gray"}}
         >
-            {/*<p>AsyncData:</p>*/}
+            {/*<p>AsyncDataHandler:</p>*/}
             {/*<ReactJson src={props}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
             {status==AppENUMS.status.notStarted && "((DEBUG INFO: Data not yet requested))"}
             {status==AppENUMS.status.loading && <Loading/>}
             {status==AppENUMS.status.loaded && children}
-            {status==AppENUMS.status.failed && "error"}
+            {status==AppENUMS.status.failed && <ErrorInfo data={data}/>}
 
         </div>
     );

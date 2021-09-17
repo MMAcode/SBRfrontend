@@ -5,7 +5,6 @@ import appContextSource from "../services/appContextSource";
 
 export default function QuizzesLoaded({data: allQuizzes}) {
     // const appContext = React.useContext(appContextSource);
-    console.log("Quizess props:", allQuizzes.length);
     return (
         <div>
             <h1>Quizzes:</h1>

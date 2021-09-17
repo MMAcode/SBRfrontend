@@ -3,35 +3,32 @@ import {firstCapital} from "../services/helperMethods";
 import ReactJson from "react-json-view";
 import AppENUMS from "../services/EnumsClass";
 import Question from "./Question";
+import RestrictedAccess from "./RestrictedAccess";
 
-export default function Quiz({data: quiz}) {
-    //1 - check if quiz in context
-    // if (quiz.status==AppENUMS.status.loaded) // render data
-
-    //2 if not, load it to context
-    if (quiz.status==AppENUMS.status.notStarted || !quiz.status) {
-        // render data
-        console.log("will get data for this quiz")
-    }
-
-    //3 show it
+export const quizContextSource = React.createContext({});
+export default function Quiz({data: quizData}) {
+    const quizHandleArr = React.useState(quizData);
+    // if (quiz.status==AppENUMS.status.notStarted || !quiz.status) {
+    //     console.log("will get data for this quiz")
+    // }
 
     return (
-        // <button
-        //     style={{
-        //         // display:"flex",
-        //         width: "95%", marginTop: "1rem",
-        //
-        //     }}
-        //     onClick={displayQuiz(quiz.id)}
-        // >
-        //     <h2>{firstCapital(quiz.title)} (id:{quiz.id})</h2>
-        //     {/*<button>Display Quiz</button>*/}
-        // </button>
-
-        <div>
-            {quiz.questions.map((q,position)=><Question data={q} positionFrom1={position+1}/>)}
-            {/*<ReactJson src={quiz}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
+        <div
+            style={{
+                textAlign: 'left',
+                width: '100%'
+            }}
+        >
+            <quizContextSource.Provider value={quizHandleArr}>
+                {quizHandleArr[0].questions.map((q, position) => <Question data={q} positionFrom1={position + 1} key={position}/>)}
+                {/*<ReactJson src={quiz}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
+            </quizContextSource.Provider>
+            <RestrictedAccess>
+                <div className="text-center">
+                    <button style={{backgroundColor:'lightGreen'}}>Save changes in this quiz</button>
+                    <button style={{backgroundColor:'red'}} >Delete this quiz</button>
+                </div>
+            </RestrictedAccess>
         </div>
     );
 }

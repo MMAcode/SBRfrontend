@@ -21,7 +21,9 @@ export default function AccordionMaterial(props) {
     const [disabled, setDisabled]= React.useState(props.disabled ? props.disabled : false);
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root}
+        style={{width:'98%', margin:'1%'}}
+        >
             <Accordion
                 disabled={disabled}
                 defaultExpanded={props.positionFrom0 == 0 ? true : false}
@@ -31,9 +33,11 @@ export default function AccordionMaterial(props) {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     style={{
-                        // background:"red",
-                        margin:"5px 0px",
-                        // border:"1px solid gray",
+                        background:"lightBlue",
+                        // margin:"5px 0px",
+                        // margin:"25px",
+                        border:"3px solid gray",
+                        borderRadius:'5px 5px 0 0',
                         textAlign:"center"
                     }}
                     // onClick={() => setDisabled(true)}

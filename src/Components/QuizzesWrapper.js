@@ -2,15 +2,15 @@ import React from 'react';
 import RESTRequestsService from "../services/RESTRequestsService";
 import appContextSource from "../services/appContextSource";
 import EnumsClass from "../services/EnumsClass";
-import AsyncData from "./AsyncData";
+import AsyncDataHandler from "./AsyncDataHandler";
 import QuizzesLoaded from "./QuizzesLoaded";
 import ReactJson from "react-json-view";
 import AppENUMS from "../services/EnumsClass";
+import {useLoginSimple} from "../hooks/useLoginAs";
 // import QuizzesLoaded from "./QuizzesLoaded";
 
 export default function QuizzesWrapper(props) {
     const appContext = React.useContext(appContextSource);
-
     React.useEffect(()=>{handleRestRequest_quizzesAllIn()},[]);
 
     const handleRestRequest_quizzesAllIn = () => {
@@ -27,6 +27,13 @@ export default function QuizzesWrapper(props) {
             })
             .catch(e => {
                 console.log("error receiving data:", e)
+                appContext.setData((previousData) => ({
+                    ...previousData,
+                    quizzes: {
+                        data: e,
+                        status: EnumsClass.status.failed
+                    }
+                }));
             });
     }
 
@@ -41,9 +48,9 @@ export default function QuizzesWrapper(props) {
                 get quizzes
             </button>
 
-            <AsyncData status={appContext.data.quizzes.status}>
+            <AsyncDataHandler status={appContext.data.quizzes.status} data={appContext.data.quizzes.data}>
                 <QuizzesLoaded data={appContext.data.quizzes.data}/>
-            </AsyncData>
+            </AsyncDataHandler>
         </div>
     );
 }
