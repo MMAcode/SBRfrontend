@@ -5,13 +5,6 @@ import UpdateQuizOptions from "./UpdateQuizOptions";
 export const quizContextSource = React.createContext({});
 export default function Quiz({data: [quizData, quizPositionFrom0]}) {
     const quizHandlingArray = React.useState({data:quizData, positionFrom0:quizPositionFrom0});
-    // if (quiz.status==AppENUMS.status.notStarted || !quiz.status) {
-    //     console.log("will get data for this quiz")
-    // }
-// useEffect(()=>{
-//     console.log("quizHandlingArray:",quizHandlingArray);
-// },[quizHandlingArray])
-
 
     return (
         <div
@@ -28,9 +21,6 @@ export default function Quiz({data: [quizData, quizPositionFrom0]}) {
 
             </quizContextSource.Provider>
 
-            {/*<RestrictedAccess>*/}
-
-            {/*</RestrictedAccess>*/}
         </div>
     );
 }
