@@ -1,12 +1,12 @@
 import React from 'react';
-import RESTRequestsService from "../services/RESTRequestsService";
-import appContextSource from "../services/appContextSource";
-import EnumsClass from "../services/EnumsClass";
-import AsyncDataHandler from "./AsyncDataHandler";
+import RESTRequestsService from "../../services/RESTRequestsService";
+import appContextSource from "../../services/appContextSource";
+import EnumsClass from "../../services/EnumsClass";
+import AsyncDataHandler from "../AsyncDataHandler";
 import QuizzesLoaded from "./QuizzesLoaded";
 import ReactJson from "react-json-view";
-import AppENUMS from "../services/EnumsClass";
-import {useLoginSimple} from "../hooks/useLoginAs";
+import AppENUMS from "../../services/EnumsClass";
+import {useLoginSimple} from "../../hooks/useLoginAs";
 // import QuizzesLoaded from "./QuizzesLoaded";
 
 export default function QuizzesWrapper(props) {
@@ -14,7 +14,7 @@ export default function QuizzesWrapper(props) {
     React.useEffect(()=>{handleRestRequest_quizzesAllIn()},[]);
 
     const handleRestRequest_quizzesAllIn = () => {
-        appContext.setData((previousData) => ({...previousData, quizzes: {status: EnumsClass.status.loading}}))
+        appContext.setData((previousData) => ({...previousData, quizzes: {status: EnumsClass.status.loading}}));
         RESTRequestsService.getQuizzes_AllIn()
             .then((x) => {
                 appContext.setData((previousData) => ({

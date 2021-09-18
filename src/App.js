@@ -8,7 +8,7 @@ import localDataService from "./services/localDataService";
 import React, {useEffect} from "react";
 import appContextSource from "./services/appContextSource";
 import AppENUMS from "./services/EnumsClass";
-import QuizzesWrapper from "./Components/QuizzesWrapper";
+import QuizzesWrapper from "./Components/quizzes/QuizzesWrapper";
 import AccodrionMaterial from "./Components/AccodrionMaterial";
 import Collapsable from "./Components/Collapsable"
 // import {Accordion} from "react-bootstrap";

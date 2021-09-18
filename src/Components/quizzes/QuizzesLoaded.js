@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import Quiz from "./Quiz";
-import AccodrionMaterial from "./AccodrionMaterial";
-import appContextSource from "../services/appContextSource";
+import AccodrionMaterial from "../AccodrionMaterial";
+import appContextSource from "../../services/appContextSource";
 
 export default function QuizzesLoaded({data: allQuizzes}) {
     // const appContext = React.useContext(appContextSource);

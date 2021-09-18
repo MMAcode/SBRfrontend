@@ -1,5 +1,5 @@
 import React from 'react';
-export default function T(props) {
+export default function EditAddChoice(props) {
     return (
         <button>Add choice</button>
     );

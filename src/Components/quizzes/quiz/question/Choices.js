@@ -1,6 +1,6 @@
 import React from 'react';
-import Choice from "./Choice";
-import RestrictedAccess from "./RestrictedAccess";
+import Choice from "./choice/Choice";
+import RestrictedAccess from "../../../RestrictedAccess";
 import EditAddChoice from "./EditAddChoice";
 
 export default function Choices({data}) {

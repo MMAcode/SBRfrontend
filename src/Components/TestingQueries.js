@@ -1,5 +1,5 @@
 import React from 'react';
-import QuizzesWrapper from "./QuizzesWrapper";
+import QuizzesWrapper from "./quizzes/QuizzesWrapper";
 
 export default function TestingQueries(props) {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import {firstCapital} from "../services/helperMethods";
+import {firstCapital} from "../../../../../services/helperMethods";
 import CorrectAnswer from "./CorrectAnswer";
 import ReactJson from "react-json-view";
 
