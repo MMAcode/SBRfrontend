@@ -21,7 +21,7 @@ export default function Choices({data}) {
                 flexWrap:'wrap'
             }}
             >
-                {data.map((choice,positionFrom0) => <Choice data={choice} key={positionFrom0}/>)}
+                {data.map((choice,positionFrom0) => <Choice data={[choice,positionFrom0]} key={positionFrom0}/>)}
                 <RestrictedAccess>
                     <EditAddChoice/>
                 </RestrictedAccess>

@@ -3,7 +3,7 @@ import {firstCapital} from "../services/helperMethods";
 import CorrectAnswer from "./CorrectAnswer";
 import ReactJson from "react-json-view";
 
-export default function Choice({data}) {
+export default function Choice({data:[data,choicePositionFrom0]}) {
     return (
         <div style={{
 
@@ -22,7 +22,7 @@ export default function Choice({data}) {
             >
                 {firstCapital(data.title)}
             </button>
-            {data.correctAnswer != null && <CorrectAnswer data={data}/>}
+            {data.correctAnswer != null && <CorrectAnswer data={[data, choicePositionFrom0]}/>}
         </div>
     );
 }

@@ -13,7 +13,7 @@ export default function QuizzesLoaded({data: allQuizzes}) {
                 <AccodrionMaterial
                     key={position}
                     head={<h2>{quiz.title}</h2>}
-                    body={<Quiz key={quiz.id} data={quiz}/>}
+                    body={<Quiz key={quiz.id} data={[quiz, position]}/>}
                     data={quiz}
                     positionFrom0={position}
                     // disabled={appContext?}

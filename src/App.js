@@ -19,26 +19,31 @@ import AccordionSingle from "./Components/AccordionSingle";
 import bootstrap from 'bootstrap'
 import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
+import RestrictedAccess from "./Components/RestrictedAccess";
+import {useLoginSimple} from "./hooks/useLoginAs";
 // import {Toast} from 'bootstrap';
+
 
 
 const defaultAppState = {
     user: {
         data: {
             username: "x1",
-            password: 'x1'
+            password: 'x1',
+            role: 'USER'
         },
         status: AppENUMS.status.loaded
     },
-    quizzes:{
-        data:{},
+    quizzes: {
+        data: {},
         status: AppENUMS.status.notStarted
     }
 };
 
 function App() {
     useEffect(() => {
-        localDataService.setUser(defaultAppState.user.username, defaultAppState.user.password);
+        // localDataService.setUserData(defaultAppState.user.username, defaultAppState.user.password, defaultAppState.user.role);
+        localDataService.setUserDataInLocalService(defaultAppState.user.username, defaultAppState.user.password, defaultAppState.user.role);
         console.log("appState changed");
     }, [])
 
@@ -49,12 +54,18 @@ function App() {
     }
 
     useEffect(() => {
-        console.log("Context data updated to: ", stateForContext.data, " u:", stateForContext.data?.user?.data?.username)
+        console.log("Context data updated to: ", stateForContext.data, " u:", stateForContext.data?.user?.data?.username, "r:", stateForContext.data?.user?.data?.role)
+        // if (stateForContext.data?.user?.data?.role != AppENUMS.role.admin) document.querySelectorAll(".restrict_admin").forEach(e=>{e.style.display="none"});
+        if (stateForContext.data?.user?.data?.role != AppENUMS.role.admin) {
+            document.querySelectorAll(".restrict_admin").forEach(e => {e.classList.add("hideIt")});
+        } else {
+            document.querySelectorAll(".restrict_admin").forEach(e => {e.classList.remove("hideIt")});
+        }
     }, [stateForContext, appState, defaultAppState])
 
 
     return (
-        <div className="App" style={{background:"lightGray", minHeight:"100vh"}}>
+        <div className="App" style={{background: "lightGray", minHeight: "100vh"}}>
             <appContextSource.Provider value={stateForContext}>
                 {/*<HandleAsyncData/>*/}
                 {/*<SimpleReducer/>*/}
@@ -62,6 +73,7 @@ function App() {
                 {/*<ComplexReducer/>*/}
                 <LoginPage/>
                 {/*<TestingQueries/>*/}
+                {/*<RestrictedBy roleAllowed={AppENUMS.role.manager}></RestrictedBy>*/}
                 <QuizzesWrapper/>
 
             </appContextSource.Provider>
