@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Choices from "./question/Choices";
 
 export const questionContextSource = React.createContext({});
 
 export default function Question({data:[data,questionPositionFrom0]}) {
     const [question, setQuestion] = React.useState(data);
+    // useEffect(()=>{console.log(`question ${questionPositionFrom0+1} changed:`,question)},[question])
 
     return (
         <div

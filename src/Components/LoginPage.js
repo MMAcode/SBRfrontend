@@ -35,10 +35,11 @@ export default function LoginPage(props) {
     }
 
     const updateUserLoginDetails = (u, p, r) => {
+        console.log("xy1: ", u,p,r);
         localDataService.setUserDataInLocalService(u, p, r);
         appContext.setData((d) => ({
             ...d, user: {
-                data: localDataService.data.user,
+                data: localDataService.data.user.data,
                 status: AppENUMS.status.loaded
             }
         }))

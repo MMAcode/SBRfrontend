@@ -43,7 +43,8 @@ const defaultAppState = {
 function App() {
     useEffect(() => {
         // localDataService.setUserData(defaultAppState.user.username, defaultAppState.user.password, defaultAppState.user.role);
-        localDataService.setUserDataInLocalService(defaultAppState.user.username, defaultAppState.user.password, defaultAppState.user.role);
+        console.log("xy2:", defaultAppState.user.data.username, defaultAppState.user.data.password, defaultAppState.user.data.role)
+        localDataService.setUserDataInLocalService(defaultAppState.user.data.username, defaultAppState.user.data.password, defaultAppState.user.data.role);
         console.log("appState changed");
     }, [])
 

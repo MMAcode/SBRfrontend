@@ -7,17 +7,18 @@ class LocalDataService {
             data:{},
             status: AppENUMS.status.notStarted
         },
-        quizzes:{
-            data:{},
-            status: AppENUMS.status.notStarted
-        },
+        // quizzes:{
+        //     data:{},
+        //     status: AppENUMS.status.notStarted
+        // },
 
     };
 
 
     setUserDataInLocalService(u, p, r = "USER"){
+        console.log("xy",u,p,r);
         const user= {username: u, password:p, role: r};
-        this.data.user = user;
+        this.data.user.data = user;
     }
 
 

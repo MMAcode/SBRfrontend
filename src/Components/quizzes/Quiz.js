@@ -6,7 +6,8 @@ export const quizContextSource = React.createContext({});
 export default function Quiz({data: [quizData, quizPositionFrom0]}) {
     // const [quiz,setQuiz] = React.useState({data:quizData, positionFrom0:quizPositionFrom0});
     const [quiz,setQuiz] = React.useState(quizData);
-    // useEffect(()=>{console.log("quiz changed: ",quiz)},[quiz])
+    // useEffect(()=>{console.log(`quiz ${quizPositionFrom0+1} changed: choices:`,quiz.questions[0].choices)},[quiz])
+    useEffect(()=>{console.log(`quiz ${quizPositionFrom0+1} changed:`,quiz)},[quiz])
 
     return (
         <div

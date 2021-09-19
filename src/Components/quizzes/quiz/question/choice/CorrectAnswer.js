@@ -1,13 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import EditChoice from "./EditChoice";
-export default function CorrectAnswer({data:[data,choicePositionFrom0]}) {
+import {choiceContextSource} from "./Choice";
+export default function CorrectAnswer() {
+    const[choice]=useContext(choiceContextSource);
     return (
         <div>
-            <span className="m-1">{data.correctAnswer.toString()}</span>
-            {/*<RestrictedAccess>*/}
-                <EditChoice data={[data,choicePositionFrom0]}/>
-
-            {/*</RestrictedAccess>*/}
+            <span className="m-1">{choice.correctAnswer.toString()}</span>
+            <EditChoice/>
         </div>
     );
 }

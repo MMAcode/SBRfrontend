@@ -1,13 +1,17 @@
 import React, {useEffect} from 'react';
 import {quizContextSource} from "../../../Quiz";
 import {questionContextSource} from "../../Question";
+import {choiceContextSource} from "./Choice";
 
-export default function EditChoice({data:[choice,choicePositionFrom0]}) {
+export default function EditChoice() {
     const [quiz,,setQuiz] = React.useContext(quizContextSource);
     const [question] = React.useContext(questionContextSource);
+    const [choice,choicePositionFrom0] = React.useContext(choiceContextSource);
 
     const flipCorrectAnswer = ()=> {
         choice.correctAnswer = !choice.correctAnswer;
+        console.log(choicePositionFrom0,choice);
+        console.log(quiz.questions[0].choices);
         setQuiz({...quiz});
     }
 
