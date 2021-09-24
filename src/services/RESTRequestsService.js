@@ -1,7 +1,7 @@
 import axios from 'axios'
 import localDataService from "./localDataService";
-export const urlCore = "http://localhost:8080"
 
+export const urlCore = "http://localhost:8080"
 
 
 class RESTRequestsService {
@@ -15,10 +15,25 @@ class RESTRequestsService {
 // const xx = localDataService?.data?.user;
 //     console.log("xxxx:",localDataService)
 
-    // headers = { authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword()) };
+    config() {
+        return ({
+            headers: {
+                authorization: 'Basic ' + window.btoa(this.getUsername() + ":" + this.getPassword())
+            },
+            credentials: 'include'
+        })
+    };
+    // configOnlyCredentials() {
+    //     return ({
+    //         credentials: 'include'
+    //     })
+    // };
+
     // authorization = {authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword())};
 
-    async delay(){await new Promise(resolve => setTimeout(resolve, 0));}
+    async delay() {
+        await new Promise(resolve => setTimeout(resolve, 0));
+    }
 
     // getUsers(){
     //     return axios.get(urlCore+"/users");
@@ -35,25 +50,28 @@ class RESTRequestsService {
 
     async getQuizzes_AllIn() {
         await this.delay();
-        console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.headers);
+        console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);
         return axios.get(`${urlCore}/quizzes`
-            ,{ headers: { authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword()) } }
-            // ,{ headers: this.headers }
+            // ,{ headers: { authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword()) } }
+            // ,{ headers: {authorization:this.authorization}}
+            , this.config()
         );
     }
 
-    updateQuiz(quiz){
-        console.log("REST:specific quiz to be updated: ",quiz);
-        axios.post(`${urlCore}/quiz/update`,quiz)
-                .then((x)=>console.log("quiz updated",x))
-                .catch(e=>console.log("error updating quiz ", quiz.title, e))
+    updateQuiz(quiz) {
+        console.log("REST:specific quiz to be updated: ", quiz);
+        axios.post(`${urlCore}/quiz/update`, quiz, this.config())
+        // axios.post(`${urlCore}/quiz/update`, quiz)
+            .then((x) => console.log("quiz updated", x))
+            .catch(e => console.log("error updating quiz ", quiz.title, e))
     }
 
-    getUsername(){
-        console.log("getUsername:",localDataService)
+    getUsername() {
+        console.log("getUsername:", localDataService)
         return localDataService?.data?.user?.data?.username
     }
-    getPassword(){
+
+    getPassword() {
         return localDataService?.data?.user?.data?.password
     }
 }
