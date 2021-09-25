@@ -66,9 +66,7 @@ function App() {
 
 
     return (
-        <div className="App"
-             // style={{background: "lightGray", minHeight: "100vh"}}
-        >
+        <div className="App">
             <appContextSource.Provider value={{data:appContextData,setData:appContextDataSet}}>
                 <userContextSource.Provider value={userContextStateHandler}>
                     {/*<HandleAsyncData/>*/}

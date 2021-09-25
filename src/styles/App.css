@@ -1,12 +1,16 @@
 :root {
   --pf-base-font-size: 65.5%;
   --pf-font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --pf-primary-c: hsla(var(--pf-colorP_s, ), 100%, 64%, 1);
+  --pf-primary-c: #ffc247;
   --pf-secondary-c: #fffffa;
   --pf-font-c: #1f2033;
-  --pf-bg-c: hsla(var(--pf-colorB1_s, ), 21%, 77%, 1);
-  --pf-bg2-c: hsla(var(--pf-colorS_s, ), 25%, 47%, 1);
-  --pf-heading-c: hsla(var(--pf-colorH_s, ), 100%, 71%, 1);
+  --pf-bg-c: #b8b8d1;
+  --pf-bg2-c: #5a5e96;
+  --pf-heading-c: #ff6b6b;
+}
+
+html {
+  background-color: var(--pf-bg-c, white);
 }
 
 h1, h2, h3, h4, h5 {
@@ -34,6 +38,40 @@ button:hover {
 
 .LoginPage_C {
   background-color: var(--pf-bg-c, green);
+}
+
+.quizzesWrapper {
+  width: 98%;
+  margin: 1%;
+}
+
+.quizz {
+  textAlign: left;
+  width: 100%;
+}
+
+.colorPmm {
+  color: var(--pf-primary-c, );
+}
+
+.colorSmm {
+  color: var(--pf-secondary-c, );
+}
+
+.colorB1mm {
+  background-color: var(--pf-bg-c, );
+}
+
+.colorB2mm {
+  background-color: var(--pf-bg2-c, );
+}
+
+.colorTmm {
+  color: var(--pf-font-c, );
+}
+
+.colorHmm {
+  color: var(--pf-heading-c, );
 }
 
 @media (prefers-reduced-motion: no-preference) {

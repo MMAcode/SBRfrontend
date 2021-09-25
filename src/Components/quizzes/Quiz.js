@@ -10,12 +10,7 @@ export default function Quiz({data: [quizData, quizPositionFrom0]}) {
     useEffect(()=>{console.log(`quiz ${quizPositionFrom0+1} changed:`,quiz)},[quiz])
 
     return (
-        <div
-            style={{
-                textAlign: 'left',
-                width: '100%'
-            }}
-        >
+        <div className={"quizz"}>
             {/*<quizContextSource.Provider value={[quiz.data,quiz.positionFrom0,setQuiz]}>*/}
             <quizContextSource.Provider value={[quiz, quizPositionFrom0,setQuiz]}>
                 {quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}

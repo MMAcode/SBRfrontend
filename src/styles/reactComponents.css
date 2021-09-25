@@ -8,4 +8,14 @@
   background-color: cv(bg-c, green);
 }
 
+.quizzesWrapper {
+  width: 98%;
+  margin: 1%;
+}
+
+.quizz {
+  textAlign: left;
+  width: 100%;
+}
+
 /*# sourceMappingURL=reactComponents.css.map */

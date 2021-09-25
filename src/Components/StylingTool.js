@@ -6,13 +6,13 @@ export default function StylingTool(props) {
     // let valNr = parseInt(val,10) -140;
     // console.log("style:", val, valNr);
 
-    const add = (amount)=>{
-        console.log("clicked")
-    }
+    // const add = (amount)=>{
+    //     console.log("clicked")
+    // }
 
     const handleInput=(e)=>{
         let value = e.target.value;
-        console.log("vvvale:",value);
+        // console.log("vvvale:",value);
         valHandler[1](value);
 
 
@@ -21,20 +21,30 @@ export default function StylingTool(props) {
     useEffect(()=>{
         console.log("vvvale:",valHandler[0]);
         document.documentElement.style.setProperty('--pf-colorB1_s',valHandler[0])
-    },[valHandler[0]])
+    },[valHandler])
 
     return (
         <div style={{textAlign: "left"}}>
-            <span>style it: current val:{val}</span><button onClick={()=>add(40)}>+40</button>
+            <span>style it: current val:{val}</span>
+            {/*<button onClick={()=>add(40)}>+40</button>*/}
             <input //hue 0-360
-                onInput={handleInput}
+                // onInput={handleInput}
                 // id="typeinp"
                 type="range"
                 min="0" max="360"
                 value={valHandler[0]}
-                // onChange={handleInput}
+                onChange={handleInput}
                 step="1"
             />
+            <div>
+                colors
+                <span className="colorPmm">primary</span>
+                <span className="colorSmm">sec</span>
+                <span className="colorTmm">text</span>
+                <span className="colorHmm">headers</span>
+                <span className="colorB1mm">bg</span>
+                <span className="colorB2mm">bg2</span>
+            </div>
         </div>
     );
 }

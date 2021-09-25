@@ -7,12 +7,22 @@
 }
 
 .LoginPage_C {
-  background-color: cv(bg-c,green);
+  background-color: cv(bg-c, green);
   //background-color: cv(secondary-c,green);
   //color: cv(primary-color);
 }
 
 
+.quizzesWrapper {
+  //   style={{width:'98%', margin:'1%'}}
+  width: 98%;
+  margin: 1%;
+}
+
+.quizz{
+  textAlign: left;
+  width: 100%;
+}
 
 //@keyframes App-logo-spin {
 //  from {

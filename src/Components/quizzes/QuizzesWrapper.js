@@ -57,9 +57,7 @@ export default function QuizzesWrapper(props) {
     }
 
     return (
-        <div>
-            {/*<h1>Quizzes:</h1>*/}
-
+        <div className="quizzesWrapper">
             <button
                 onClick={handleRestRequest_quizzesAllIn}
                 disabled={appContext.data.quizzes.status == AppENUMS.status.loading}
