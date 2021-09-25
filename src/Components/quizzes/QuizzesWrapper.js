@@ -17,7 +17,6 @@ export default function QuizzesWrapper(props) {
         handleRestRequest_quizzesAllIn();
     },[userContextHandler[0]]);
     React.useEffect(()=>{
-        console.log("UUUUUUU ", userContextHandler?.role)
         if (userContextHandler[0]?.role != AppENUMS.role.admin) {
             document.querySelectorAll(".restrict_admin").forEach(e => {
                 e.classList.add("hideIt")

@@ -12,10 +12,12 @@ import {userContextSource} from "../services/contextsService";
 
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);
-    const userContext = useContext(userContextSource);
+    const userContextHandler = useContext(userContextSource);
 
     // useEffect(()=>{loginAs("x3")},[])
-    useEffect(()=>{loginAs("x3")},[])
+    useEffect(() => {
+        loginAs("x3")
+    }, [])
 
     const getUsers = () => {
         console.log("ahoj")
@@ -46,8 +48,8 @@ export default function LoginPage(props) {
         //         status: AppENUMS.status.loaded
         //     }
         // }));
-        console.log("calling to update userContext UUUUUU, currently:", userContext[0]);
-        userContext[1]({...localDataService?.data?.user?.data});
+        console.log("calling to update userContextHandler UUUUUU, currently:", userContextHandler[0]);
+        userContextHandler[1]({...localDataService?.data?.user?.data});
 
     }
 
@@ -70,18 +72,29 @@ export default function LoginPage(props) {
     //     console.log(localDataService.data.user.username);
     // }
 
+    const logout = () => {
+        updateUserLoginDetails("", "", "");
+        userContextHandler[1]({...localDataService?.data?.user?.data})
+    }
+
     return (
-        <div style={{border:"1px solid black"}}>
-            <h1>login page</h1>
-            <p>current user role: {appContext.data?.user?.data?.role}</p>
-            <button onClick={() => getUsers()}>get data from server (/users)</button>
-            <button onClick={() => loginAs("anonymous")}>login as anonymous</button>
-            <button onClick={() => loginAs("x1")}>login as x1</button>
-            <button onClick={() => loginAs("x2")}>login as x2</button>
-            <button onClick={() => loginAs("x3")}>login as x3</button>
-            <LoginForm/>
-            {/*{userState[0] && <ForHookUseLoginAs data={userState[0]} setComponentNeeded={userState[1]}/>}*/}
-            {/*<button onClick={showUserData}>show user details in LocalDataService</button>*/}
+        <div style={{border: "1px solid black"}}>
+            {userContextHandler[0]?.role !=="kjh"
+                ? <div>
+                    <h1>login page</h1>
+                    {/*<p>current user role: {appContext.data?.user?.data?.role}</p>*/}
+                    <p>current user role: {userContextHandler[0]?.role}</p>
+                    <button onClick={() => getUsers()}>get data from server (/users)</button>
+                    <button onClick={() => loginAs("anonymous")}>login as anonymous</button>
+                    <button onClick={() => loginAs("x1")}>login as x1</button>
+                    <button onClick={() => loginAs("x2")}>login as x2</button>
+                    <button onClick={() => loginAs("x3")}>login as x3</button>
+                    <LoginForm/>
+                    {/*{userState[0] && <ForHookUseLoginAs data={userState[0]} setComponentNeeded={userState[1]}/>}*/}
+                    {/*<button onClick={showUserData}>show user details in LocalDataService</button>*/}
+                </div>
+                : <button style={{float: "right"}} onClick={logout}>logout</button>
+            }
         </div>
     );
 

@@ -3,8 +3,10 @@ import RESTRequestsService from "../services/RESTRequestsService";
 import localDataService from "../services/localDataService";
 import AppENUMS from "../services/EnumsClass";
 import appContextSource from "../services/appContextSource";
+import {userContextSource} from "../services/contextsService";
 export default function T(props) {
     const appContext = useContext(appContextSource);
+    const userContextHandler = useContext(userContextSource);
     const username = useState("x1");
     const password = useState("x1");
 
@@ -21,12 +23,14 @@ export default function T(props) {
                     let authority = x?.data?.authorities[0];
                     if (authority){
                         localDataService.setUserDataInLocalService(username[0],password[0], authority);
-                        appContext.setData((d) => ({
-                            ...d, user: {
-                                data: localDataService.data.user.data,
-                                status: AppENUMS.status.loaded
-                            }
-                        }))
+                        // appContext.setData((d) => ({
+                        //     ...d, user: {
+                        //         data: localDataService.data.user.data,
+                        //         status: AppENUMS.status.loaded
+                        //     }
+                        // }))
+                        userContextHandler[1]({...localDataService?.data?.user?.data})
+
 
                     }
 

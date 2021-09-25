@@ -57,17 +57,6 @@ function App() {
 
     useEffect(() => {
         console.log("AppContext data updated to: ", appContextData, " u:", appContextData?.user?.data?.username, "r:", appContextData?.user?.data?.role)
-        // if (appContextData?.user?.data?.role != AppENUMS.role.admin) {
-        //     document.querySelectorAll(".restrict_admin").forEach(e => {
-        //         e.classList.add("hideIt")
-        //     });
-        // } else {
-        //     document.querySelectorAll(".restrict_admin").forEach(e => {
-        //         e.classList.remove("hideIt")
-        //     });
-        // }
-    // }, [stateForAppContext, appContextData, defaultAppState])
-    // }, [stateForAppContext])
     }, [appContextData])
 
     useEffect(()=>{
