@@ -8,9 +8,11 @@ import {getRole} from "../services/helperMethods";
 import useLoginAs from "../hooks/useLoginAs";
 import ForHookUseLoginAs from "../hooks/ForHookUseLoginAs";
 import LoginForm from "./LoginForm";
+import {userContextSource} from "../services/contextsService";
 
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);
+    const userContext = useContext(userContextSource);
 
     // useEffect(()=>{loginAs("x3")},[])
     useEffect(()=>{loginAs("x3")},[])
@@ -38,12 +40,15 @@ export default function LoginPage(props) {
     const updateUserLoginDetails = (u, p, r) => {
         // console.log("xy1: ", u,p,r);
         localDataService.setUserDataInLocalService(u, p, r);
-        appContext.setData((d) => ({
-            ...d, user: {
-                data: localDataService.data.user.data,
-                status: AppENUMS.status.loaded
-            }
-        }))
+        // appContext.setData((d) => ({
+        //     ...d, user: {
+        //         data: localDataService.data.user.data,
+        //         status: AppENUMS.status.loaded
+        //     }
+        // }));
+        console.log("calling to update userContext UUUUUU, currently:", userContext[0]);
+        userContext[1]({...localDataService?.data?.user?.data});
+
     }
 
 

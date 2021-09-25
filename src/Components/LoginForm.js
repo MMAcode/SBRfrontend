@@ -1,6 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import RESTRequestsService from "../services/RESTRequestsService";
+import localDataService from "../services/localDataService";
+import AppENUMS from "../services/EnumsClass";
+import appContextSource from "../services/appContextSource";
 export default function T(props) {
+    const appContext = useContext(appContextSource);
     const username = useState("x1");
     const password = useState("x1");
 
@@ -14,7 +18,18 @@ export default function T(props) {
         RESTRequestsService.loginUser(username[0],password[0])
                 .then((x) => {
                     console.log("login from server success: result:", x);
-                    // updateUserLoginDetails("x1", "x1", "USER");
+                    let authority = x?.data?.authorities[0];
+                    if (authority){
+                        localDataService.setUserDataInLocalService(username[0],password[0], authority);
+                        appContext.setData((d) => ({
+                            ...d, user: {
+                                data: localDataService.data.user.data,
+                                status: AppENUMS.status.loaded
+                            }
+                        }))
+
+                    }
+
                 })
                 .catch(e => console.log("error logingin to server:", e))
     }

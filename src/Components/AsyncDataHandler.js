@@ -5,7 +5,7 @@ import ReactJson from "react-json-view";
 import ErrorInfo from "./ErrorInfo";
 
 export default function AsyncDataHandler({status, data, children}) {
-    console.log("currentAsyncDataLoadingStatus:",status);
+    // console.log("currentAsyncDataLoadingStatus:",status);
 
     // const after = (time ,x) =>{
     //     const doLater = async()=>{
