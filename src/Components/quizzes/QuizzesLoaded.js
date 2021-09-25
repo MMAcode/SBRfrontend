@@ -9,7 +9,7 @@ export default function QuizzesLoaded({data: allQuizzes}) {
         <div>
             <h1>Quizzes:</h1>
             {/*{allQuizzes.map((quiz,position) => <Quiz key={quiz.id} data={quiz}/>)}*/}
-            {allQuizzes.map((quiz, position) =>
+            {allQuizzes?.map((quiz, position) =>
                 <AccodrionMaterial
                     key={position}
                     head={<h2>{quiz.title}</h2>}

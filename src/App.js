@@ -56,7 +56,6 @@ function App() {
 
     useEffect(() => {
         console.log("Context data updated to: ", stateForContext.data, " u:", stateForContext.data?.user?.data?.username, "r:", stateForContext.data?.user?.data?.role)
-        // if (stateForContext.data?.user?.data?.role != AppENUMS.role.admin) document.querySelectorAll(".restrict_admin").forEach(e=>{e.style.display="none"});
         if (stateForContext.data?.user?.data?.role != AppENUMS.role.admin) {
             document.querySelectorAll(".restrict_admin").forEach(e => {e.classList.add("hideIt")});
         } else {

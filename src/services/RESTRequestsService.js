@@ -48,6 +48,16 @@ class RESTRequestsService {
     //         .catch(e=>console.log("error users x1:", e))
     // }
 
+    async loginUser (u, p ){
+        return axios.get(`${urlCore}/login`,{
+            headers: {
+                authorization: 'Basic ' + window.btoa(u + ":" + p)
+            },
+            credentials: 'include' // to include cookies I think (for remember me service)
+        } )
+
+    }
+
     async getQuizzes_AllIn() {
         await this.delay();
         console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);

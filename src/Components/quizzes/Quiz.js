@@ -18,7 +18,7 @@ export default function Quiz({data: [quizData, quizPositionFrom0]}) {
         >
             {/*<quizContextSource.Provider value={[quiz.data,quiz.positionFrom0,setQuiz]}>*/}
             <quizContextSource.Provider value={[quiz, quizPositionFrom0,setQuiz]}>
-                {quiz.questions.map((q, position) => <Question data={[q, position]} key={position}/>)}
+                {quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}
                 {/*<ReactJson src={quiz}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
                 <UpdateQuizOptions/>
 

@@ -17,6 +17,7 @@ export default function QuizzesWrapper(props) {
         appContext.setData((previousData) => ({...previousData, quizzes: {status: EnumsClass.status.loading}}));
         RESTRequestsService.getQuizzes_AllIn()
             .then((x) => {
+                console.log("all quizzes data received like this:",x)
                 appContext.setData((previousData) => ({
                     ...previousData,
                     quizzes: {
