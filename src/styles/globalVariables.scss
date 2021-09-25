@@ -1,0 +1,20 @@
+@import 'setup.scss';
+@include cssvars(( //usage like when in css setting 'root' variables
+        base-font-size: 65.5%,
+        font-family: #{"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif},
+
+        primary-color: yellow,
+        secondary-color: #ff500a,
+));
+
+
+
+
+
+
+
+
+
+
+
+
