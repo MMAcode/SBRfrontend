@@ -1,3 +1,5 @@
+@import 'setup.scss';
+
 .App {
   text-align: center;
 }
@@ -38,15 +40,22 @@
 }
 
 
-button{
-  margin:5px
+button {
+  margin: 5px
 }
-button:hover{
+
+button:hover {
   opacity: 0.7;
 }
 
 .restrict_admin {
 }
-.hideIt{
+
+.hideIt {
   display: none !important;
+}
+
+.LoginPage_C {
+  background-color: cv(primary-color,green);
+  //color: cv(primary-color);
 }

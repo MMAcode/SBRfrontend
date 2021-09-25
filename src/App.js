@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.scss';
 import HandleAsyncData from "./learningReact/HandleAsyncData";
 import SimpleReducer from "./learningReact/hooks/useReducer/SimpleReducer";
 import ComplexReducer from "./learningReact/hooks/useReducer/ComplexReducer";

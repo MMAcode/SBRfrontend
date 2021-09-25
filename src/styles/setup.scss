@@ -1,0 +1,27 @@
+
+
+//https://dev.to/felipperegazio/css-custom-properties-vars-with-sass-scss-a-practical-architecture-strategy-1m88
+
+//setup behind the scenes
+@mixin cssvars($css_variables, $prefix: pf) {
+  :root {
+    @each $name, $value in $css_variables {
+      --#{$prefix}-#{$name}: #{$value};
+    }
+  }
+}
+//usage for setting 'root' variables
+@include cssvars((
+        base-font-size: 65.5%,
+        font-family: #{"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif},
+
+        primary-color: yellow,
+        secondary-color: #ff500a,
+));
+
+//how to call css var
+@function cv($name, $default:"", $prefix: pf) {
+  @return var(--#{$prefix}-#{$name},#{$default});
+}
+
+
