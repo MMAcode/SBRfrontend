@@ -1,10 +1,32 @@
 @import 'setup.scss';
-@include cssvars(( //usage like when in css setting 'root' variables
+
+@include cssvars((//usage like when in css setting 'root' variables
         base-font-size: 65.5%,
         font-family: #{"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif},
 
-        primary-color: yellow,
-        secondary-color: #ff500a,
+
+        //color properties
+        //colorP_s:40,
+        //colorS_s:236,
+        //colorB1_s:40,
+        //colorH_s:300,
+
+        //colors:      (calc(cv(colorB1_s)* 1%)
+        primary-c: hsla(cv(colorP_s), 100%, 64%, 1),  //yellow
+        secondary-c: hsla(60, 100%, 99%, 1),           //white
+        font-c: hsla(237, 24%, 16%, 1),               //black-blue
+        bg-c: hsla(cv(colorB1_s), 21%, 77%, 1),                 //light blue
+        bg2-c: hsla(cv(colorS_s), 25%, 47%, 1), //dark blue
+        heading-c:hsla(cv(colorH_s), 100%, 71%, 1)    //pink
+
+
+//pallete1: https://coolors.co/b8b8d1-5b5f97-ffc145-fffffb-ff6b6c
+//--wild-blue-yonder: hsla(240, 21%, 77%, 1);
+//--dark-blue-gray: hsla(236, 25%, 47%, 1);
+//--maximum-yellow-red: hsla(40, 100%, 64%, 1);
+//--baby-powder: hsla(60, 100%, 99%, 1);
+//--light-coral: hsla(360, 100%, 71%, 1);
+//$space-cadet: hsla(237, 24%, 16%, 1);
 ));
 
 

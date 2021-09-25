@@ -1,47 +1,23 @@
 :root {
   --pf-base-font-size: 65.5%;
   --pf-font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --pf-primary-color: yellow;
-  --pf-secondary-color: #ff500a;
+  --pf-primary-c: hsla(var(--pf-colorP_s, ), 100%, 64%, 1);
+  --pf-secondary-c: #fffffa;
+  --pf-font-c: #1f2033;
+  --pf-bg-c: hsla(var(--pf-colorB1_s, ), 21%, 77%, 1);
+  --pf-bg2-c: hsla(var(--pf-colorS_s, ), 25%, 47%, 1);
+  --pf-heading-c: hsla(var(--pf-colorH_s, ), 100%, 71%, 1);
 }
 
-.App {
-  text-align: center;
+h1, h2, h3, h4, h5 {
+  color: var(--pf-heading-c, orange);
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p, button, a {
+  color: var(--pf-font-c, black);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 button {
   margin: 5px;
 }
@@ -50,12 +26,23 @@ button:hover {
   opacity: 0.7;
 }
 
-.hideIt {
-  display: none !important;
+.App {
+  text-align: center;
+  background-color: var(--pf-bg-c, white);
+  minHeight: 100vh;
 }
 
 .LoginPage_C {
-  background-color: var(--pf-primary-color, green);
+  background-color: var(--pf-bg-c, green);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.hideIt {
+  display: none !important;
 }
 
 /*# sourceMappingURL=App.css.map */

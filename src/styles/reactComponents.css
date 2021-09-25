@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  background-color: cv(bg-c, white);
+  minHeight: 100vh;
+}
+
+.LoginPage_C {
+  background-color: cv(bg-c, green);
+}
+
+/*# sourceMappingURL=reactComponents.css.map */

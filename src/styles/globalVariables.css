@@ -1,8 +1,12 @@
 :root {
   --pf-base-font-size: 65.5%;
   --pf-font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
-  --pf-primary-color: yellow;
-  --pf-secondary-color: #ff500a;
+  --pf-primary-c: hsla(var(--pf-colorP_s, ), 100%, 64%, 1);
+  --pf-secondary-c: #fffffa;
+  --pf-font-c: #1f2033;
+  --pf-bg-c: hsla(var(--pf-colorB1_s, ), 21%, 77%, 1);
+  --pf-bg2-c: hsla(var(--pf-colorS_s, ), 25%, 47%, 1);
+  --pf-heading-c: hsla(var(--pf-colorH_s, ), 100%, 71%, 1);
 }
 
 /*# sourceMappingURL=globalVariables.css.map */

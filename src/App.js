@@ -22,6 +22,7 @@ import Button from "react-bootstrap/Button";
 import Accordion from "react-bootstrap/Accordion";
 import RestrictedAccess from "./Components/RestrictedAccess";
 import {useLoginSimple} from "./hooks/useLoginAs";
+import StylingTool from "./Components/StylingTool";
 // import {Toast} from 'bootstrap';
 
 
@@ -65,13 +66,16 @@ function App() {
 
 
     return (
-        <div className="App" style={{background: "lightGray", minHeight: "100vh"}}>
+        <div className="App"
+             // style={{background: "lightGray", minHeight: "100vh"}}
+        >
             <appContextSource.Provider value={{data:appContextData,setData:appContextDataSet}}>
                 <userContextSource.Provider value={userContextStateHandler}>
                     {/*<HandleAsyncData/>*/}
                     {/*<SimpleReducer/>*/}
                     {/*<br/>*/}
                     {/*<ComplexReducer/>*/}
+                    <StylingTool/>
                     <LoginPage/>
                     {/*<TestingQueries/>*/}
                     {/*<RestrictedBy roleAllowed={AppENUMS.role.manager}></RestrictedBy>*/}
