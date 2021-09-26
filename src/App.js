@@ -12,29 +12,10 @@ import AppENUMS from "./services/EnumsClass";
 import QuizzesWrapper from "./Components/quizzes/QuizzesWrapper";
 import AccodrionMaterial from "./Components/AccodrionMaterial";
 import Collapsable from "./Components/Collapsable"
-// import {Accordion} from "react-bootstrap";
-// import Accordion from 'react-bootstrap/Accordion'
-import {Alert} from "react-bootstrap";
-// import Accordion from "react-bootstrap/cjs/Accordion";
-import AccordionSingle from "./Components/AccordionSingle";
-import bootstrap from 'bootstrap'
-import Button from "react-bootstrap/Button";
-import Accordion from "react-bootstrap/Accordion";
-import RestrictedAccess from "./Components/RestrictedAccess";
-import {useLoginSimple} from "./hooks/useLoginAs";
+import ContextMonitor from "./Components/ContextMonitor";
 import StylingTool from "./Components/StylingTool";
-// import {Toast} from 'bootstrap';
-
 
 let defaultAppState = {
-    // user: {
-    //     data: {
-    //         username: "x1",
-    //         password: 'x1',
-    //         role: 'USER'
-    //     },
-    //     status: AppENUMS.status.loaded
-    // },
     quizzes: {
         data: {},
         status: AppENUMS.status.notStarted
@@ -42,38 +23,17 @@ let defaultAppState = {
 };
 
 function App() {
-    // useEffect(() => {
-    //     // localDataService.setUserData(defaultAppState.user.username, defaultAppState.user.password, defaultAppState.user.role);
-    //     // console.log("xy2:", defaultAppState.user.data.username, defaultAppState.user.data.password, defaultAppState.user.data.role)
-    //     // localDataService.setUserDataInLocalService(defaultAppState.user.data.username, defaultAppState.user.data.password, defaultAppState.user.data.role);
-    //     // console.log("appContextData changed");
-    // }, [])
 
     const [appContextData, appContextDataSet] = React.useState(defaultAppState);
-    // const stateForAppContext = {
-    //     data: appContextData,
-    //     setData: appContextDataSet
-    // }
     const userContextStateHandler = React.useState();
 
-    useEffect(() => {
-        console.log("AppContext data updated to: ", appContextData, " u:", appContextData?.user?.data?.username, "r:", appContextData?.user?.data?.role)
-    }, [appContextData])
 
-    useEffect(()=>{
-        console.log("userContext data updated to: ", userContextStateHandler[0])
-    },[userContextStateHandler[0]])
-
-
-    // useEffect(()=>{
-    //         let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-    //         document.documentElement.setAttribute("theme", isDarkTheme ? "dark" : "");
-    // },[])
 
     return (
         <div className="App">
             <appContextSource.Provider value={{data:appContextData,setData:appContextDataSet}}>
                 <userContextSource.Provider value={userContextStateHandler}>
+                    <ContextMonitor/>
                     {/*<HandleAsyncData/>*/}
                     {/*<SimpleReducer/>*/}
                     {/*<br/>*/}
