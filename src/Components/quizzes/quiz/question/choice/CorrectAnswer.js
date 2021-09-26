@@ -5,7 +5,7 @@ export default function CorrectAnswer() {
     const[choice]=useContext(choiceContextSource);
     return (
         <div>
-            <span className="m-1">{choice.correctAnswer.toString()}</span>
+            <span>{choice.correctAnswer.toString()}</span>
             <EditChoice/>
         </div>
     );

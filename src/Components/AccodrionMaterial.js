@@ -28,19 +28,15 @@ export default function AccordionMaterial(props) {
             <Accordion
                 disabled={disabled}
                 defaultExpanded={props.positionFrom0 == 0 ? true : false}
+                // defaultExpanded={false}
+                className="accordion"
             >
                 <AccordionSummary
                     // expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    style={{
-                        // background:"",
-                        margin:"5px 0px",
-                        // margin:"25px",
-                        // border:"3px solid gray",
-                        borderRadius:'5px 5px 0 0',
-                        textAlign:"center"
-                    }}
+                    className="accordionTitlesWrappers"
+                    style={{}}
                     // onClick={() => setDisabled(true)}
                     // load data for this specific quiz using props.data -> check context first if loaded already, use RESTService, update context data
                 >

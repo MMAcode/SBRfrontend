@@ -1,18 +1,32 @@
-.colorPmm{
-  color:cv(primary-c);
+.restrict_admin {
+  //background-color: red !important;
+ button{
+   background-color: red !important;
+   color: cv(secondary-c);
+ }
+
 }
-.colorSmm{
-  color:cv(secondary-c);
+
+.hideIt {
+  display: none !important;
 }
-.colorB1mm{
-  background-color:cv(bg-c);
-}
-.colorB2mm{
-  background-color:cv(bg2-c);
-}
-.colorTmm{
-  color:cv(font-c);
-}
-.colorHmm{
-  color:cv(heading-c);
-}
+
+
+//.colorPmm{
+//  color:cv(primary-c);
+//}
+//.colorSmm{
+//  color:cv(secondary-c);
+//}
+//.colorB1mm{
+//  background-color:cv(bg-c);
+//}
+//.colorB2mm{
+//  background-color:cv(bg2-c);
+//}
+//.colorTmm{
+//  color:cv(font-c);
+//}
+//.colorHmm{
+//  color:cv(heading-c);
+//}

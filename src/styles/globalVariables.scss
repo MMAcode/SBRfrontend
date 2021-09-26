@@ -8,18 +8,20 @@
         //color properties
         //colorP_s:40,
         //colorS_s:236,
-        //colorB1_s:240,
+        colorB1_s:240,
         //colorH_s:300,
+        border_radius:10px,
 
-        //colors:      calc(cv(colorB1_s)* 1%)
+        //colors:      hh
   //bg-c: hsla(calc(var(--pf-colorB1_s) + 10), 21%, 77%, 1),                 //light blue  WORKS
   //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
 
         primary-c: hsla(40, 100%, 64%, 1),  //yellow
         secondary-c: hsla(60, 100%, 99%, 1),           //white
         font-c: hsla(237, 24%, 16%, 1),               //black-blue
-        bg-c: hsla(240, 21%, 77%, 1),                 //light blue
-        bg2-c: hsla(236, 25%, 47%, 1), //dark blue
+        bg-c: hsla(cvPlus(colorB1_s), 21%, 77%, 1),                 //light blue
+        //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
+        bg2-c: hsla(236, 25%, 47%, 1), //dark blhue
         heading-c:hsla(360, 100%, 71%, 1)    //pink
 
 

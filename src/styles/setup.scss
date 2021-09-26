@@ -13,9 +13,16 @@
 @function cv($name, $default:"", $prefix: pf) {
   @return var(--#{$prefix}-#{$name},#{$default});
 }
+@function cvPlus($name,$offset:0, $prefix: pf) { //works
+  @return calc( var(--#{$prefix}-#{$name}) + #{$offset});
+}
+@function cvDivide($name,$by:0, $prefix: pf) { //works
+  @return calc( var(--#{$prefix}-#{$name}) / #{$by});
+}
 
-
-
+//@function cvPlus($name,$offset:0, $default:0, $prefix: pf) {
+//  @return calc( var(--#{$prefix}-#{$name},#{$default}) + #{offset});
+//}
 
 
 

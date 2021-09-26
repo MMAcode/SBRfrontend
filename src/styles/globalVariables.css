@@ -1,10 +1,12 @@
 :root {
   --pf-base-font-size: 65.5%;
   --pf-font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --pf-colorB1_s: 240;
+  --pf-border_radius: 10px;
   --pf-primary-c: #ffc247;
   --pf-secondary-c: #fffffa;
   --pf-font-c: #1f2033;
-  --pf-bg-c: #b8b8d1;
+  --pf-bg-c: hsla(calc( var(--pf-colorB1_s) + 0), 21%, 77%, 1);
   --pf-bg2-c: #5a5e96;
   --pf-heading-c: #ff6b6b;
 }

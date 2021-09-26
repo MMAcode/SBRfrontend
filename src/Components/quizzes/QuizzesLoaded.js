@@ -13,7 +13,7 @@ export default function QuizzesLoaded({data: allQuizzes}) {
             {allQuizzes?.map((quiz, position) =>
                 <AccodrionMaterial
                     key={position}
-                    head={<h2>{firstCapital(quiz.title)}</h2>}
+                    head={<h2 className="accordionTitles">{firstCapital(quiz.title)}</h2>}
                     body={<Quiz key={quiz.id} data={[quiz, position]}/>}
                     data={quiz}
                     positionFrom0={position}

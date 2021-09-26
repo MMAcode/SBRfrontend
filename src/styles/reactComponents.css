@@ -13,9 +13,44 @@
   margin: 1%;
 }
 
+.accordion {
+  background-color: cv(bg2-c, white) !important;
+  border: 1px solid cv(secondary-c) !important;
+  border-radius: cv(border_radius) !important;
+  margin: 5px 0px !important;
+}
+.accordion .accordionTitlesWrappers .accordionTitles {
+  margin: 5px;
+}
+
 .quizz {
   textAlign: left;
   width: 100%;
+}
+.question {
+  background-color: cv(secondary-c);
+  border-radius: cv(border_radius);
+  padding: 5px 20px;
+  margin: 10px 0;
+}
+.question h3 {
+  text-align: left;
+}
+
+.choices {
+  display: flex;
+  alignItems: stretch;
+  justifyContent: center;
+  flexWrap: wrap;
+  overflow: auto;
+}
+
+.choice {
+  flex: 1 1 0;
+  textAlign: center;
+}
+.choice button {
+  width: 90%;
 }
 
 /*# sourceMappingURL=reactComponents.css.map */

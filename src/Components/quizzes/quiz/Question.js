@@ -9,15 +9,10 @@ export default function Question({data:[data,questionPositionFrom0]}) {
 
     return (
         <div
-            style={{
-                // border:'1px dotted gray',
-                backgroundColor: "lightGray",
-                padding: '1rem',
-                margin: '1rem 0'
-            }}
+            className="question"
         >
             <questionContextSource.Provider value={[question,questionPositionFrom0,setQuestion]}>
-                <h3><strong>Question {questionPositionFrom0+1}:</strong></h3>
+                <h3>Question {questionPositionFrom0+1}:</h3>
                 <h3 className="text-center">{data.title}????</h3>
                 {data.choices && <Choices data={data.choices}/>}
                 {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}

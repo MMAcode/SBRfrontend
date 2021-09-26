@@ -10,25 +10,10 @@ export default function Choice({data:[data,choicePositionFrom0]}) {
     const [choice, setChoice] = React.useState(data);
 
     return (
-        <div style={{
-
-            flex: '1 1 0',
-            textAlign:'center'
-        }}
-        className="m-2 p-2"
-        >
+        <div className="choice">
             <choiceContextSource.Provider value={[choice,choicePositionFrom0,setChoice]}>
-
             {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-            <button
-                className="m-0"
-                style={{
-                    backgroundColor:'yellow',
-                    width:'100%'
-                }}
-            >
-                {firstCapital(data.title)}
-            </button>
+            <button>{firstCapital(data.title)}</button>
             {data.correctAnswer != null && <CorrectAnswer/>}
             </choiceContextSource.Provider>
         </div>

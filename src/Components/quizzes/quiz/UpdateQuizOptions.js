@@ -10,7 +10,7 @@ export default function UpdateQuizOptions(props) {
     }
 
     return (
-        <div className="text-center restrict_admin">
+        <div className="updateQuizOptions restrict_admin">
             <button style={{backgroundColor:'lightGreen'}}
                     onClick={saveChanges}>Save changes in this quiz</button>
             <button style={{backgroundColor:'red'}} >Delete this quiz (Button functionality not implemented)</button>
