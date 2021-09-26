@@ -60,8 +60,18 @@ button:hover {
   border-radius: var(--pf-border_radius, ) !important;
   margin: 5px 0px !important;
 }
-.accordion .accordionTitlesWrappers .accordionTitles {
-  margin: 5px;
+.accordion .accordionTitlesWrappers div {
+  margin: 0 0 0 0;
+}
+
+.quizHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.quizHead button {
+  float: right;
 }
 
 .quizz {

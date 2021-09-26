@@ -1,19 +1,12 @@
 import './styles/App.scss';
-import HandleAsyncData from "./learningReact/HandleAsyncData";
-import SimpleReducer from "./learningReact/hooks/useReducer/SimpleReducer";
-import ComplexReducer from "./learningReact/hooks/useReducer/ComplexReducer";
-import LoginPage from "./Components/LoginPage";
-import TestingQueries from "./Components/TestingQueries";
-import localDataService from "./services/localDataService";
+import LoginPage from "./Components/user/LoginPage";
 import React, {useEffect} from "react";
 import appContextSource from "./services/appContextSource";
 import {userContextSource} from "./services/contextsService";
 import AppENUMS from "./services/EnumsClass";
 import QuizzesWrapper from "./Components/quizzes/QuizzesWrapper";
-import AccodrionMaterial from "./Components/AccodrionMaterial";
-import Collapsable from "./Components/Collapsable"
 import ContextMonitor from "./Components/ContextMonitor";
-import StylingTool from "./Components/StylingTool";
+import StylingTool from "./Components/styling/StylingTool";
 
 let defaultAppState = {
     quizzes: {

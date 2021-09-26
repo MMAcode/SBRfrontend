@@ -19,6 +19,7 @@
   margin: 1%;
 }
 
+
 .accordion{
   background-color: cv(bg2-c,white) !important;
    //border-bottom:3px solid gray !important;
@@ -30,15 +31,26 @@
   margin:5px 0px !important;
 
   .accordionTitlesWrappers{
-
-    .accordionTitles{
-      margin: 5px;
+    div{
+      margin: 0 0 0 0;
 
     }
   }
 }
 
-
+.quizHead{
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  h2{
+    //display: inline;
+    //margin: 0;
+  }
+  button{
+    float:right;
+  }
+}
 
 .quizz{
   textAlign: left;

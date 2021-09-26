@@ -1,14 +1,14 @@
 import React, {useContext, useEffect} from 'react';
 import axios from "axios";
-import {urlCore} from "../services/RESTRequestsService";
-import appContextSource from "../services/appContextSource";
-import localDataService from "../services/localDataService";
-import AppENUMS from "../services/EnumsClass";
-import {getRole} from "../services/helperMethods";
-import useLoginAs from "../hooks/useLoginAs";
-import ForHookUseLoginAs from "../hooks/ForHookUseLoginAs";
+import {urlCore} from "../../services/RESTRequestsService";
+import appContextSource from "../../services/appContextSource";
+import localDataService from "../../services/localDataService";
+import AppENUMS from "../../services/EnumsClass";
+import {getRole} from "../../services/helperMethods";
+import useLoginAs from "../../hooks/useLoginAs";
+import ForHookUseLoginAs from "../../hooks/ForHookUseLoginAs";
 import LoginForm from "./LoginForm";
-import {userContextSource} from "../services/contextsService";
+import {userContextSource} from "../../services/contextsService";
 
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);

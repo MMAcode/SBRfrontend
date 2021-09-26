@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
-import RESTRequestsService from "../services/RESTRequestsService";
-import localDataService from "../services/localDataService";
-import AppENUMS from "../services/EnumsClass";
-import appContextSource from "../services/appContextSource";
-import {userContextSource} from "../services/contextsService";
+import RESTRequestsService from "../../services/RESTRequestsService";
+import localDataService from "../../services/localDataService";
+import AppENUMS from "../../services/EnumsClass";
+import appContextSource from "../../services/appContextSource";
+import {userContextSource} from "../../services/contextsService";
 export default function T(props) {
     const appContext = useContext(appContextSource);
     const userContextHandler = useContext(userContextSource);

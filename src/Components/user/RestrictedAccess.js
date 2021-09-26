@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
-import appContextSource from "../services/appContextSource";
+import appContextSource from "../../services/appContextSource";
 import ReactJson from "react-json-view";
-import AppENUMS from "../services/EnumsClass";
+import AppENUMS from "../../services/EnumsClass";
 
 export default function RestrictedAccess({children}) {
     const currentUserRole = useContext(appContextSource).data?.user?.data?.role.toLocaleLowerCase();
