@@ -68,10 +68,9 @@ button:hover {
   textAlign: left;
   width: 100%;
 }
-.quizz .updateQuizOptions #saveQuiz {
-  background-color: green !important;
+.quizz .updateQuizOptions button {
+  font-size: 1.2rem;
 }
-
 .question {
   background-color: var(--pf-secondary-c, );
   border-radius: var(--pf-border_radius, );
@@ -112,8 +111,9 @@ button:hover {
 }
 
 .restrict_admin button {
-  background-color: red;
+  background-color: var(--pf-heading-c, );
   color: var(--pf-secondary-c, );
+  width: auto;
 }
 
 .hideIt {

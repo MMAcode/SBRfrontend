@@ -1,6 +1,7 @@
 .restrict_admin button {
-  background-color: red;
+  background-color: cv(heading-c);
   color: cv(secondary-c);
+  width: auto;
 }
 
 .hideIt {

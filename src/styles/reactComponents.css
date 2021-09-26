@@ -27,10 +27,9 @@
   textAlign: left;
   width: 100%;
 }
-.quizz .updateQuizOptions #saveQuiz {
-  background-color: green !important;
+.quizz .updateQuizOptions button {
+  font-size: 1.2rem;
 }
-
 .question {
   background-color: cv(secondary-c);
   border-radius: cv(border_radius);
