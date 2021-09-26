@@ -1,10 +1,34 @@
 .restrict_admin button {
-  background-color: red !important;
+  background-color: red;
   color: cv(secondary-c);
 }
 
 .hideIt {
   display: none !important;
+}
+
+.colorPmm {
+  color: cv(primary-c);
+}
+
+.colorSmm {
+  color: cv(secondary-c);
+}
+
+.colorB1mm {
+  background-color: cv(bg-c);
+}
+
+.colorB2mm {
+  background-color: cv(bg2-c);
+}
+
+.colorTmm {
+  color: cv(font-c);
+}
+
+.colorHmm {
+  color: cv(heading-c);
 }
 
 /*# sourceMappingURL=classes.css.map */

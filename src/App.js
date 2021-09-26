@@ -65,6 +65,11 @@ function App() {
     },[userContextStateHandler[0]])
 
 
+    // useEffect(()=>{
+    //         let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+    //         document.documentElement.setAttribute("theme", isDarkTheme ? "dark" : "");
+    // },[])
+
     return (
         <div className="App">
             <appContextSource.Provider value={{data:appContextData,setData:appContextDataSet}}>

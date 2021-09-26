@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import Switch from "@material-ui/core/Switch";
+import DarkModeSwitch from "./styling/DarkModeSwitch";
 
 export default function StylingTool(props) {
     let val = window.getComputedStyle(document.documentElement).getPropertyValue('--pf-colorB1_s');
@@ -36,6 +38,7 @@ export default function StylingTool(props) {
                 onChange={handleInput}
                 step="1"
             />
+            <DarkModeSwitch/>
             <div>
                 colors
                 <span className="colorPmm">primary</span>
@@ -45,6 +48,11 @@ export default function StylingTool(props) {
                 <span className="colorB1mm">bg</span>
                 <span className="colorB2mm">bg2</span>
             </div>
+            {/*const label = { inputProps: { 'aria-label': 'Switch demo' } };*/}
+            {/*<Switch {...label}/>*/}
+
+
+
         </div>
     );
 }

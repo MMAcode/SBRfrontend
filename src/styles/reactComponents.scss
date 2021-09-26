@@ -45,7 +45,9 @@
   width: 100%;
 
   .updateQuizOptions{
-
+    #saveQuiz{
+      background-color: green !important;
+    }
   }
 }
 
@@ -74,6 +76,17 @@
   }
 }
 
+
+//styling section
+#darkSwitch{
+  //border: 1px solid black;
+  border-radius: 100px;
+  //background-color: hsla(237, 24%, 16%, 0.5);
+  background-color: rgba(50, 36, 44, 0.34);
+  color: cv(primary-c);
+  padding:  0 15px 0 0;
+  margin: 3px 10px;
+}
 
 
 

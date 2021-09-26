@@ -11,4 +11,8 @@
   --pf-heading-c: #ff6b6b;
 }
 
+:root[theme=dark] {
+  filter: invert(1) brightness(0.6);
+}
+
 /*# sourceMappingURL=globalVariables.css.map */

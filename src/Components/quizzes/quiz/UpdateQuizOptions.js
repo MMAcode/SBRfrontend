@@ -11,9 +11,9 @@ export default function UpdateQuizOptions(props) {
 
     return (
         <div className="updateQuizOptions restrict_admin">
-            <button style={{backgroundColor:'lightGreen'}}
+            <button id="saveQuiz"
                     onClick={saveChanges}>Save changes in this quiz</button>
-            <button style={{backgroundColor:'red'}} >Delete this quiz (Button functionality not implemented)</button>
+            <button>Delete this quiz (Button functionality not implemented)</button>
             {/*<button onClick={showC}>showC</button>*/}
         </div>
     );

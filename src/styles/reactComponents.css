@@ -27,6 +27,10 @@
   textAlign: left;
   width: 100%;
 }
+.quizz .updateQuizOptions #saveQuiz {
+  background-color: green !important;
+}
+
 .question {
   background-color: cv(secondary-c);
   border-radius: cv(border_radius);
@@ -51,6 +55,14 @@
 }
 .choice button {
   width: 90%;
+}
+
+#darkSwitch {
+  border-radius: 100px;
+  background-color: rgba(50, 36, 44, 0.34);
+  color: cv(primary-c);
+  padding: 0 15px 0 0;
+  margin: 3px 10px;
 }
 
 /*# sourceMappingURL=reactComponents.css.map */
