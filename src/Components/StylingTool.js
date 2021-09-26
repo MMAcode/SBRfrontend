@@ -26,7 +26,7 @@ export default function StylingTool(props) {
     },[valHandler])
 
     return (
-        <div style={{textAlign: "left"}}>
+        <div id="stylingTool">
             <span>style it: current val:{val}</span>
             {/*<button onClick={()=>add(40)}>+40</button>*/}
             <input //hue 0-360
@@ -37,8 +37,7 @@ export default function StylingTool(props) {
                 value={valHandler[0]}
                 onChange={handleInput}
                 step="1"
-            />
-            <DarkModeSwitch/>
+            /><DarkModeSwitch/>
             <div>
                 colors
                 <span className="colorPmm">primary</span>
