@@ -28,7 +28,8 @@ export default function DarkModeSwitch(props) {
             onChange={(e) => handleDarkmodeChange(e.target.checked)}
         />}
         label="Dark Theme"
-        id="darkSwitch"
+        // id="darkSwitch"
+        className="toggleSwitchWrapper"
         />
     );
 }

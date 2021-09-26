@@ -34,6 +34,9 @@
 //--light-coral: hsla(360, 100%, 71%, 1);
 //$space-cadet: hsla(237, 24%, 16%, 1);
 ));
+:root{
+  //filter: brightness(1);
+}
 
 :root[theme='dark']{
   //--pf-base-font-size: 65.5%;

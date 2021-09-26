@@ -72,7 +72,7 @@
   border-bottom: 1px solid black;
 }
 
-#darkSwitch {
+.toggleSwitchWrapper {
   border-radius: 100px;
   background-color: rgba(50, 36, 44, 0.34);
   color: cv(primary-c);
