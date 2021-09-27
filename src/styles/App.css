@@ -120,7 +120,6 @@ button:hover {
   padding: 0 15px 0 0;
   margin: 3px 10px;
 }
-
 .restrict_admin button {
   background-color: var(--pf-heading-c, );
   color: var(--pf-secondary-c, );

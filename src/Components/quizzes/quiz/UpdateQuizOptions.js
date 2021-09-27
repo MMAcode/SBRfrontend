@@ -1,5 +1,5 @@
 import React from 'react';
-import {quizContextSource} from "../Quiz";
+import {quizContextSource} from "./QuizQuestions";
 import appContextSource from "../../../services/appContextSource";
 import {getQuizIndex} from "../../../services/helperMethods";
 import RESTRequestsService from "../../../services/RESTRequestsService";

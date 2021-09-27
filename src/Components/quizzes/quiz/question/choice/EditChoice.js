@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {quizContextSource} from "../../../Quiz";
+import {quizContextSource} from "../../QuizQuestions";
 import {questionContextSource} from "../../Question";
 import {choiceContextSource} from "./Choice";
 
