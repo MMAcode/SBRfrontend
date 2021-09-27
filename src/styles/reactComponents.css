@@ -8,6 +8,13 @@
   background-color: cv(bg-c, green);
 }
 
+#questionReorderingActivator {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  left: 15px;
+}
+
 .quizzesWrapper {
   width: 98%;
   margin: 1%;
@@ -37,6 +44,7 @@
 .quizz {
   textAlign: left;
   width: 100%;
+  border-top: 1px solid rgba(50, 36, 44, 0.24);
 }
 .quizz .updateQuizOptions button {
   font-size: 1.2rem;

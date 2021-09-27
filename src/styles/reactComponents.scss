@@ -12,6 +12,15 @@
   //color: cv(primary-color);
 }
 
+#questionReorderingActivator{
+  //position: fixed;
+  //display: inline;
+  //float: right;
+  position: sticky;
+  z-index: 2;
+  top:0;
+  left:15px;
+}
 
 .quizzesWrapper {
   //   style={{width:'98%', margin:'1%'}}
@@ -70,6 +79,7 @@
 .quizz {
   textAlign: left;
   width: 100%;
+  border-top: 1px solid rgba(50, 36, 44, 0.24);
 
   .updateQuizOptions {
     button {

@@ -36,27 +36,36 @@ export const getRole = (userDetails) => {
     }
 }
 
-export const getQuizIndex=(appContext, quiz) =>{
-    return appContext.data.quizzes.data.findIndex(q => q.id==quiz.id);
+// export const getQuizIndex=(appContext, quiz) =>{
+//     return appContext.data.quizzes.data.findIndex(q => q.id==quiz.id);
+// }
+//
+// export const getQuestionIndex=(quiz, questionId) =>{
+//     return quiz.questions.findIndex(q => q.id==questionId);
+// }
+// export const getQuestionById=(quiz, questionId) =>{
+//     return quiz.questions.find(q => q.id==questionId);
+// }
+//
+// export const getChoiceIndex=(question, choiceId) =>{
+//     return question.choices.findIndex(c => c.id==choiceId);
+// }
+// export const getChoiceById=(question, choiceId) =>{
+//     return question.choices.find(ch => ch.id===choiceId);
+// }
+
+// export const userDetailsToArray=(user) =>{
+//     return [user,user,getRole(user)];
+// }
+
+export const sortQuestionsByPositions=(quiz)=>{
+    quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? 1 : ((a.positionFrom0 < b.positionFrom0) ? -1 : 0));
+    // quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? -1 : ((a.positionFrom0 < b.positionFrom0) ? 1 : 0));
+    return quiz;
 }
 
-export const getQuestionIndex=(quiz, questionId) =>{
-    return quiz.questions.findIndex(q => q.id==questionId);
-}
-export const getQuestionById=(quiz, questionId) =>{
-    return quiz.questions.find(q => q.id==questionId);
-}
+export const swapQuestions=(quiz, sourceIndex,destinationIndex)=>{
+    let q1 = quiz.questions[sourceIndex].positionFrom0 = destinationIndex;
+    let q2 = quiz.questions[destinationIndex].positionFrom0 = sourceIndex;
 
-export const getChoiceIndex=(question, choiceId) =>{
-    return question.choices.findIndex(c => c.id==choiceId);
 }
-export const getChoiceById=(question, choiceId) =>{
-    return question.choices.find(ch => ch.id===choiceId);
-}
-
-export const userDetailsToArray=(user) =>{
-    return [user,user,getRole(user)];
-}
-
-
-

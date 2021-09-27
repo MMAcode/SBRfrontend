@@ -21,10 +21,10 @@ export default function EditChoice() {
     }
     return (
         <div className="restrict_admin">
-            <button onClick={()=>flipCorrectAnswer()}>Change
+            <button onClick={()=>flipCorrectAnswer()}>Change Answer
                 {/*qz{quiz.id}q{choice.question_id}o{choice.id}*/}
             </button>
-            <button onClick={()=>deleteChoice()}>delete</button>
+            <button onClick={()=>deleteChoice()}>Delete Choice</button>
         </div>
     );
 }

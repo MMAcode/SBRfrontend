@@ -10,23 +10,24 @@ export default function Question({data: [data, questionPositionFrom0]}) {
 
     return (
         <Draggable
-        draggableId={question.id.toString()}
-        // index={question.positionFrom0}
-        index={questionPositionFrom0}
+            draggableId={question.id.toString()}
+            // index={question.positionFrom0}
+            index={questionPositionFrom0}
         >
-            {(provided)=>(
+            {(provided) => (
                 <div
-                    className="question"
+                    className="question overlayWrapper"
                     {...provided.draggableProps}
-                    {...provided.dragHandleProps} //*pass this to (sub)component which will enable moving */
+                    //*pass this to (sub)component which will enable moving */
                     ref={provided.innerRef}
                 >
-                    <questionContextSource.Provider value={[question, questionPositionFrom0, setQuestion]}>
-                        {/*<h3>Question {questionPositionFrom0+1}:</h3>*/}
-                        <h3 className="text-center">{questionPositionFrom0 + 1}) {data.title}????</h3>
-                        {data.choices && <Choices data={data.choices}/>}
-                        {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-                    </questionContextSource.Provider>
+                        <div className="overlay hideIt"  {...provided.dragHandleProps}/>
+                        <questionContextSource.Provider value={[question, questionPositionFrom0, setQuestion]}>
+                            {/*<h3>Question {questionPositionFrom0+1}:</h3>*/}
+                            <h3 className="text-center">{questionPositionFrom0 + 1}) {data.title}????</h3>
+                            {data.choices && <Choices data={data.choices}/>}
+                            {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
+                        </questionContextSource.Provider>
                 </div>
             )}
 

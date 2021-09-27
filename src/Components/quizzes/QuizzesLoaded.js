@@ -4,12 +4,14 @@ import AccodrionMaterial from "./quiz/AccodrionMaterial";
 import appContextSource from "../../services/appContextSource";
 import {firstCapital} from "../../services/helperMethods";
 import QuizWrapper from "./QuizWrapper";
+import QuestionReorderingActivator from "./quiz/QuestionReorderingActivator";
 
 export default function QuizzesLoaded({data: allQuizzes}) {
     // const appContext = React.useContext(appContextSource);
     return (
         <div className="quizzesLoaded">
             <h1>Quizzes</h1>
+            <QuestionReorderingActivator/>
             {allQuizzes?.map((quiz, positionFrom0) =>
                 <QuizWrapper key={quiz.id} data={[quiz, positionFrom0]}/>
             )}

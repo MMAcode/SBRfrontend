@@ -79,7 +79,7 @@ export default function LoginPage(props) {
 
     return (
         <div className="LoginPage_C" style={{borderBottom: "1px solid black"}}>
-            {userContextHandler[0]?.role !=="kjh"
+            {!userContextHandler[0]?.role
                 ? <div>
                     <h1>login page</h1>
                     {/*<p>current user role: {appContext.data?.user?.data?.role}</p>*/}

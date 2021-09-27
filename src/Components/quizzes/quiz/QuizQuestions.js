@@ -2,21 +2,26 @@ import React, {useEffect} from 'react';
 import Question from "./Question";
 import UpdateQuizOptions from "./UpdateQuizOptions";
 import {DragDropContext, Droppable} from "react-beautiful-dnd";
-import ChoicesHider from "./ChoicesHider";
+import QuestionReorderingActivator from "./QuestionReorderingActivator";
+import {sortQuestionsByPositions, swapQuestions} from "../../../services/helperMethods";
 
 export const quizContextSource = React.createContext({});
 export default function QuizQuestions() {
-    const [quiz, quizPositionFrom0] = React.useContext(quizContextSource);
+    const [quiz, quizPositionFrom0, setQuiz] = React.useContext(quizContextSource);
     useEffect(() => {
+        // sortQuestionsByPositions(quiz);
         console.log(`quiz ${quizPositionFrom0 + 1} changed:`, quiz)
     }, [quiz])
 
-    const onDragEnd = () => {
+    const onDragEnd = (result) => {
+        const {source:{index:sourceIndex}, destination:{index:destinationIndex}} = result;
+        swapQuestions(quiz, sourceIndex,destinationIndex);
+        setQuiz({...quiz});
 
     }
     return (
         <div className="quizz">
-            <ChoicesHider/>
+            {/*<QuestionReorderingActivator/>*/}
 
             <DragDropContext onDragEnd={onDragEnd}>
                 <Droppable droppableId="droppableId">
@@ -25,7 +30,8 @@ export default function QuizQuestions() {
                             ref={provided.innerRef}
                             {...provided.droppableProps}
                         >
-                            {quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}
+                            {/*{quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}*/}
+                            {sortQuestionsByPositions(quiz)?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}
                             {provided.placeholder}
                         </div>
                     )}
