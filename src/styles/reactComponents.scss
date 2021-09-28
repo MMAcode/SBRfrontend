@@ -57,10 +57,10 @@
 //}
 //}}}
 .quizHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: center;
+  //width: 100%;
   //background-color: yellowgreen;
   //border-bottom:  1px dotted cv(secondary-c);
   //transform: translateX(10);
@@ -108,9 +108,9 @@
 
 .choices {
   display: flex;
-  alignItems: stretch;
-  justifyContent: center;
-  flexWrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
   overflow: auto;
 }
 
@@ -156,7 +156,7 @@
   padding: 0 15px 0 0;
   margin: 3px 10px;
   //text-align: right;
-  //z-index: -100;
+  z-index: 100;
 
   span {
     //width: 200px !important;

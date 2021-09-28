@@ -72,12 +72,6 @@ button:hover {
   margin: 0 0 0 0;
 }
 
-.quizHead {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
 .quizHead button {
   float: right;
   z-index: 10;
@@ -103,9 +97,9 @@ button:hover {
 
 .choices {
   display: flex;
-  alignItems: stretch;
-  justifyContent: center;
-  flexWrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
   overflow: auto;
 }
 
@@ -127,6 +121,7 @@ button:hover {
   color: var(--pf-primary-c, );
   padding: 0 15px 0 0;
   margin: 3px 10px;
+  z-index: 100;
 }
 .restrict_admin button {
   background-color: var(--pf-heading-c, );
