@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Choices from "./question/Choices";
 import {Draggable} from "react-beautiful-dnd";
 import {questionContextSource} from "../../../services/contextsService";
+import QuestionContext from "./question/QuestionContext";
 
 
 export default function Question({data: [data, questionPositionFrom0]}) {
@@ -19,17 +20,12 @@ export default function Question({data: [data, questionPositionFrom0]}) {
                 <div
                     className="question overlayWrapper"
                     {...provided.draggableProps}
-                    //*pass this to (sub)component which will enable moving */
                     ref={provided.innerRef}
                 >
                         {/*<div className="overlay hideIt"  {...provided.dragHandleProps}/>*/}
                         <div className="overlay"  {...provided.dragHandleProps}/>
-                        <questionContextSource.Provider value={{question, setQuestion, questionPositionFrom0}}>
-                            {/*<h3>Question {questionPositionFrom0+1}:</h3>*/}
-                            <h3 className="text-center">{questionPositionFrom0 + 1}) {data.title}????</h3>
-                            {data.choices && <Choices data={data.choices}/>}
-                            {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-                        </questionContextSource.Provider>
+                        <QuestionContext data={{question, setQuestion, questionPositionFrom0}}/>
+
                 </div>
             )}
 
