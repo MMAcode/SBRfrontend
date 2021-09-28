@@ -59,12 +59,16 @@ export const getRole = (userDetails) => {
 // }
 
 export const sortQuestionsByPositions=(quiz)=>{
+    console.log("before sorting:", quiz.questions)
     quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? 1 : ((a.positionFrom0 < b.positionFrom0) ? -1 : 0));
     // quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? -1 : ((a.positionFrom0 < b.positionFrom0) ? 1 : 0));
+    console.log("after sorting:", quiz.questions)
+
     return quiz;
 }
 
 export const swapQuestions=(quiz, sourceIndex,destinationIndex)=>{
+    console.log(sourceIndex,destinationIndex)
     let q1 = quiz.questions[sourceIndex].positionFrom0 = destinationIndex;
     let q2 = quiz.questions[destinationIndex].positionFrom0 = sourceIndex;
 

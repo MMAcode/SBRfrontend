@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {firstCapital} from "../../services/helperMethods";
-import QuizQuestions from "./quiz/QuizQuestions";
+import QuizBody from "./quiz/QuizBody";
 import {quizContextSource} from "../../services/contextsService";
 import AccodrionMaterial from "./quiz/AccodrionMaterial";
 import QuizHead from "./quiz/QuizHead";
@@ -18,7 +18,7 @@ export default function QuizWrapper({data: [quizData, positionFrom0]}) {
             <AccodrionMaterial
                 key={positionFrom0}
                 head={<QuizHead/>}
-                body={<QuizQuestions/>}
+                body={<QuizBody/>}
                 data={quiz}
                 positionFrom0={positionFrom0}
                 // disabled={appContext?}
