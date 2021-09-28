@@ -1,7 +1,7 @@
 import './styles/App.scss';
 import LoginPage from "./Components/user/LoginPage";
 import React, {useEffect} from "react";
-import appContextSource from "./services/appContextSource";
+import {appContextSource} from "./services/contextsService";
 import {userContextSource} from "./services/contextsService";
 import AppENUMS from "./services/EnumsClass";
 import QuizzesWrapper from "./Components/quizzes/QuizzesWrapper";

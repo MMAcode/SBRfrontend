@@ -4,8 +4,8 @@ import UpdateQuizOptions from "./UpdateQuizOptions";
 import {DragDropContext, Droppable} from "react-beautiful-dnd";
 import QuestionReorderingActivator from "./QuestionReorderingActivator";
 import {sortQuestionsByPositions, swapQuestions} from "../../../services/helperMethods";
+import {quizContextSource} from "../../../services/contextsService";
 
-export const quizContextSource = React.createContext({});
 export default function QuizQuestions() {
     const {quiz, quizPositionFrom0, setQuiz} = React.useContext(quizContextSource);
     useEffect(() => {

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import RESTRequestsService from "../../services/RESTRequestsService";
-import appContextSource from "../../services/appContextSource";
+import {appContextSource} from "../../services/contextsService";
 import EnumsClass from "../../services/EnumsClass";
 import AsyncDataHandler from "../AsyncDataHandler";
 import QuizzesLoaded from "./QuizzesLoaded";

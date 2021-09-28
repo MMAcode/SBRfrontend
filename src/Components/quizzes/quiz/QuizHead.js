@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {firstCapital} from "../../../services/helperMethods";
-import {quizContextSource} from "./QuizQuestions";
+import {quizContextSource} from "../../../services/contextsService";
 import AppENUMS from "../../../services/EnumsClass";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";

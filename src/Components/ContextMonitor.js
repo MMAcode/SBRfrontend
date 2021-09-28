@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import appContextSource from "../services/appContextSource";
+import {appContextSource} from "../services/contextsService";
 import {userContextSource} from "../services/contextsService";
 import AppENUMS from "../services/EnumsClass";
 export default function ContextMonitor(props) {

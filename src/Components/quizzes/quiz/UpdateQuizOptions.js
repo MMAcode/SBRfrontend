@@ -1,7 +1,5 @@
 import React from 'react';
-import {quizContextSource} from "./QuizQuestions";
-import appContextSource from "../../../services/appContextSource";
-import {getQuizIndex} from "../../../services/helperMethods";
+import {quizContextSource} from "../../../services/contextsService";
 import RESTRequestsService from "../../../services/RESTRequestsService";
 export default function UpdateQuizOptions(props) {
     const {quiz} = React.useContext(quizContextSource);

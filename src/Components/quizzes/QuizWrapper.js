@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {firstCapital} from "../../services/helperMethods";
-import QuizQuestions, {quizContextSource} from "./quiz/QuizQuestions";
+import QuizQuestions from "./quiz/QuizQuestions";
+import {quizContextSource} from "../../services/contextsService";
 import AccodrionMaterial from "./quiz/AccodrionMaterial";
 import QuizHead from "./quiz/QuizHead";
 

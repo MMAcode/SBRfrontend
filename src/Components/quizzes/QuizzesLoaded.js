@@ -1,8 +1,4 @@
 import React, {useContext} from 'react';
-import QuizQuestions from "./quiz/QuizQuestions";
-import AccodrionMaterial from "./quiz/AccodrionMaterial";
-import appContextSource from "../../services/appContextSource";
-import {firstCapital} from "../../services/helperMethods";
 import QuizWrapper from "./QuizWrapper";
 import QuestionReorderingActivator from "./quiz/QuestionReorderingActivator";
 

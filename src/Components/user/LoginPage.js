@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import axios from "axios";
 import {urlCore} from "../../services/RESTRequestsService";
-import appContextSource from "../../services/appContextSource";
+import {appContextSource} from "../../services/contextsService";
 import localDataService from "../../services/localDataService";
 import AppENUMS from "../../services/EnumsClass";
 import {getRole} from "../../services/helperMethods";
