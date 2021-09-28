@@ -7,12 +7,12 @@ import QuestionContext from "./question/QuestionContext";
 
 export default function Question({data: [data, questionPositionFrom0]}) {
 
-    // const [question, setQuestion] = React.useState(data);
+    const [question] = React.useState(data);
 
     // useEffect(()=>{console.log(`question ${questionPositionFrom0+1} changed:`,question)},[question])
     return (
         <Draggable
-            draggableId={data.id.toString()}
+            draggableId={question.id.toString()}
             // index={question.positionFrom0}
             index={questionPositionFrom0}
         >
