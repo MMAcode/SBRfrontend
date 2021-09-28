@@ -60,7 +60,7 @@ export const getRole = (userDetails) => {
 
 export const sortQuestionsByPositions=(quiz)=>{
     quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? 1 : ((a.positionFrom0 < b.positionFrom0) ? -1 : 0));
-    console.log("sortedQuiz:", quiz);
+    // console.log("sortedQuiz:", quiz);
     return quiz;
 }
 

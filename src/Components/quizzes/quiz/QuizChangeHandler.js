@@ -10,16 +10,16 @@ export default function T(props) {
 
     useEffect(() => {
         console.log(`quiz ${positionFrom0 + 1} changed:`,questionsNeedReordering(quiz), quiz)
-        // if (quizChanged ===null) {
-        //     // if() setQuizChanged(false);
-        //     if (questionsNeedReordering(quiz)){
-        //         sortQuestionsByPositions(quiz);
-        //         refreshPositionNumbersOnSortedQuestions(quiz);
-        //         setQuiz({...quiz});
-        //     } else {
-        //         setQuizChanged(false)
-        //     }
-        // } else if (quizChanged ==false){setQuizChanged(true);}
+        if (quizChanged ===null) {
+            // if() setQuizChanged(false);
+            if (questionsNeedReordering(quiz)){
+                sortQuestionsByPositions(quiz);
+                refreshPositionNumbersOnSortedQuestions(quiz);
+                setQuiz({...quiz});
+            } else {
+                setQuizChanged(false)
+            }
+        } else if (quizChanged ==false){setQuizChanged(true);}
 
     }, [quiz])
 
