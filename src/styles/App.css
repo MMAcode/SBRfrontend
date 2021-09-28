@@ -1,6 +1,7 @@
 :root {
   --pf-base-font-size: 65.5%;
   --pf-font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --pf-adminWrapper: calc( var(--pf-border_radius) / 1) 0 calc( var(--pf-border_radius) / 1) 0;
   --pf-colorB1_s: 240;
   --pf-border_radius: 10px;
   --pf-primary-c: #ffc247;
@@ -115,6 +116,12 @@ button:hover {
 .choice button {
   width: 90%;
 }
+.choice .editChoice {
+  border: 1px dotted var(--pf-heading-c, );
+  border-radius: var(--pf-adminWrapper, );
+  margin: 15px;
+  padding: 10px;
+}
 
 #stylingTool {
   padding-bottom: 10px;
@@ -132,7 +139,11 @@ button:hover {
   background-color: var(--pf-heading-c, );
   color: var(--pf-secondary-c, );
   width: auto;
-  border-radius: calc( var(--pf-border_radius) / 1) 0 calc( var(--pf-border_radius) / 1) 0;
+  border-radius: var(--pf-adminWrapper, );
+}
+.restrict_admin input {
+  padding: 3px 10px;
+  width: auto;
 }
 
 .hideIt {

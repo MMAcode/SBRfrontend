@@ -4,12 +4,16 @@ import QuizQuestions from "./quiz/QuizQuestions";
 import {quizContextSource} from "../../services/contextsService";
 import AccodrionMaterial from "./quiz/AccodrionMaterial";
 import QuizHead from "./quiz/QuizHead";
+import QuizChangeHandler from "./quiz/QuizChangeHandler";
 
 export default function QuizWrapper({data: [quizData, positionFrom0]}) {
     const [quiz, setQuiz] = React.useState(quizData);
+    const [quizChanged, setQuizChanged] = React.useState(null);
 
     return (
-        <quizContextSource.Provider value={{quiz, positionFrom0, setQuiz}}>
+        <quizContextSource.Provider value={{quiz, setQuiz, positionFrom0,quizChanged,setQuizChanged}}>
+            <div style={{display:"none"}}></div>
+            <QuizChangeHandler/>
             <div className="mirecek">
             <AccodrionMaterial
                 key={positionFrom0}

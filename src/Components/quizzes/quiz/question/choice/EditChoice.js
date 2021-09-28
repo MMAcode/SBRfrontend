@@ -25,7 +25,7 @@ export default function EditChoice() {
         setQuiz({...quiz});
     }
     return (
-        <div className="restrict_admin">
+        <div className="restrict_admin editChoice">
             <div><input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
             <button onClick={flipCorrectAnswer}>Change Answer</button>
             <button onClick={deleteChoice}>Delete Choice</button>

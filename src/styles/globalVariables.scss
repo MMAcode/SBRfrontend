@@ -4,7 +4,7 @@
         base-font-size: 65.5%,
         font-family: #{"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif},
 
-
+        adminWrapper: cvDivide(border_radius,1) 0 cvDivide(border_radius,1) 0,
         //color properties
         //colorP_s:40,
         //colorS_s:236,
@@ -16,13 +16,12 @@
   //bg-c: hsla(calc(var(--pf-colorB1_s) + 10), 21%, 77%, 1),                 //light blue  WORKS
   //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
 
-        //primary-c: hsla(40, 100%, 64%, 1),  //yellow
         primary-c: hsla(40, 100%, 64%, 1),  //yellow
         secondary-c: hsla(60, 100%, 99%, 1),           //white
         font-c: hsla(237, 24%, 16%, 1),               //black-blue
         bg-c: hsla(cvPlus(colorB1_s), 21%, 77%, 1),                 //light blue
         //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
-        bg2-c: hsla(236, 25%, 47%, 1), //dark blhue
+        bg2-c: hsla(236, 25%, 47%, 1), //dark blue
         heading-c:hsla(360, 100%, 71%, 1)    //pink
 
 

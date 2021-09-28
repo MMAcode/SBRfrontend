@@ -4,8 +4,13 @@
     background-color: cv(heading-c);
     color: cv(secondary-c);
     width: auto;
-    border-radius: cvDivide(border_radius,1) 0 cvDivide(border_radius,1) 0;
+    border-radius: cv(adminWrapper);
 
+
+  }
+  input{
+    padding: 3px 10px;
+    width: auto;
   }
 
 }
