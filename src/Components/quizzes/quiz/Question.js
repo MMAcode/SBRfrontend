@@ -7,12 +7,12 @@ import QuestionContext from "./question/QuestionContext";
 
 export default function Question({data: [data, questionPositionFrom0]}) {
 
-    const [question, setQuestion] = React.useState(data);
-    // useEffect(()=>{console.log(`question ${questionPositionFrom0+1} changed:`,question)},[question])
+    // const [question, setQuestion] = React.useState(data);
 
+    // useEffect(()=>{console.log(`question ${questionPositionFrom0+1} changed:`,question)},[question])
     return (
         <Draggable
-            draggableId={question.id.toString()}
+            draggableId={data.id.toString()}
             // index={question.positionFrom0}
             index={questionPositionFrom0}
         >
@@ -24,7 +24,7 @@ export default function Question({data: [data, questionPositionFrom0]}) {
                 >
                         {/*<div className="overlay hideIt"  {...provided.dragHandleProps}/>*/}
                         <div className="overlay"  {...provided.dragHandleProps}/>
-                        <QuestionContext data={{question, setQuestion, questionPositionFrom0}}/>
+                        <QuestionContext data={{question:data, questionPositionFrom0}}/>
 
                 </div>
             )}

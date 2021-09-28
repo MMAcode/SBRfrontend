@@ -16,7 +16,7 @@ export default function QuizQuestions() {
     const onDragEnd = (result) => {
         const {source:{index:sourceIndex}, destination:{index:destinationIndex}} = result;
         swapQuestions(quiz, sourceIndex,destinationIndex);
-        sortQuestionsByPositions(quiz);
+        // sortQuestionsByPositions(quiz);
         setQuiz({...quiz});
 
     }
@@ -32,8 +32,8 @@ export default function QuizQuestions() {
                             {...provided.droppableProps}
                         >
                             {/*{quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}*/}
-                            {/*{sortQuestionsByPositions(quiz)?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}*/}
-                            {quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}
+                            {sortQuestionsByPositions(quiz)?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}
+                            {/*{quiz?.questions?.map((q, position) => <Question data={[q, position]} key={position}/>)}*/}
                             {provided.placeholder}
                         </div>
                     )}
