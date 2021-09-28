@@ -3,7 +3,6 @@ import QuizWrapper from "./QuizWrapper";
 import QuestionReorderingActivator from "./quiz/QuestionReorderingActivator";
 
 export default function QuizzesLoaded({data: allQuizzes}) {
-    // const appContext = React.useContext(appContextSource);
     return (
         <div className="quizzesLoaded">
             <h1>Quizzes</h1>

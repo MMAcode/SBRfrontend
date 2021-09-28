@@ -16,19 +16,6 @@ export default function QuizzesWrapper(props) {
     React.useEffect(()=>{
         handleRestRequest_quizzesAllIn();
     },[userContextHandler[0]]);
-    // React.useEffect(()=>{
-        // if (userContextHandler[0]?.role != AppENUMS.role.admin) {
-        //     document.querySelectorAll(".restrict_admin").forEach(e => {
-        //         e.classList.add("hideIt")
-        //     });
-        // } else {
-        //     document.querySelectorAll(".restrict_admin").forEach(e => {
-        //         e.classList.remove("hideIt")
-        //     });
-        // }
-    // },[appContext.data])
-
-
 
     const handleRestRequest_quizzesAllIn = () => {
         console.log("handleRestRequest_quizzesAllIn running");

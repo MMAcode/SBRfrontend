@@ -1,19 +1,17 @@
-import React, {useContext, useEffect} from 'react';
-import Choices from "./question/Choices";
+import React, {useContext} from 'react';
 import {Draggable} from "react-beautiful-dnd";
-import {questionContextSource, quizContextSource} from "../../../services/contextsService";
-import EditQuestionOptions from "./question/EditQuestionOptions";
-
-
-export default function Question({data: [data, questionPositionFrom0]}) {
-    const [question, setQuestion] = React.useState(data);
+import EditQuestionOptions from "./EditQuestionOptions";
+import Choices from "./Choices";
+import {questionContextSource} from "../../../../services/contextsService";
+export default function QuestionDraggable(props) {
+    const {question, positionFrom0} = useContext(questionContextSource);
 
     return (
         <Draggable
-            // draggableId={question?.id ? question.id.toString() : question.title}
-            draggableId={question.positionFrom0.toString()}
+            draggableId={question.id ? question.id.toString() : question.title}
+            // draggableId={questionContext.question.positionFrom0.toString()}
             // index={question.positionFrom0}
-            index={questionPositionFrom0}
+            index={positionFrom0}
         >
             {(provided) => (
                 <div
@@ -23,20 +21,21 @@ export default function Question({data: [data, questionPositionFrom0]}) {
                     ref={provided.innerRef}
                 >
                     <div className="overlay hideIt"  {...provided.dragHandleProps}/>
-                    <questionContextSource.Provider value={{question, setQuestion, questionPositionFrom0}}>
-                        {/*<h3>Question {questionPositionFrom0+1}:</h3>*/}
+                    <div>
+                        {/*<h3>QuestionContext {questionPositionFrom0+1}:</h3>*/}
                         <div style={{textAlign: "left"}}>
                             <h3 style={{
                                 display: "inline-block",
                                 paddingRight: '20px'
-                            }}>{questionPositionFrom0 + 1}) {data.title}????</h3>
+                            }}>{positionFrom0 + 1}) {question.title}????</h3>
                             <EditQuestionOptions/>
 
 
                         </div>
-                        {data.choices && <Choices data={data.choices}/>}
+                        {question.choices && <Choices data={question.choices}/>}
                         {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-                    </questionContextSource.Provider>
+                    </div>
+
                 </div>
             )}
 

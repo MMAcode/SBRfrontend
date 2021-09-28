@@ -7,7 +7,7 @@ export default function ContextMonitor(props) {
     const userContext = React.useContext(userContextSource);
 
     useEffect(() => {
-        console.log("AppContext data updated to: ", appContextData, " u:", appContextData?.user?.data?.username, "r:", appContextData?.user?.data?.role)
+        console.log("AppContext data updated to: ", appContextData)
     }, [appContextData])
 
     useEffect(()=>{

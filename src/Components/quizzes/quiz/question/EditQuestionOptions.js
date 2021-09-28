@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {questionContextSource, quizContextSource} from "../../../../services/contextsService";
+import {refreshPositionNumbersOnSortedQuestions} from "../../../../services/helperMethods";
 
 export default function EditQuestionOptions(props) {
     const {question} = useContext(questionContextSource);
@@ -12,7 +13,8 @@ export default function EditQuestionOptions(props) {
 
     const deleteQuestion = () => {
         quizContext.quiz.questions.splice(question.positionFrom0,1);
-        quizContext.quiz.questions.forEach((q,i)=>q.positionFrom0=i);
+        // quizContext.quiz.questions.forEach((q,i)=>q.positionFrom0=i);
+        refreshPositionNumbersOnSortedQuestions(quizContext.quiz);
 
         // question.choices.splice(choicePositionFrom0,1);
         quizContext.setQuiz({...quizContext.quiz});

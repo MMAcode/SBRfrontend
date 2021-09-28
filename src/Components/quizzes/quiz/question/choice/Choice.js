@@ -2,7 +2,7 @@ import React from 'react';
 import {firstCapital} from "../../../../../services/helperMethods";
 import CorrectAnswer from "./CorrectAnswer";
 import ReactJson from "react-json-view";
-import {questionContextSource} from "../../Question";
+import {questionContextSource} from "../QuestionContext";
 
 export const choiceContextSource = React.createContext({});
 

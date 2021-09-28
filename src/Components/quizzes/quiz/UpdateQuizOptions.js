@@ -24,7 +24,7 @@ export default function UpdateQuizOptions(props) {
             {/*<span>Add new question:</span>*/}
             <form>
                 <input onChange={e => newQuestionTitleHandler[1](e.target.value)} type="text" defaultValue={newQuestionTitleHandler[0]}
-                       placeholder="Question title..."/>
+                       placeholder="QuestionContext title..."/>
                 <button onClick={addQuestion}>Add question</button>
             </form>
             <button id="saveQuiz"

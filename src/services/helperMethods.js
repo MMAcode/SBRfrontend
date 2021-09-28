@@ -60,7 +60,12 @@ export const getRole = (userDetails) => {
 
 export const sortQuestionsByPositions=(quiz)=>{
     quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? 1 : ((a.positionFrom0 < b.positionFrom0) ? -1 : 0));
-    // quiz?.questions.sort((a,b)=>(a.positionFrom0 > b.positionFrom0) ? -1 : ((a.positionFrom0 < b.positionFrom0) ? 1 : 0));
+    console.log("sortedQuiz:", quiz);
+    return quiz;
+}
+
+export const refreshPositionNumbersOnSortedQuestions=(quiz)=>{
+    quiz.questions.forEach((q,i)=>{q.positionFrom0=i;})
     return quiz;
 }
 
@@ -68,4 +73,13 @@ export const swapQuestions=(quiz, sourceIndex,destinationIndex)=>{
     let q1 = quiz.questions[sourceIndex].positionFrom0 = destinationIndex;
     let q2 = quiz.questions[destinationIndex].positionFrom0 = sourceIndex;
 
+}
+
+export const questionsNeedReordering = (quiz) =>{
+    let changeNeeded = false;
+    quiz.questions.forEach((q,i) => {
+        // console.log(q.positionFrom0 != i)
+        if (q.positionFrom0 != i) changeNeeded =  true;
+    })
+    return changeNeeded;
 }
