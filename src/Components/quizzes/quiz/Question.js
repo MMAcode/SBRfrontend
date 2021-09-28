@@ -22,7 +22,8 @@ export default function Question({data: [data, questionPositionFrom0]}) {
                     //*pass this to (sub)component which will enable moving */
                     ref={provided.innerRef}
                 >
-                        <div className="overlay hideIt"  {...provided.dragHandleProps}/>
+                        {/*<div className="overlay hideIt"  {...provided.dragHandleProps}/>*/}
+                        <div className="overlay"  {...provided.dragHandleProps}/>
                         <questionContextSource.Provider value={{question, setQuestion, questionPositionFrom0}}>
                             {/*<h3>Question {questionPositionFrom0+1}:</h3>*/}
                             <h3 className="text-center">{questionPositionFrom0 + 1}) {data.title}????</h3>
