@@ -8,7 +8,7 @@ export default function QuizWrapper({data: [quizData, positionFrom0]}) {
     const [quiz, setQuiz] = React.useState(quizData);
 
     return (
-        <quizContextSource.Provider value={[quiz, positionFrom0, setQuiz]}>
+        <quizContextSource.Provider value={{quiz, positionFrom0, setQuiz}}>
             <div className="mirecek">
             <AccodrionMaterial
                 key={positionFrom0}

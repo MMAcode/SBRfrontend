@@ -7,7 +7,7 @@ import Switch from "@material-ui/core/Switch";
 import ChoicesHider from "./QuestionReorderingActivator";
 
 export default function QuizHead(props) {
-    const [quiz] = useContext(quizContextSource)
+    const {quiz} = useContext(quizContextSource)
 
 
     return (

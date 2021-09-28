@@ -4,7 +4,7 @@ import {questionContextSource} from "../../Question";
 import {choiceContextSource} from "./Choice";
 
 export default function EditChoice() {
-    const [quiz,,setQuiz] = React.useContext(quizContextSource);
+    const {quiz,setQuiz} = React.useContext(quizContextSource);
     const [question] = React.useContext(questionContextSource);
     const [choice,choicePositionFrom0] = React.useContext(choiceContextSource);
     const choiceEditHandler = useState(false);

@@ -7,7 +7,7 @@ import {sortQuestionsByPositions, swapQuestions} from "../../../services/helperM
 
 export const quizContextSource = React.createContext({});
 export default function QuizQuestions() {
-    const [quiz, quizPositionFrom0, setQuiz] = React.useContext(quizContextSource);
+    const {quiz, quizPositionFrom0, setQuiz} = React.useContext(quizContextSource);
     useEffect(() => {
         // sortQuestionsByPositions(quiz);
         console.log(`quiz ${quizPositionFrom0 + 1} changed:`, quiz)

@@ -4,7 +4,7 @@ import appContextSource from "../../../services/appContextSource";
 import {getQuizIndex} from "../../../services/helperMethods";
 import RESTRequestsService from "../../../services/RESTRequestsService";
 export default function UpdateQuizOptions(props) {
-    const [quiz] = React.useContext(quizContextSource);
+    const {quiz} = React.useContext(quizContextSource);
     const saveChanges= () => {
         RESTRequestsService.updateQuiz(quiz);
     }
