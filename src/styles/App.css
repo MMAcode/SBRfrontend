@@ -116,13 +116,6 @@ button:hover {
 .choice button {
   width: 90%;
 }
-.choice .editChoice {
-  border: 1px dotted var(--pf-heading-c, );
-  border-radius: var(--pf-adminWrapper, );
-  margin: 15px;
-  padding: 10px;
-}
-
 #stylingTool {
   padding-bottom: 10px;
   border-bottom: 1px solid black;
@@ -144,6 +137,13 @@ button:hover {
 .restrict_admin input {
   padding: 3px 10px;
   width: auto;
+}
+
+.adminBorder {
+  border: 1px dotted var(--pf-heading-c, );
+  border-radius: var(--pf-adminWrapper, );
+  margin: 15px;
+  padding: 10px;
 }
 
 .hideIt {

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {quizContextSource} from "../../../../../services/contextsService";
-import {questionContextSource} from "../../Question";
+import {questionContextSource} from "../../../../../services/contextsService";
 import {choiceContextSource} from "./Choice";
 
 export default function EditChoice() {
     const {quiz,setQuiz} = React.useContext(quizContextSource);
-    const [question] = React.useContext(questionContextSource);
+    const {question} = React.useContext(questionContextSource);
     const [choice,choicePositionFrom0] = React.useContext(choiceContextSource);
     const choiceEditHandler = useState(false);
 
@@ -25,7 +25,7 @@ export default function EditChoice() {
         setQuiz({...quiz});
     }
     return (
-        <div className="restrict_admin editChoice">
+        <div className="restrict_admin editChoice adminBorder">
             <div><input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
             <button onClick={flipCorrectAnswer}>Change Answer</button>
             <button onClick={deleteChoice}>Delete Choice</button>
