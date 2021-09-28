@@ -19,7 +19,7 @@ export default function QuizBody() {
         // console.log(sourceIndex,destinationIndex, quiz)
         swapQuestions(quiz, sourceIndex,destinationIndex);
         // sortQuestionsByPositions(quiz);
-        console.log(sourceIndex,destinationIndex, quiz)
+        // console.log(sourceIndex,destinationIndex, quiz)
         setQuiz({...quiz});
     }
     // console.log("in quiz body:", quiz)
