@@ -70,10 +70,7 @@ class RESTRequestsService {
 
     updateQuiz(quiz) {
         console.log("REST:specific quiz to be updated: ", quiz);
-        axios.post(`${urlCore}/quiz/update`, quiz, this.config())
-        // axios.post(`${urlCore}/quiz/update`, quiz)
-            .then((x) => console.log("quiz updated", x))
-            .catch(e => console.log("error updating quiz ", quiz.title, e))
+        return axios.post(`${urlCore}/quiz/update`, quiz, this.config());
     }
 
     getUsername() {

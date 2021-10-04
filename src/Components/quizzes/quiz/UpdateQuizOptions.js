@@ -7,7 +7,13 @@ export default function UpdateQuizOptions(props) {
     const quizContext = React.useContext(quizContextSource);
     const saveChanges= () => {
         quizContext.setQuizChanged(false);
-        RESTRequestsService.updateQuiz(quizContext.quiz);
+        RESTRequestsService.updateQuiz(quizContext.quiz)
+            .then((response) => {
+                quizContext.setQuiz(response.data);
+                console.log("quiz updated", response.data);
+            })
+            .catch(e => console.log("error updating quiz ", quizContext?.title, e))
+        ;
     }
 
     const addQuestion=(e)=>{

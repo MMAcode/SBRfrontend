@@ -10,7 +10,9 @@ export default function QuizzesLoaded({data: allQuizzes}) {
             {allQuizzes?.map((quiz, positionFrom0) =>
                 <QuizWrapper key={quiz.id} data={[quiz, positionFrom0]}/>
             )}
-
+<div className="restrict_admin adminBorder">
+    <button>Add quiz</button>
+</div>
 
         </div>
     );
