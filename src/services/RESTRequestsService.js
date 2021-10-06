@@ -23,6 +23,7 @@ class RESTRequestsService {
             credentials: 'include'
         })
     };
+
     // configOnlyCredentials() {
     //     return ({
     //         credentials: 'include'
@@ -48,25 +49,54 @@ class RESTRequestsService {
     //         .catch(e=>console.log("error users x1:", e))
     // }
 
-    async loginUser (u, p ){
-        return axios.get(`${urlCore}/login`,{
-            headers: {
-                authorization: 'Basic ' + window.btoa(u + ":" + p)
+    // async loginUser (u, p ){
+    //     return axios.get(`${urlCore}/login`,{
+    //         headers: {
+    //             authorization: 'Basic ' + window.btoa(u + ":" + p)
+    //         },
+    //         credentials: 'include' // to include cookies I think (for remember me service)
+    //     } )
+    //
+    // }
+
+    async loginUser(u, p) {
+        return axios({
+            method: 'post',
+            // url: `${urlCore}/login`,
+            url: `${urlCore}/login`,
+            params: {
+                username:u,
+                password:p,
+                'remember-me':true,
             },
-            credentials: 'include' // to include cookies I think (for remember me service)
-        } )
+            config: {
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                credentials: 'same-origin', // to include cookies I think (for remember me service),
+                withCredentials:true
+            }
+        })
 
     }
 
     async getQuizzes_AllIn() {
         await this.delay();
         console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);
-        return axios.get(`${urlCore}/quizzes`
-            // ,{ headers: { authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword()) } }
-            // ,{ headers: {authorization:this.authorization}}
-            , this.config()
-        );
+        return axios({
+            method: 'get',
+            url: `${urlCore}/quizzes`,
+            params:{'remember-me':true}
+        });
     }
+
+    // async getQuizzes_AllIn() {
+    //     await this.delay();
+    //     console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);
+    //     return axios.get(`${urlCore}/quizzes`
+    //         // ,{ headers: { authorization: 'Basic ' + window.btoa(this.getUsername()+":"+this.getPassword()) } }
+    //         // ,{ headers: {authorization:this.authorization}}
+    //         , this.config()
+    //     );
+    // }
 
     updateQuiz(quiz) {
         console.log("REST:specific quiz to be updated: ", quiz);

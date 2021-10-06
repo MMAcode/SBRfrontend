@@ -14,7 +14,7 @@ export default function QuizzesWrapper(props) {
     const appContext = React.useContext(appContextSource);
     const userContextHandler = React.useContext(userContextSource);
     React.useEffect(()=>{
-        handleRestRequest_quizzesAllIn();
+        // handleRestRequest_quizzesAllIn();
     },[userContextHandler[0]]);
 
     const handleRestRequest_quizzesAllIn = () => {
