@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import axios from "axios";
-import {urlCore} from "../../services/RESTRequestsService";
+import RESTRequestsService, {urlCore} from "../../services/RESTRequestsService";
 import {appContextSource} from "../../services/contextsService";
 import localDataService from "../../services/localDataService";
 import AppENUMS from "../../services/EnumsClass";
@@ -13,10 +13,30 @@ import {userContextSource} from "../../services/contextsService";
 export default function LoginPage(props) {
     const appContext = useContext(appContextSource);
     const userContextHandler = useContext(userContextSource);
+    const userFromCookie = ()=>{
+        RESTRequestsService.getUserDetailsFromCookie()
+            .then(({data})=> {
+                console.log(data)
+                console.log(data?.name)
+                console.log(data?.authorities[0])
+                localDataService.setUserDataInLocalService(data?.name, "", data?.authorities[0]);
+                // appContext.setData((d) => ({
+                //     ...d, user: {
+                //         data: localDataService.data.user.data,
+                //         status: AppENUMS.status.loaded
+                //     }
+                // }));
+                console.log("calling to update userContextHandler UUUUUU, currently:", userContextHandler[0]);
+                userContextHandler[1]({...localDataService?.data?.user?.data});
+
+            })
+            .catch(e=>console.log(e))
+    }
 
     // useEffect(()=>{loginAs("x3")},[])
     useEffect(() => {
-        loginAs("x3")
+        // loginAs("x3")
+        userFromCookie();
     }, [])
 
     const getUsers = () => {
@@ -40,16 +60,36 @@ export default function LoginPage(props) {
     // }
 
     const updateUserLoginDetails = (u, p, r) => {
-        // console.log("xy1: ", u,p,r);
-        localDataService.setUserDataInLocalService(u, p, r);
+        console.log("xy1: ", u,p,r);
+        RESTRequestsService.loginUser(u,p)
+            .then((x) => {
+                console.log("login from server success: result:", x);
+                let authority = x?.data?.authorities[0];
+                if (authority){
+                    localDataService.setUserDataInLocalService(u,'', authority);
+                    // appContext.setData((d) => ({
+                    //     ...d, user: {
+                    //         data: localDataService.data.user.data,
+                    //         status: AppENUMS.status.loaded
+                    //     }
+                    // }))
+                    userContextHandler[1]({...localDataService?.data?.user?.data})
+                }
+
+            })
+            .catch(e => console.log("error logingin to server:", e))
+
+
+
+        // localDataService.setUserDataInLocalService(u, p, r);
         // appContext.setData((d) => ({
         //     ...d, user: {
         //         data: localDataService.data.user.data,
         //         status: AppENUMS.status.loaded
         //     }
         // }));
-        console.log("calling to update userContextHandler UUUUUU, currently:", userContextHandler[0]);
-        userContextHandler[1]({...localDataService?.data?.user?.data});
+        // console.log("calling to update userContextHandler UUUUUU, currently:", userContextHandler[0]);
+        // userContextHandler[1]({...localDataService?.data?.user?.data});
 
     }
 
@@ -65,7 +105,7 @@ export default function LoginPage(props) {
 
 
         // userState[1](userDetails);
-        updateUserLoginDetails(userDetails, userDetails, getRole(userDetails));
+        updateUserLoginDetails(userDetails, userDetails);
     }
 
     // const showUserData = ()=>{
@@ -73,8 +113,11 @@ export default function LoginPage(props) {
     // }
 
     const logout = () => {
-        updateUserLoginDetails("", "", "");
-        userContextHandler[1]({...localDataService?.data?.user?.data})
+        RESTRequestsService.logoutUser().then(()=>{
+            // updateUserLoginDetails("", "", null);
+            userContextHandler[1]({})
+        });
+
     }
 
     return (
@@ -89,11 +132,14 @@ export default function LoginPage(props) {
                     <button onClick={() => loginAs("x1")}>login as x1</button>
                     <button onClick={() => loginAs("x2")}>login as x2</button>
                     <button onClick={() => loginAs("x3")}>login as x3</button>
+                    <button onClick={userFromCookie}>get user from cookie</button>
                     <LoginForm/>
                     {/*{userState[0] && <ForHookUseLoginAs data={userState[0]} setComponentNeeded={userState[1]}/>}*/}
                     {/*<button onClick={showUserData}>show user details in LocalDataService</button>*/}
                 </div>
-                : <button style={{float: "right"}} onClick={logout}>logout</button>
+                : <span style={{float: "right"}} >
+                    <span>{userContextHandler[0]?.role} {userContextHandler[0]?.username}</span>
+                    <button onClick={logout}>logout</button></span>
             }
         </div>
     );

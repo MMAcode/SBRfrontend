@@ -14,32 +14,39 @@ export default function QuizzesWrapper(props) {
     const appContext = React.useContext(appContextSource);
     const userContextHandler = React.useContext(userContextSource);
     React.useEffect(()=>{
-        // handleRestRequest_quizzesAllIn();
+        handleRestRequest_quizzesAllIn();
     },[userContextHandler[0]]);
+
+    const updateQuizzes = (errorOrData, isError)=>{
+        console.log("quizzes response received, was error?:", isError);
+        appContext.setData((previousData) => ({
+            ...previousData,
+            quizzes: {
+                data: errorOrData,
+                status: isError ? EnumsClass.status.failed : EnumsClass.status.loaded
+            }
+        }));
+    }
 
     const handleRestRequest_quizzesAllIn = () => {
         console.log("handleRestRequest_quizzesAllIn running");
         appContext.setData((previousData) => ({...previousData, quizzes: {status: EnumsClass.status.loading}}));
         RESTRequestsService.getQuizzes_AllIn()
             .then((x) => {
-                console.log("all quizzes data received like this:",x)
-                appContext.setData((previousData) => ({
-                    ...previousData,
-                    quizzes: {
-                        data: x.data,
-                        status: EnumsClass.status.loaded
-                    }
-                }));
+                let isFormError = x.headers["content-type"].includes("text");
+                updateQuizzes( isFormError ? "User not logged in." : x.data, isFormError)
             })
             .catch(e => {
-                console.log("error receiving data:", e)
-                appContext.setData((previousData) => ({
-                    ...previousData,
-                    quizzes: {
-                        data: e,
-                        status: EnumsClass.status.failed
-                    }
-                }));
+                console.log(e)
+                updateQuizzes(e.data, true)
+                // console.log("error receiving data:", e)
+                // appContext.setData((previousData) => ({
+                //     ...previousData,
+                //     quizzes: {
+                //         data: e,
+                //         status: EnumsClass.status.failed
+                //     }
+                // }));
             });
     }
 

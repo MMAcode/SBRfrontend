@@ -30,8 +30,6 @@ export default function T(props) {
                         //     }
                         // }))
                         userContextHandler[1]({...localDataService?.data?.user?.data})
-
-
                     }
 
                 })

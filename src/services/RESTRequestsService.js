@@ -17,10 +17,11 @@ class RESTRequestsService {
 
     config() {
         return ({
-            headers: {
-                authorization: 'Basic ' + window.btoa(this.getUsername() + ":" + this.getPassword())
-            },
-            credentials: 'include'
+            // headers: {
+            //     authorization: 'Basic ' + window.btoa(this.getUsername() + ":" + this.getPassword())
+            // },
+            withCredentials: true,
+            params:{'remember-me':true},
         })
     };
 
@@ -59,32 +60,54 @@ class RESTRequestsService {
     //
     // }
 
+    async getUserDetailsFromCookie() {
+        return axios({ //https://axios-http.com/docs/req_config
+            method: 'get',
+            url: `${urlCore}/login`,
+            params: {
+            //     username:u,
+            //     password:p,
+                'remember-me':true,
+            },
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            withCredentials:true
+        })
+    }
+
     async loginUser(u, p) {
-        return axios({
+        return axios({ //https://axios-http.com/docs/req_config
             method: 'post',
-            // url: `${urlCore}/login`,
             url: `${urlCore}/login`,
             params: {
                 username:u,
                 password:p,
                 'remember-me':true,
             },
-            config: {
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                credentials: 'same-origin', // to include cookies I think (for remember me service),
-                withCredentials:true
-            }
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            withCredentials:true
         })
+    }
 
+    async logoutUser() {
+        return axios({ //https://axios-http.com/docs/req_config
+            method: 'post',
+            url: `${urlCore}/logout`,
+            params: {
+                'remember-me':true,
+            },
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            withCredentials:true
+        })
     }
 
     async getQuizzes_AllIn() {
         await this.delay();
-        console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);
+        // console.log("xxxyyy:", this.getUsername(), this.getPassword(), this.config);
         return axios({
             method: 'get',
             url: `${urlCore}/quizzes`,
-            params:{'remember-me':true}
+            params:{'remember-me':true},
+            withCredentials: true
         });
     }
 
