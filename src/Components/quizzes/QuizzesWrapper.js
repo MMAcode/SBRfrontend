@@ -34,7 +34,7 @@ export default function QuizzesWrapper(props) {
         RESTRequestsService.getQuizzes_AllIn()
             .then((x) => {
                 let isFormError = x.headers["content-type"].includes("text");
-                updateQuizzes( isFormError ? "User not logged in." : x.data, isFormError)
+                updateQuizzes( isFormError ? "Log in to view quizzes." : x.data, isFormError)
             })
             .catch(e => {
                 console.log(e)

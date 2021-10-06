@@ -63,7 +63,7 @@ class RESTRequestsService {
     async getUserDetailsFromCookie() {
         return axios({ //https://axios-http.com/docs/req_config
             method: 'get',
-            url: `${urlCore}/login`,
+            url: `${urlCore}/userInfo`,
             params: {
             //     username:u,
             //     password:p,
