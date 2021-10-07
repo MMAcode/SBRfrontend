@@ -33,12 +33,13 @@ export default function QuizzesWrapper(props) {
         appContext.setData((previousData) => ({...previousData, quizzes: {status: EnumsClass.status.loading}}));
         RESTRequestsService.getQuizzes_AllIn()
             .then((x) => {
+                console.log("xxxxxxxxxxxxx",x)
                 let isFormError = x.headers["content-type"].includes("text");
                 updateQuizzes( isFormError ? "Log in to view quizzes." : x.data, isFormError)
             })
             .catch(e => {
-                console.log(e)
-                updateQuizzes(e.data, true)
+                console.log("server error???",e)
+                updateQuizzes(<>Sorry, it looks like the server is down.<br/> Try again later.</>, true)
                 // console.log("error receiving data:", e)
                 // appContext.setData((previousData) => ({
                 //     ...previousData,

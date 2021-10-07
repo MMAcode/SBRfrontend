@@ -75,17 +75,29 @@ class RESTRequestsService {
     }
 
     async loginUser(u, p) {
-        return axios({ //https://axios-http.com/docs/req_config
-            method: 'post',
-            url: `${urlCore}/login`,
-            params: {
-                username:u,
-                password:p,
-                'remember-me':true,
-            },
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            withCredentials:true
-        })
+        try {
+            let {data} = await axios({ //https://axios-http.com/docs/req_config
+                method: 'post',
+                url: `${urlCore}/login`,
+                params: {
+                    username: u,
+                    password: p,
+                    'remember-me': true,
+                },
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                withCredentials: true
+            })
+
+            console.log("login from server success: result:", data);
+            if (data != "wrong credentials") {
+                localDataService.setUserDataInLocalService(data.name, "", data.authorities[0]);
+                return({...localDataService?.data?.user?.data})
+            } else {
+                return({error: "Wrong credentials, try again."})
+            }
+        } catch (err){
+            return ({error: "We have an issue with server"})
+        }
     }
 
     async logoutUser() {

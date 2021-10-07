@@ -20,18 +20,7 @@ export default function LoginPage() {
         getUserInfoFromCookie();
     }, [])
 
-    const loginAs = (u, p) => {
-        RESTRequestsService.loginUser(u,p)
-            .then((x) => {
-                console.log("login from server success: result:", x);
-                let authority = x?.data?.authorities[0];
-                if (authority){
-                    localDataService.setUserDataInLocalService(u,'', authority);
-                    userContextHandler[1]({...localDataService?.data?.user?.data})
-                }
-            })
-            .catch(e => console.log("error logingin to server:", e))
-    }
+    const loginAs = async (u, p) => userContextHandler[1](await RESTRequestsService.loginUser(u,p));
 
     const logout = () => {
         RESTRequestsService.logoutUser()
@@ -49,6 +38,7 @@ export default function LoginPage() {
                     <button onClick={() => loginAs("x2","x2")}>login as x2</button>
                     <button onClick={() => loginAs("x3","x3")}>login as x3</button>
                     <LoginForm/>
+                    <p>{userContextHandler[0]?.error && userContextHandler[0].error }</p>
                 </div>
                 : <span style={{float: "right"}} >
                     <span>{userContextHandler[0]?.role} {userContextHandler[0]?.username}</span>

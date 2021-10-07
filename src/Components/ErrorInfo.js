@@ -10,7 +10,7 @@ export default function ErrorInfo({data}) {
         }}>
             <h3 style={{color:'white'}}>{data}</h3>
             {/*<p>{data}</p>*/}
-            {typeof data === 'object' && <ReactJson src={data} style={{textAlign: 'left'}}/>}
+            {/*{typeof data === 'object' && <ReactJson src={data} style={{textAlign: 'left'}}/>}*/}
 
         </div>
     );
