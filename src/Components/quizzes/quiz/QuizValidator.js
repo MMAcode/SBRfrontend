@@ -25,6 +25,7 @@ export default function QuizValidator(props) {
         console.log("quiz VALIDATOR", quiz)
         validateQuizTitleLength()
         validateNumberOfQuestions()
+        validateNumberOfChoices()
     }
 
     function validateQuizTitleLength() {
@@ -56,7 +57,29 @@ export default function QuizValidator(props) {
         }
     }
 
-    if (countIssues(quizIssuesHandler)==0) return null;
+    function validateNumberOfChoices() {
+        quiz.questions.forEach(q=>{
+
+            const choicesSize = q.choices.length
+
+            if (choicesSize < 2 || choicesSize>5) {
+                quizIssuesHandler[1](issues => {
+                    issues[`numberOfChoices${q.positionFrom0}`] = "2 to 5 choices allowed. Question "+q.positionFrom0+1+" in this quiz contains " +choicesSize + " choices."
+                    return ({...issues})
+                })
+            } else {
+                quizIssuesHandler[1](issues => {
+                    issues[`numberOfChoices${q.positionFrom0}`] = ""
+                    return ({...issues})
+                })
+            }
+        })
+    }
+
+    if (countIssues(quizIssuesHandler)===0) {
+        console.log("indeed 0")
+        return null;
+    };
     return (
         <div className='quizValidator'>
             <h4>Issues found:</h4>
