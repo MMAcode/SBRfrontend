@@ -76,6 +76,7 @@ class RESTRequestsService {
 
 
     async loginUser(u, p) {
+
         return axios({ //https://axios-http.com/docs/req_config
             method: 'post',
             url: `${urlCore}/login`,
@@ -101,7 +102,7 @@ class RESTRequestsService {
             });
     }
 
-    //
+
     // async loginUser(u, p) {
     //     try {
     //         let {data} = await axios({ //https://axios-http.com/docs/req_config

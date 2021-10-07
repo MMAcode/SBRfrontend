@@ -23,7 +23,7 @@ export default function DarkModeSwitch(props) {
     return (
         <FormControlLabel
         control={<Switch
-            inputProps={{'aria-label': 'Switch demo'}}
+            inputProps={{'aria-label': 'UserSwitch demo'}}
             checked={darkModeHandler[0]}
             onChange={(e) => handleDarkmodeChange(e.target.checked)}
         />}

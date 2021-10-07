@@ -103,7 +103,13 @@
   margin: 10px 0;
 
   h3 {
-    text-align: left
+    text-align: left;
+    //style={{
+    //  display: "inline-block",
+    //  paddingRight: '20px'
+    //}}
+    display: inline-block;
+    padding-right: 20px;
   }
 }
 

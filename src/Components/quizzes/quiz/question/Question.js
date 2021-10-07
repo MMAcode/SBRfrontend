@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import EditQuestionOptions from "./EditQuestionOptions";
 import Choices from "./Choices";
 import {questionContextSource} from "../../../../services/contextsService";
-import EditorRouter from "../../../EditorRouter";
+import UserSwitch from "../../../UserSwitch";
 
 export default function Question(props) {
     const {question, positionFrom0} = useContext(questionContextSource);
@@ -11,14 +11,10 @@ export default function Question(props) {
         <div>
             <div style={{textAlign: "left"}}>
 
-                <EditorRouter
+                <UserSwitch
                     editor={<EditQuestionOptions/>}
-                    notEditor={<h3 style={{
-                        display: "inline-block",
-                        paddingRight: '20px'
-                    }}>
-                        {positionFrom0 + 1}) {question.title}?
-                    </h3>}/>
+                    notEditor={<h3 >{positionFrom0 + 1}) {question.title}?</h3>}
+                />
             </div>
             {question.choices && <Choices data={question.choices}/>}
             {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}

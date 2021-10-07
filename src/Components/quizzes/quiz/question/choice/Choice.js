@@ -3,7 +3,7 @@ import {firstCapital} from "../../../../../services/helperMethods";
 import CorrectAnswer from "./CorrectAnswer";
 import ReactJson from "react-json-view";
 import {questionContextSource} from "../QuestionContext";
-import EditorRouter from "../../../../EditorRouter";
+import UserSwitch from "../../../../UserSwitch";
 import EditChoice from "./EditChoice";
 
 export const choiceContextSource = React.createContext({});
@@ -17,7 +17,7 @@ export default function Choice({data:[data,choicePositionFrom0]}) {
         <div className="choice">
             <choiceContextSource.Provider value={[choice,choicePositionFrom0,setChoice]}>
             {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-                <EditorRouter
+                <UserSwitch
                     editor={<>
                         {/*<button>{firstCapital(data.title)}</button>*/}
                         <EditChoice/>

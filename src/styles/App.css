@@ -94,6 +94,8 @@ button:hover {
 }
 .question h3 {
   text-align: left;
+  display: inline-block;
+  padding-right: 20px;
 }
 
 .choices {

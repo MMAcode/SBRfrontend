@@ -5,6 +5,8 @@ import AppENUMS from "../../../services/EnumsClass";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import ChoicesHider from "./QuestionReorderingActivator";
+import UserSwitch from "../../UserSwitch";
+import QuizTitleEditor from "./QuizTitleEditor";
 
 export default function QuizHead(props) {
     const {quiz} = useContext(quizContextSource)
@@ -12,11 +14,10 @@ export default function QuizHead(props) {
 
     return (
         <div className="quizHead">
-            <h2>{firstCapital(quiz.title)}</h2>
-            {/*<span className="restrict_admin">*/}
-            {/*    /!*<button onClick={reorder}>Re-order Questions</button>*!/*/}
-            {/*    /!*<ChoicesHider/>*!/*/}
-            {/*</span>*/}
+            <UserSwitch
+                notEditor={<h2>{firstCapital(quiz.title)}</h2>}
+                editor={<QuizTitleEditor/>}
+            />
 
         </div>
     );

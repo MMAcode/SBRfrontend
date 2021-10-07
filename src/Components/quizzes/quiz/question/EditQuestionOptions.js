@@ -12,7 +12,7 @@ export default function EditQuestionOptions(props) {
     }
 
     const deleteQuestion = () => {
-        quizContext.quiz.questions.splice(question.positionFrom0,1);
+        quizContext.quiz.questions.splice(question.positionFrom0, 1);
         // quizContext.quiz.questions.forEach((q,i)=>q.positionFrom0=i);
         refreshPositionNumbersOnSortedQuestions(quizContext.quiz);
 
@@ -20,10 +20,10 @@ export default function EditQuestionOptions(props) {
         quizContext.setQuiz({...quizContext.quiz});
     }
     return (
-        <span className="restrict_admin" style={{display:"inline-block"}}>
-            <div>Question {positionFrom0+1}</div>
- title: <input onChange={(e) => updateQuestion(e.target.value)} type="text" value={question.title}/>
-            <button style={{marginLeft:'35px'}} onClick={deleteQuestion}>Delete Question</button>
+        <span className="restrict_admin" style={{display: "inline-block"}}>
+            <h3>Question {positionFrom0 + 1}</h3>
+            title: <input onChange={(e) => updateQuestion(e.target.value)} type="text" value={question.title}/>
+            <button style={{marginLeft: '35px'}} onClick={deleteQuestion}>Delete Question</button>
         </span>
     );
 }

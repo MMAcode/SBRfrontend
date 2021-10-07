@@ -42,7 +42,7 @@ export default function QuestionReorderingActivator(props) {
         <div style={{textAlign:"right"}} className="restrict_admin" id="questionReorderingActivator">
             <FormControlLabel
                 control={<Switch
-                    inputProps={{'aria-label': 'Switch demo'}}
+                    inputProps={{'aria-label': 'UserSwitch demo'}}
                     checked={reorderHandler[0]}
                     onChange={reorder}
                 />}
