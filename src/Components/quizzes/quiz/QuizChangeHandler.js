@@ -9,8 +9,9 @@ export default function T(props) {
     const {quiz, setQuiz, quizChanged, setQuizChanged, positionFrom0}= React.useContext(quizContextSource);
 
     useEffect(() => {
-        console.log(`quiz ${positionFrom0 + 1} changed:`,questionsNeedReordering(quiz), quiz)
+        console.log(`quiz ${positionFrom0 + 1} changed:`, quiz)
         if (quizChanged ===null) {
+            console.log('setting quiz change from null to false now')
             // if() setQuizChanged(false);
             if (questionsNeedReordering(quiz)){
                 sortQuestionsByPositions(quiz);
@@ -22,10 +23,6 @@ export default function T(props) {
         } else if (quizChanged ==false){setQuizChanged(true);}
 
     }, [quiz])
-
-
-
-
 
 
     // JUST PROVIDING INFO:

@@ -163,7 +163,7 @@ class RESTRequestsService {
     // }
 
     updateQuiz(quiz) {
-        console.log("REST:specific quiz to be updated: ", quiz);
+        // console.log("REST:specific quiz to be updated: ", quiz);
         return axios.post(`${urlCore}/quiz/update`, quiz, this.config());
     }
 

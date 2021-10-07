@@ -22,7 +22,6 @@ export default function QuizValidator(props) {
 
 
     const validateQuiz = () => {
-        console.log("quiz VALIDATOR", quiz)
         validateQuizTitleLength()
         validateNumberOfQuestions()
         validateNumberOfChoices()
@@ -43,7 +42,6 @@ export default function QuizValidator(props) {
     }
 
     function validateNumberOfQuestions() {
-        console.log("qqq length:", quiz.questions.length)
         if (quiz.questions.length < 2 || quiz.questions.length>10) {
             quizIssuesHandler[1](issues => {
                 issues.numberOfQuestions = "2 to 10 questions allowed. This quiz contains " + quiz.questions.length + " questions."
@@ -80,7 +78,6 @@ export default function QuizValidator(props) {
     }
 
     if (countIssues(quizIssuesHandler)===0) {
-        console.log("indeed 0")
         return null;
     };
     return (

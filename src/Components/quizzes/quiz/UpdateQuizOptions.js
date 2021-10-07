@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {quizContextSource} from "../../../services/contextsService";
 import RESTRequestsService from "../../../services/RESTRequestsService";
 import QuizValidator from "./QuizValidator";
@@ -7,12 +7,18 @@ export default function UpdateQuizOptions(props) {
     const newQuestionTitleHandler = useState("");
 
     const quizContext = React.useContext(quizContextSource);
+
+    // useEffect(()=>{console.log("quiz changed - update save button to", quizContext.quizChanged)},[quizContext.quizChanged])
+
     const saveChanges= () => {
+        // quizContext.setQuizChanged(null);
         quizContext.setQuizChanged(false);
         RESTRequestsService.updateQuiz(quizContext.quiz)
             .then((response) => {
+                // console.log("quiz received from DB", response.data);
+                quizContext.setQuizChanged(null);
                 quizContext.setQuiz(response.data);
-                console.log("quiz updated", response.data);
+
             })
             .catch(e => console.log("error updating quiz ", quizContext?.title, e))
         ;
