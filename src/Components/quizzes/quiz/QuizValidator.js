@@ -58,18 +58,18 @@ export default function QuizValidator(props) {
     }
 
     function validateNumberOfChoices() {
-        quiz.questions.forEach(q=>{
+        quiz.questions.forEach((q,i)=>{
 
             const choicesSize = q.choices.length
 
             if (choicesSize < 2 || choicesSize>5) {
                 quizIssuesHandler[1](issues => {
-                    issues[`numberOfChoices${q.positionFrom0}`] = "2 to 5 choices allowed. Question "+q.positionFrom0+1+" in this quiz contains " +choicesSize + " choices."
+                    issues[`numberOfChoices${i+1}`] = "2 to 5 choices allowed. Question "+(i+1)+" in this quiz contains " +choicesSize + " choices."
                     return ({...issues})
                 })
             } else {
                 quizIssuesHandler[1](issues => {
-                    issues[`numberOfChoices${q.positionFrom0}`] = ""
+                    issues[`numberOfChoices${i+1}`] = ""
                     return ({...issues})
                 })
             }

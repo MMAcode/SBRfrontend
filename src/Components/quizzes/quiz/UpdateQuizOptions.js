@@ -35,6 +35,7 @@ export default function UpdateQuizOptions(props) {
                        placeholder="Title..."/>
                 <button onClick={addQuestion}>Add question</button>
             </form>
+            <QuizValidator/>
             <button id="saveQuiz"
                     style={{backgroundColor:`${quizContext.quizChanged ? "lightgreen" : "white"}`}}
                     onClick={saveChanges}
@@ -44,7 +45,7 @@ export default function UpdateQuizOptions(props) {
             </button>
 
             <button>Delete this quiz (Button functionality not implemented)</button>
-            <QuizValidator/>
+
         </div>
     );
 }
