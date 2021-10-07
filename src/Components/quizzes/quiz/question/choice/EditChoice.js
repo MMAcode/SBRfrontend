@@ -11,10 +11,14 @@ export default function EditChoice() {
 
     const flipCorrectAnswer = ()=> {
         choice.correctAnswer = !choice.correctAnswer;
-        console.log(choicePositionFrom0,choice);
-        console.log(quiz.questions[0].choices);
         setQuiz({...quiz});
     }
+    const setAsSingleCorrectAnswer = ()=> {
+        question.choices.forEach(choice=>choice.correctAnswer=false)
+        choice.correctAnswer = true;
+        setQuiz({...quiz});
+    }
+
 
     const deleteChoice = () => {
         question.choices.splice(choicePositionFrom0,1);
@@ -29,7 +33,15 @@ export default function EditChoice() {
              // style={{backgroundColor:"pink"}}
         >
             <div> Choice: <input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
-            <div> Correct answer: <button style={{backgroundColor:`${choice.correctAnswer ? 'green' : 'red'}`}} onClick={flipCorrectAnswer}>{choice.correctAnswer.toString()}</button></div>
+            <div> Correct answer:
+                <button
+                    style={{backgroundColor:`${choice.correctAnswer ? 'green' : 'white'}`}}
+                    // onClick={flipCorrectAnswer}
+                    onClick={setAsSingleCorrectAnswer}
+                >
+                    {choice.correctAnswer.toString()}
+                </button>
+            </div>
             <button onClick={deleteChoice}>Delete</button>
         </div>
     );

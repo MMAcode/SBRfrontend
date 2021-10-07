@@ -76,6 +76,9 @@ export default function QuizValidator(props) {
         })
     }
 
+    function validateSingleCorrectAnswer() {
+    }
+
     if (countIssues(quizIssuesHandler)===0) {
         console.log("indeed 0")
         return null;
