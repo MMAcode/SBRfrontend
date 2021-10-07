@@ -136,6 +136,17 @@ button[disabled] {
   margin: 3px 10px;
   z-index: 100;
 }
+.quizValidator {
+  background-color: var(--pf-heading-c, );
+  text-align: left;
+  margin: 2rem;
+  padding: 2rem;
+  color: var(--pf-secondary-c, );
+}
+.quizValidator h1, .quizValidator h2, .quizValidator h3, .quizValidator h4, .quizValidator h5 {
+  color: var(--pf-secondary-c, );
+}
+
 .restrict_admin button {
   background-color: var(--pf-heading-c, );
   background-color: var(--pf-secondary-c, );

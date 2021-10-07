@@ -23,14 +23,14 @@ export default function QuizValidator(props) {
 
     const validateQuiz = () => {
         console.log("quiz VALIDATOR", quiz)
-        // validateQuizTitleLength()
+        validateQuizTitleLength()
         validateNumberOfQuestions()
     }
 
     function validateQuizTitleLength() {
-        if (quiz.title.length > 5) {
+        if (quiz.title.length < 5 || quiz.title.length>50) {
             quizIssuesHandler[1](q => {
-                q.quizTitleLength = "Maximum length of a quiz title is 5 characters. Your title length contains " + quiz.title.length + " characters."
+                q.quizTitleLength = "5-50 characters allowed in quiz title. This title contains " + quiz.title.length + " characters."
                 return ({...q})
             })
         } else {
@@ -58,7 +58,7 @@ export default function QuizValidator(props) {
 
     if (countIssues(quizIssuesHandler)==0) return null;
     return (
-        <div style={{backgroundColor:'red',textAlign:'left'}}>
+        <div className='quizValidator'>
             <h4>Issues found:</h4>
                 {Object.keys(quizIssuesHandler[0]).map((objKey,i)=> quizIssuesHandler[0][objKey] && <li key={i}>{quizIssuesHandler[0][objKey]}</li>)}
         </div>

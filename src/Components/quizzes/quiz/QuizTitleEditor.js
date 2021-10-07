@@ -17,6 +17,7 @@ export default function QuizTitleEditor({className}) {
                 onChange={(e) => updateQuizTitle(e.target.value)}
                 type="text"
                 value={firstCapital(quizContext?.quiz?.title)}
+                style={{color:`${quizContext.quiz.title.length < 5 ? 'red': 'black'}`}}
             />
         </div>
     );

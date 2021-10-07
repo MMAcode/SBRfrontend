@@ -89,5 +89,15 @@
   margin: 3px 10px;
   z-index: 100;
 }
+.quizValidator {
+  background-color: cv(heading-c);
+  text-align: left;
+  margin: 2rem;
+  padding: 2rem;
+  color: cv(secondary-c);
+}
+.quizValidator h1, .quizValidator h2, .quizValidator h3, .quizValidator h4, .quizValidator h5 {
+  color: cv(secondary-c);
+}
 
 /*# sourceMappingURL=reactComponents.css.map */
