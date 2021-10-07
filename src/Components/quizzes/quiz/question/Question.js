@@ -19,10 +19,6 @@ export default function Question(props) {
                     }}>
                         {positionFrom0 + 1}) {question.title}?
                     </h3>}/>
-
-
-
-
             </div>
             {question.choices && <Choices data={question.choices}/>}
             {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}

@@ -87,6 +87,7 @@ button:hover {
 }
 .question {
   background-color: var(--pf-secondary-c, );
+  background-color: var(--pf-bg-c, );
   border-radius: var(--pf-border_radius, );
   padding: 5px 20px;
   margin: 10px 0;
@@ -110,6 +111,11 @@ button:hover {
 .choice button {
   width: 90%;
 }
+.choice .editChoice {
+  background-color: var(--pf-primary-c, );
+  background-color: var(--pf-secondary-c, );
+}
+
 #stylingTool {
   padding-bottom: 10px;
   border-bottom: 1px solid black;
@@ -125,7 +131,9 @@ button:hover {
 }
 .restrict_admin button {
   background-color: var(--pf-heading-c, );
+  background-color: var(--pf-secondary-c, );
   color: var(--pf-secondary-c, );
+  color: var(--pf-bg2-c, );
   width: auto;
   border-radius: var(--pf-adminWrapper, );
 }
@@ -136,6 +144,12 @@ button:hover {
 
 .adminBorder {
   border: 1px dotted var(--pf-heading-c, );
+  border-radius: var(--pf-adminWrapper, );
+  margin: 15px;
+  padding: 10px;
+}
+
+.adminInvisibleBorder {
   border-radius: var(--pf-adminWrapper, );
   margin: 15px;
   padding: 10px;

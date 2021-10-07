@@ -25,9 +25,11 @@ export default function EditChoice() {
         setQuiz({...quiz});
     }
     return (
-        <div className="restrict_admin editChoice adminBorder">
+        <div className="restrict_admin editChoice adminInvisibleBorder"
+             // style={{backgroundColor:"pink"}}
+        >
             <div> Choice: <input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
-            <div> Correct answer: <button onClick={flipCorrectAnswer}>{choice.correctAnswer.toString()}</button></div>
+            <div> Correct answer: <button style={{backgroundColor:`${choice.correctAnswer ? 'green' : 'red'}`}} onClick={flipCorrectAnswer}>{choice.correctAnswer.toString()}</button></div>
             <button onClick={deleteChoice}>Delete</button>
         </div>
     );

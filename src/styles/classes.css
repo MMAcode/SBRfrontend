@@ -1,6 +1,8 @@
 .restrict_admin button {
   background-color: cv(heading-c);
+  background-color: cv(secondary-c);
   color: cv(secondary-c);
+  color: cv(bg2-c);
   width: auto;
   border-radius: cv(adminWrapper);
 }
@@ -11,6 +13,12 @@
 
 .adminBorder {
   border: 1px dotted cv(heading-c);
+  border-radius: cv(adminWrapper);
+  margin: 15px;
+  padding: 10px;
+}
+
+.adminInvisibleBorder {
   border-radius: cv(adminWrapper);
   margin: 15px;
   padding: 10px;

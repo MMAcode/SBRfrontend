@@ -97,6 +97,7 @@
 
 .question {
   background-color: cv(secondary-c);
+  background-color: cv(bg-c);
   border-radius: cv(border_radius);
   padding: 5px 20px;
   margin: 10px 0;
@@ -126,6 +127,9 @@
     //border-radius: cv(adminWrapper);
     //margin: 15px;
     //padding: 10px;
+    background-color: cv(primary-c);
+    background-color: cv(secondary-c);
+    //background-color: orange !important;
   }
 }
 

@@ -45,6 +45,7 @@
 }
 .question {
   background-color: cv(secondary-c);
+  background-color: cv(bg-c);
   border-radius: cv(border_radius);
   padding: 5px 20px;
   margin: 10px 0;
@@ -68,6 +69,11 @@
 .choice button {
   width: 90%;
 }
+.choice .editChoice {
+  background-color: cv(primary-c);
+  background-color: cv(secondary-c);
+}
+
 #stylingTool {
   padding-bottom: 10px;
   border-bottom: 1px solid black;
