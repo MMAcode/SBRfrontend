@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {quizContextSource} from "../../../services/contextsService";
 import RESTRequestsService from "../../../services/RESTRequestsService";
+import QuizValidator from "./QuizValidator";
+import {countIssues} from "../../../services/helperMethods";
 export default function UpdateQuizOptions(props) {
     const newQuestionTitleHandler = useState("");
 
@@ -34,9 +36,15 @@ export default function UpdateQuizOptions(props) {
                 <button onClick={addQuestion}>Add question</button>
             </form>
             <button id="saveQuiz"
-                    style={{backgroundColor:`${quizContext.quizChanged ? "red" : "gray"}`}}
-                    onClick={saveChanges}>Save changes in this quiz</button>
+                    style={{backgroundColor:`${quizContext.quizChanged ? "lightgreen" : "white"}`}}
+                    onClick={saveChanges}
+                    disabled={countIssues(quizContext.quizIssuesHandler)>0 || !quizContext.quizChanged}
+            >
+                {quizContext.quizChanged ? "Save changes in this quiz" : "No changes in this quiz"}
+            </button>
+
             <button>Delete this quiz (Button functionality not implemented)</button>
+            <QuizValidator/>
         </div>
     );
 }

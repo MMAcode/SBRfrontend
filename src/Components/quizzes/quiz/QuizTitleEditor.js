@@ -13,6 +13,7 @@ export default function QuizTitleEditor({className}) {
         <div className={className}>
             <h2 style={{display:'inline'}}>Quiz title: </h2>
             <input
+                onClick={e=>e.stopPropagation()}
                 onChange={(e) => updateQuizTitle(e.target.value)}
                 type="text"
                 value={firstCapital(quizContext?.quiz?.title)}

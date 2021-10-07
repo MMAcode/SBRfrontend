@@ -83,3 +83,12 @@ export const questionsNeedReordering = (quiz) =>{
     })
     return changeNeeded;
 }
+
+export function countIssues(quizIssuesHandler) {
+    let counter = 0;
+    Object.keys(quizIssuesHandler[0])
+        .forEach(key => {
+            if (quizIssuesHandler[0][key]) counter++
+        })
+    return counter
+}

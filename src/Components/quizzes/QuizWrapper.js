@@ -9,9 +9,10 @@ import QuizChangeHandler from "./quiz/QuizChangeHandler";
 export default function QuizWrapper({data: [quizData, positionFrom0]}) {
     const [quiz, setQuiz] = React.useState(quizData);
     const [quizChanged, setQuizChanged] = React.useState(null);
+    const quizIssuesHandler = React.useState({});
 
     return (
-        <quizContextSource.Provider value={{quiz, setQuiz, positionFrom0,quizChanged,setQuizChanged}}>
+        <quizContextSource.Provider value={{quiz, setQuiz, positionFrom0,quizChanged,setQuizChanged, quizIssuesHandler}}>
             <div style={{display:"none"}}></div>
             <QuizChangeHandler/>
             <div className="mirecek">
