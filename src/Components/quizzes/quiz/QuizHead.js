@@ -11,14 +11,12 @@ import QuizTitleEditor from "./QuizTitleEditor";
 export default function QuizHead(props) {
     const {quiz} = useContext(quizContextSource)
 
-
     return (
         <div className="quizHead">
             <UserSwitch
                 notEditor={<h2>{firstCapital(quiz.title)}</h2>}
                 editor={<QuizTitleEditor/>}
             />
-
         </div>
     );
 }

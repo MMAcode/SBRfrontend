@@ -15,12 +15,11 @@ export default function EditAddChoice(props) {
         <div className="restrict_admin">
             {/*<button onClick={addChoice}>Add choice</button>*/}
             <div>
-
                 <form>
-                    <span>New choice: </span>
+                    {/*<span>New Choice: </span>*/}
                     <input onChange={e => titleHandler[1](e.target.value)} type="text" defaultValue={titleHandler[0]}
-                           placeholder="choice text"/>
-                        <button onClick={addChoice}>Add</button>
+                           placeholder="text..."/>
+                        <button onClick={addChoice}>Add Choice</button>
                 </form>
             </div>
         </div>
