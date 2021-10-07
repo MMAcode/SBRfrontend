@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Draggable} from "react-beautiful-dnd";
 import QuestionWithContext from "./QuestionWithContext";
 
 export default function QuestionDraggableWrapper({data:question, positionInArray}) {
-    const [questionForId] = useState(question);
+    const [questionForId,setQ] = useState(question);
+    // useEffect(()=>{setQ(question)},[question])
 
     return (
         <Draggable
             draggableId={questionForId.id ? questionForId.id.toString() : questionForId.title}
+            // draggableId={questio0n.id ? question.id.toString() : question.title}
             index={positionInArray}
         >
             {(provided) => (

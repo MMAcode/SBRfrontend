@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {Draggable} from "react-beautiful-dnd";
-import EditQuestionOptions from "./EditQuestionOptions";
-import Choices from "./Choices";
-import {questionContextSource} from "../../../../services/contextsService";
+import EditQuestionOptions from "../EditQuestionOptions";
+import Choices from "../Choices";
+import {questionContextSource} from "../../../../../services/contextsService";
 export default function QuestionDraggable(props) {
     const {question, positionFrom0} = useContext(questionContextSource);
 

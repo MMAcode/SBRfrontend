@@ -1,8 +1,8 @@
 import React, {useContext, useEffect} from 'react';
-import Choices from "./Choices";
+import Choices from "../Choices";
 import {Draggable} from "react-beautiful-dnd";
-import {questionContextSource, quizContextSource} from "../../../../services/contextsService";
-import EditQuestionOptions from "./EditQuestionOptions";
+import {questionContextSource, quizContextSource} from "../../../../../services/contextsService";
+import EditQuestionOptions from "../EditQuestionOptions";
 import QuestionDraggable from "./QuestionDraggable";
 
 
