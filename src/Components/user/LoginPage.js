@@ -21,6 +21,10 @@ export default function LoginPage() {
     }, [])
 
     const loginAs = async (u, p) => userContextHandler[1](await RESTRequestsService.loginUser(u,p));
+    // const loginAs = async (u, p) => {
+    //     console.log("uuu:", await RESTRequestsService.loginUser(u, p))
+    //     ;
+    // }
 
     const logout = () => {
         RESTRequestsService.logoutUser()

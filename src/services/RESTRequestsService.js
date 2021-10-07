@@ -21,7 +21,7 @@ class RESTRequestsService {
             //     authorization: 'Basic ' + window.btoa(this.getUsername() + ":" + this.getPassword())
             // },
             withCredentials: true,
-            params:{'remember-me':true},
+            params: {'remember-me': true},
         })
     };
 
@@ -65,50 +65,78 @@ class RESTRequestsService {
             method: 'get',
             url: `${urlCore}/userInfo`,
             params: {
-            //     username:u,
-            //     password:p,
-                'remember-me':true,
+                //     username:u,
+                //     password:p,
+                'remember-me': true,
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            withCredentials:true
+            withCredentials: true
         })
     }
 
-    async loginUser(u, p) {
-        try {
-            let {data} = await axios({ //https://axios-http.com/docs/req_config
-                method: 'post',
-                url: `${urlCore}/login`,
-                params: {
-                    username: u,
-                    password: p,
-                    'remember-me': true,
-                },
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                withCredentials: true
-            })
 
-            console.log("login from server success: result:", data);
-            if (data != "wrong credentials") {
-                localDataService.setUserDataInLocalService(data.name, "", data.authorities[0]);
-                return({...localDataService?.data?.user?.data})
-            } else {
-                return({error: "Wrong credentials, try again."})
-            }
-        } catch (err){
-            return ({error: "We have an issue with server"})
-        }
+    async loginUser(u, p) {
+        return axios({ //https://axios-http.com/docs/req_config
+            method: 'post',
+            url: `${urlCore}/login`,
+            params: {
+                username: u,
+                password: p,
+                'remember-me': true,
+            },
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            withCredentials: true
+        })
+            .then(({data}) => {
+                console.log("login from server success: result:", data);
+                if (data != "wrong credentials") {
+                    localDataService.setUserDataInLocalService(data.name, "", data.authorities[0]);
+                    return ({...localDataService?.data?.user?.data})
+                } else {
+                    return ({error: "Wrong credentials, try again."})
+                }
+            })
+            .catch(e => {
+                return ({error: "We have an issue with server"})
+            });
     }
+
+    //
+    // async loginUser(u, p) {
+    //     try {
+    //         let {data} = await axios({ //https://axios-http.com/docs/req_config
+    //             method: 'post',
+    //             url: `${urlCore}/login`,
+    //             params: {
+    //                 username: u,
+    //                 password: p,
+    //                 'remember-me': true,
+    //             },
+    //             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    //             withCredentials: true
+    //         })
+    //
+    //         console.log("login from server success: result:", data);
+    //         if (data != "wrong credentials") {
+    //             localDataService.setUserDataInLocalService(data.name, "", data.authorities[0]);
+    //             return({...localDataService?.data?.user?.data})
+    //         } else {
+    //             return({error: "Wrong credentials, try again."})
+    //         }
+    //     } catch (err){
+    //         return ({error: "We have an issue with server"})
+    //     }
+    // }
 
     async logoutUser() {
         return axios({ //https://axios-http.com/docs/req_config
             method: 'post',
             url: `${urlCore}/logout`,
             params: {
-                'remember-me':true,
+                'remember-me': true,
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            withCredentials:true
+            withCredentials: true
         })
     }
 
@@ -118,7 +146,7 @@ class RESTRequestsService {
         return axios({
             method: 'get',
             url: `${urlCore}/quizzes`,
-            params:{'remember-me':true},
+            params: {'remember-me': true},
             withCredentials: true
         });
     }
