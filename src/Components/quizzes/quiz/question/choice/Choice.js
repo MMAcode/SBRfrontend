@@ -16,10 +16,19 @@ export default function Choice({data:[data,choicePositionFrom0]}) {
         <div className="choice">
             <choiceContextSource.Provider value={[choice,choicePositionFrom0,setChoice]}>
             {/*<ReactJson src={data}  style={{textAlign:'left', backgroundColor:'lightGray'}}/>*/}
-            {/*    <EditorRouter editor={Adminlw} notEditor={wef}/>*/}
+                <EditorRouter
+                    editor={<>
+                        <button>{firstCapital(data.title)}</button>
+                        {data.correctAnswer != null && <CorrectAnswer/>}
+                    </>}
+                    notEditor={<>
+                        <button>{firstCapital(data.title)}</button>
+                        {data.correctAnswer != null && <CorrectAnswer/>}
+                    </>}
+                />
 
-            <button>{firstCapital(data.title)}</button>
-            {data.correctAnswer != null && <CorrectAnswer/>}
+            {/*<button>{firstCapital(data.title)}</button>*/}
+            {/*{data.correctAnswer != null && <CorrectAnswer/>}*/}
             </choiceContextSource.Provider>
         </div>
     );

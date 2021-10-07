@@ -1,11 +1,8 @@
 import React, {useContext} from 'react';
 import {userContextSource} from "../services/contextsService";
-export default function EditorRouter(props) {
-    let userContextHandler = useContext(userContextSource);
-// userContextHandler[0].
-    return (
-        <div>
+import EnumsClass from "../services/EnumsClass";
 
-        </div>
-    );
+export default function EditorRouter({editor, notEditor}) {
+    let userContextHandler = useContext(userContextSource);
+    return (<>{userContextHandler[0]?.role == EnumsClass.role.admin ? editor : notEditor}</>);
 }
