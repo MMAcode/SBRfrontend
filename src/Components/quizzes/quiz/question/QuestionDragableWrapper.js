@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Draggable} from "react-beautiful-dnd";
-import QuestionWithContext2 from "./QuestionWithContext2";
+import QuestionWithContext from "./QuestionWithContext";
 
 export default function QuestionDraggableWrapper({data:question, positionInArray}) {
     const [questionForId] = useState(question);
@@ -17,7 +17,7 @@ export default function QuestionDraggableWrapper({data:question, positionInArray
                     ref={provided.innerRef}
                 >
                     <div className="overlay hideIt"  {...provided.dragHandleProps}/>
-                    <QuestionWithContext2 question={question} positionInArray={positionInArray}/>
+                    <QuestionWithContext question={question} positionInArray={positionInArray}/>
                 </div>
             )}
 

@@ -5,7 +5,7 @@ import {DragDropContext, Droppable} from "react-beautiful-dnd";
 import QuestionReorderingActivator from "./QuestionReorderingActivator";
 import {sortQuestionsByPositions, swapQuestions} from "../../../services/helperMethods";
 import {quizContextSource} from "../../../services/contextsService";
-import QuestionDragableWrapper2 from "./question/QuestionDragableWrapper2";
+import QuestionDragableWrapper2 from "./question/QuestionDragableWrapper";
 
 export default function QuizBody() {
     const {quiz, positionFrom0, setQuiz} = React.useContext(quizContextSource);

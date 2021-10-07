@@ -6,7 +6,7 @@ export default function CorrectAnswer() {
     return (
         <div>
             <span>{choice.correctAnswer.toString()}</span>
-            <EditChoice/>
+            {/*<EditChoice/>*/}
         </div>
     );
 }

@@ -26,9 +26,9 @@ export default function EditChoice() {
     }
     return (
         <div className="restrict_admin editChoice adminBorder">
-            <div><input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
-            <button onClick={flipCorrectAnswer}>Change Answer</button>
-            <button onClick={deleteChoice}>Delete Choice</button>
+            <div> Choice: <input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
+            <div> Correct answer: <button onClick={flipCorrectAnswer}>{choice.correctAnswer.toString()}</button></div>
+            <button onClick={deleteChoice}>Delete</button>
         </div>
     );
 }

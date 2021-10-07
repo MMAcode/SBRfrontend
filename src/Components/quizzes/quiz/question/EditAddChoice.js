@@ -12,16 +12,15 @@ export default function EditAddChoice(props) {
         quizContext.setQuiz({...quizContext.quiz});
     }
     return (
-        <div className="restrict_admin adminBorder">
+        <div className="restrict_admin">
             {/*<button onClick={addChoice}>Add choice</button>*/}
             <div>
-                <span>Add new choice:</span>
+
                 <form>
+                    <span>New choice: </span>
                     <input onChange={e => titleHandler[1](e.target.value)} type="text" defaultValue={titleHandler[0]}
                            placeholder="choice text"/>
-                    <div>
-                        <button onClick={addChoice}>Add choice</button>
-                    </div>
+                        <button onClick={addChoice}>Add</button>
                 </form>
             </div>
         </div>
