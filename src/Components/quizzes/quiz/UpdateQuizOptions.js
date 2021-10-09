@@ -31,14 +31,13 @@ export default function UpdateQuizOptions(props) {
             choices:[],
             positionFrom0:quizContext.quiz.questions.length});
         quizContext.setQuiz({...quizContext.quiz});
-        newQuestionTitleHandler[1]("")
     }
 
     return (
         <div className="updateQuizOptions restrict_admin">
             {/*<span>Add new question:</span>*/}
             <form>
-                <input onChange={e => newQuestionTitleHandler[1](e.target.value)} type="text" value={newQuestionTitleHandler[0]}
+                <input onChange={e => newQuestionTitleHandler[1](e.target.value)} type="text" defaultValue={newQuestionTitleHandler[0]}
                        placeholder="Title..."/>
                 <button onClick={addQuestion}>Add question</button>
             </form>

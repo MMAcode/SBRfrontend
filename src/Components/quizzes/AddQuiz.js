@@ -13,8 +13,6 @@ export default function AddQuiz(props) {
         //     questions:[]
         //     })
         // appContextHandler.setData({...appContextHandler.data});
-
-
         appContextHandler.setData((data)=>{
             data.quizzes.data.push({
                 title:newQuizTitleHandler[0],
@@ -22,15 +20,12 @@ export default function AddQuiz(props) {
             })
             return ({...data})
         });
-
-        newQuizTitleHandler[1]("");
-
     }
 
 
     return (
         <form>
-            <input onChange={e => newQuizTitleHandler[1](e.target.value)} type="text" value={newQuizTitleHandler[0]}
+            <input onChange={e => newQuizTitleHandler[1](e.target.value)} type="text" defaultValue={newQuizTitleHandler[0]}
                    placeholder="Title..."/>
             <button onClick={addQuiz}>Add</button>
         </form>

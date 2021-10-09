@@ -9,7 +9,7 @@ export default function QuizValidator(props) {
     // let issues = [];
 
     useEffect(() => {
-        validateQuiz()
+        // validateQuiz()
     }, [quiz])
 
     useEffect(() => {

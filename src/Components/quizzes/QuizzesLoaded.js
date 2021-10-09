@@ -13,9 +13,10 @@ export default function QuizzesLoaded({data: allQuizzes}) {
             <h1>Quizzes</h1>
             <QuestionReorderingActivator/>
             {allQuizzes?.map((quiz, positionFrom0) =>
-                <QuizWrapper key={positionFrom0} data={[quiz, positionFrom0]}/>
+                <QuizWrapper key={quiz.id} data={[quiz, positionFrom0]}/>
             )}
             <div className="restrict_admin">
+                <button onClick={addQuiz}>Add quiz</button>
                 <AddQuiz/>
             </div>
 
