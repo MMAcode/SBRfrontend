@@ -15,7 +15,7 @@ export default function QuizHead(props) {
         <div className="quizHead">
             <UserSwitch
                 notEditor={<h2>{firstCapital(quiz.title)}</h2>}
-                editor={<QuizTitleEditor/>}
+                editor={<QuizTitleEditor className="restrict_admin"/>}
             />
         </div>
     );
