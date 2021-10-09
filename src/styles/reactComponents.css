@@ -1,11 +1,11 @@
 .App {
   text-align: center;
-  background-color: cv(bg-c, white);
+  background-color: cv(light-blue-c, white);
   minHeight: 100vh;
 }
 
 .LoginPage_C {
-  background-color: cv(bg-c, green);
+  background-color: cv(light-blue-c, green);
 }
 
 #questionReorderingActivator {
@@ -22,12 +22,19 @@
 
 .accordion {
   background-color: cv(bg2-c, white) !important;
-  border: 1px solid cv(secondary-c) !important;
+  border: 1px solid cv(white-c) !important;
   border-radius: cv(border_radius) !important;
   margin: 5px 0px !important;
 }
 .accordion .accordionTitlesWrappers div {
   margin: 0 0 0 0;
+}
+
+.MuiAccordionSummary-root {
+  border-radius: 10px !important;
+}
+.MuiAccordionSummary-root:hover {
+  background: linear-gradient(cv(yellow-c) 0%, cv(black-blue-c) 100%);
 }
 
 .quizHead button {
@@ -44,8 +51,8 @@
   font-size: 1.2rem;
 }
 .question {
-  background-color: cv(secondary-c);
-  background-color: cv(bg-c);
+  background-color: cv(white-c);
+  background-color: cv(light-blue-c);
   border-radius: cv(border_radius);
   padding: 5px 20px;
   margin: 10px 0;
@@ -72,8 +79,8 @@
   width: 90%;
 }
 .choice .editChoice {
-  background-color: cv(primary-c);
-  background-color: cv(secondary-c);
+  background-color: cv(yellow-c);
+  background-color: cv(white-c);
 }
 
 #stylingTool {
@@ -84,7 +91,7 @@
 .toggleSwitchWrapper {
   border-radius: 100px;
   background-color: rgba(50, 36, 44, 0.34);
-  color: cv(primary-c);
+  color: cv(yellow-c);
   padding: 0 15px 0 0;
   margin: 3px 10px;
   z-index: 100;
@@ -94,10 +101,10 @@
   text-align: left;
   margin: 2rem;
   padding: 2rem;
-  color: cv(secondary-c);
+  color: cv(white-c);
 }
 .quizValidator h1, .quizValidator h2, .quizValidator h3, .quizValidator h4, .quizValidator h5 {
-  color: cv(secondary-c);
+  color: cv(white-c);
 }
 
 /*# sourceMappingURL=reactComponents.css.map */
