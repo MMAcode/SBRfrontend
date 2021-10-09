@@ -10,6 +10,7 @@ export default function EditAddChoice(props) {
         e.preventDefault();
         questionContext.question.choices.push({title: titleHandler[0], correctAnswer: false});
         quizContext.setQuiz({...quizContext.quiz});
+        titleHandler[1]("");
     }
     return (
         <div className="restrict_admin">
@@ -17,7 +18,7 @@ export default function EditAddChoice(props) {
             <div>
                 <form>
                     {/*<span>New Choice: </span>*/}
-                    <input onChange={e => titleHandler[1](e.target.value)} type="text" defaultValue={titleHandler[0]}
+                    <input onChange={e => titleHandler[1](e.target.value)} type="text" value={titleHandler[0]}
                            placeholder="text..."/>
                         <button onClick={addChoice}>Add Choice</button>
                 </form>

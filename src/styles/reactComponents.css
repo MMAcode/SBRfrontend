@@ -30,6 +30,13 @@
   margin: 0 0 0 0;
 }
 
+.MuiAccordionSummary-root {
+  border-radius: 10px !important;
+}
+.MuiAccordionSummary-root:hover {
+  background: linear-gradient(cv(yellow-c) 0%, cv(black-blue-c) 100%);
+}
+
 .quizHead button {
   float: right;
   z-index: 10;
