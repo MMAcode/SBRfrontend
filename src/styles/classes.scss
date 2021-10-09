@@ -1,32 +1,12 @@
 
 
 
-.restrict_admin {
-  input{
-    padding: 5px 10px;
-    margin: 5px;
 
-    //width: auto;
-    border:1px dashed gray;
-    //border-color: cv(font-c);
-  }
-}
 
-.choice{
-  .restrict_admin{
-    button{
-      width: 90%;
-      //margin: 5px 0;
-    }
-    input{
-      width: 90%;
-      display: inline-block;
-    }
-  }
-}
 
 .heading{
-  font-size: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: cv(heading-c);
 }
 

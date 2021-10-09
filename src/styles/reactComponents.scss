@@ -142,17 +142,19 @@
   flex: 1 1 0;
   textAlign: center;
 
-  button {
+  button{
     width: 90%;
+    //margin: 5px 0;
   }
+
   .editChoice{
-    //border: 1px dotted cv(heading-c);
-    //border-radius: cv(adminWrapper);
-    //margin: 15px;
-    //padding: 10px;
-    background-color: cv(primary-c);
     background-color: cv(secondary-c);
-    //background-color: orange !important;
+
+
+    input{
+      width: 90%;
+      display: inline-block;
+    }
   }
 }
 

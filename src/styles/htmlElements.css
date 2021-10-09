@@ -31,4 +31,10 @@ button[disabled] {
   color: gray;
 }
 
+input {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px dashed gray;
+}
+
 /*# sourceMappingURL=htmlElements.css.map */

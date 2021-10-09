@@ -49,6 +49,12 @@ button[disabled] {
   color: gray;
 }
 
+input {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px dashed gray;
+}
+
 .App {
   text-align: center;
   background-color: var(--pf-bg-c, white);
@@ -130,8 +136,11 @@ button[disabled] {
   width: 90%;
 }
 .choice .editChoice {
-  background-color: var(--pf-primary-c, );
   background-color: var(--pf-secondary-c, );
+}
+.choice .editChoice input {
+  width: 90%;
+  display: inline-block;
 }
 
 #stylingTool {
@@ -158,22 +167,9 @@ button[disabled] {
   color: var(--pf-secondary-c, );
 }
 
-.restrict_admin input {
-  padding: 5px 10px;
-  margin: 5px;
-  border: 1px dashed gray;
-}
-
-.choice .restrict_admin button {
-  width: 90%;
-}
-.choice .restrict_admin input {
-  width: 90%;
-  display: inline-block;
-}
-
 .heading {
-  font-size: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: var(--pf-heading-c, );
 }
 
