@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 html{
   background-color: cv(bg-c, white);
 }
@@ -16,6 +20,7 @@ button {
   margin: 5px;
   padding: 5px 10px;
   border-radius: cvDivide(border_radius,2);
+  border: 1px solid cv(bg2-c);
   transition: .1s;
 
   &:hover:enabled {

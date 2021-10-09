@@ -23,7 +23,7 @@ export default function EditQuestionOptions(props) {
         <span className="restrict_admin" style={{display: "inline-block"}}>
             <h3>Question {positionFrom0 + 1}</h3>
             title: <input onChange={(e) => updateQuestion(e.target.value)} type="text" value={question.title}/>
-            <button style={{marginLeft: '35px'}} onClick={deleteQuestion}>Delete Question</button>
+            <button className="deleteButton"  onClick={deleteQuestion}>Delete Question</button>
         </span>
     );
 }

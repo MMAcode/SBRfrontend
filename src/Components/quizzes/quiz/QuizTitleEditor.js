@@ -11,13 +11,18 @@ export default function QuizTitleEditor({className}) {
 
     return (
         <div className={className}>
-            <h2 style={{display:'inline'}}>Quiz title: </h2>
+            {/*<h2 style={{display:'inline'}}>Quiz title: </h2>*/}
             <input
                 onClick={e=>e.stopPropagation()}
                 onChange={(e) => updateQuizTitle(e.target.value)}
                 type="text"
+                className="heading"
                 value={firstCapital(quizContext?.quiz?.title)}
-                style={{color:`${quizContext.quiz.title.length < 5 ? 'red': 'black'}`}}
+                style={{
+                    // color:`${quizContext.quiz.title.length < 5 ? 'red': 'cv(primary-c)'}`,
+                    backgroundColor:`${quizContext.quiz.title.length < 5 ? 'red': 'transparent'}`,
+                    // fontSize:"20px"
+                }}
             />
         </div>
     );

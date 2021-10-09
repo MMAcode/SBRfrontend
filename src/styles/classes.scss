@@ -1,21 +1,41 @@
+
+
+
 .restrict_admin {
-  //background-color: red !important;
-  button {
-    //background-color: cv(heading-c);
-    //background-color: cv(secondary-c);
-    //background-color: cv(primary-c);
-    color: cv(secondary-c);
-    color: cv(bg2-c);
-    width: auto;
-    border-radius: cv(adminWrapper);
-
-
-  }
   input{
-    padding: 3px 10px;
-    width: auto;
+    padding: 5px 10px;
+    margin: 5px;
+
+    //width: auto;
+    border:1px dashed gray;
     //border-color: cv(font-c);
   }
+}
+
+.choice{
+  .restrict_admin{
+    button{
+      width: 90%;
+      //margin: 5px 0;
+    }
+    input{
+      width: 90%;
+      display: inline-block;
+    }
+  }
+}
+
+.heading{
+  font-size: 20px;
+  color: cv(heading-c);
+}
+
+.textDetail{
+  color: gray;
+  font-size: 0.8rem;
+}
+.deleteButton{
+  background-color: cv(heading-c);
 }
 
 .adminBorder{

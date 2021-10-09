@@ -32,8 +32,9 @@ export default function EditChoice() {
         <div className="restrict_admin editChoice adminInvisibleBorder"
              // style={{backgroundColor:"pink"}}
         >
-            <div> Choice: <input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
-            <div> Correct answer:
+            {/*<div> Choice: <input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>*/}
+            <div><input type="text" onChange={e=>editChoice(e.target.value)} defaultValue={choice.title}/></div>
+            <div> <span className="textDetail">Correct answer:</span>
                 <button
                     style={{backgroundColor:`${choice.correctAnswer ? 'green' : 'white'}`}}
                     // onClick={flipCorrectAnswer}
@@ -42,7 +43,7 @@ export default function EditChoice() {
                     {choice.correctAnswer.toString()}
                 </button>
             </div>
-            <button onClick={deleteChoice}>Delete</button>
+            <button className="deleteButton" onClick={deleteChoice}>Delete</button>
         </div>
     );
 }

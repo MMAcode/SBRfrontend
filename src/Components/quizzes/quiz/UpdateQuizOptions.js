@@ -51,7 +51,7 @@ export default function UpdateQuizOptions(props) {
                 {quizContext.quizChanged ? "Save changes in this quiz" : "No changes in this quiz"}
             </button>
 
-            <button>Delete this quiz (Button functionality not implemented)</button>
+            <button className="deleteButton">Delete this quiz (Button functionality not implemented)</button>
 
         </div>
     );
