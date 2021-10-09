@@ -31,10 +31,12 @@
 }
 
 .MuiAccordionSummary-root {
-  border-radius: 10px !important;
+  border-radius: cv(border_radius) !important;
+  opacity: 1;
+  background: transparent;
 }
 .MuiAccordionSummary-root:hover {
-  background: linear-gradient(cv(yellow-c) 0%, cv(black-blue-c) 100%);
+  background-color: cv(primary-c);
 }
 
 .quizHead button {

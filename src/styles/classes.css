@@ -28,21 +28,23 @@
   display: none !important;
 }
 
-.overlayWrapper {
+.questionOverlayWrapper {
   position: relative;
 }
 
-.overlay {
+.questionOverlay {
   position: absolute;
   top: 0px;
   right: 0px;
+  border-radius: cv(border_radius);
   width: 100%;
   height: 100%;
   z-index: 2;
   transition: 0.2s;
 }
-.overlay:hover {
+.questionOverlay:hover {
   opacity: 0.5;
+  background-color: cv(primary-c) !important;
 }
 
 .colorPmm {

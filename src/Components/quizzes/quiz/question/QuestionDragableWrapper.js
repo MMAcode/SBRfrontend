@@ -24,11 +24,11 @@ export default function QuestionDraggableWrapper({data:question, positionInArray
         >
             {(provided) => (
                 <div
-                    className="question overlayWrapper"
+                    className="question questionOverlayWrapper"
                     {...provided.draggableProps}
                     ref={provided.innerRef}
                 >
-                    <div className="overlay hideIt"  {...provided.dragHandleProps}/>
+                    <div className="questionOverlay hideIt"  {...provided.dragHandleProps}/>
                     <QuestionWithContext question={question} positionInArray={positionInArray}/>
                 </div>
             )}

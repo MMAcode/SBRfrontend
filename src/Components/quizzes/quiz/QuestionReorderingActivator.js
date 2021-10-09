@@ -21,7 +21,7 @@ export default function QuestionReorderingActivator(props) {
                 e.classList.add("hideIt")
             });
 
-            document.querySelectorAll(".overlay").forEach(o=>{
+            document.querySelectorAll(".questionOverlay").forEach(o=>{
                 o.classList.remove("hideIt")
             })
         } else {
@@ -29,7 +29,7 @@ export default function QuestionReorderingActivator(props) {
                 e.classList.remove("hideIt")
             });
 
-            document.querySelectorAll(".overlay").forEach(o=>{
+            document.querySelectorAll(".questionOverlay").forEach(o=>{
                 o.classList.add("hideIt")
             })
         }

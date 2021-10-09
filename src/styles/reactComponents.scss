@@ -48,10 +48,13 @@
 }
 
 .MuiAccordionSummary-root {
-  border-radius: 10px !important;
+  border-radius: cv(border_radius) !important;
+  opacity: 1;
+  background: transparent;
   &:hover {
-    //background-color: cv(black-blue-c);
-    background: linear-gradient(cv(yellow-c) 0%, cv(black-blue-c) 100%);
+    background-color: cv(primary-c);
+    //background: linear-gradient(cv(primary-c) -30%, cv(bg2-c) 110%);
+    //opacity: 0.3;
     //border-color: cv(yellow-c);
     //background-color: red;
 

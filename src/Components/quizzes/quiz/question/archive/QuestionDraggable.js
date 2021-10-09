@@ -15,12 +15,12 @@ export default function QuestionDraggable(props) {
         >
             {(provided) => (
                 <div
-                    className="question overlayWrapper"
+                    className="question questionOverlayWrapper"
                     {...provided.draggableProps}
                     //*pass this to (sub)component which will enable moving */
                     ref={provided.innerRef}
                 >
-                    <div className="overlay hideIt"  {...provided.dragHandleProps}/>
+                    <div className="questionOverlay hideIt"  {...provided.dragHandleProps}/>
                     <div>
                         {/*<h3>QuestionContext {questionPositionFrom0+1}:</h3>*/}
                         <div style={{textAlign: "left"}}>
