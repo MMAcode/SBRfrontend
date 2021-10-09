@@ -13,14 +13,14 @@
         border_radius:10px,
 
         //colors:      hh
-  //light-blue-c: hsla(calc(var(--pf-colorB1_s) + 10), 21%, 77%, 1),                 //light blue  WORKS
-  //light-blue-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
+  //bg-c: hsla(calc(var(--pf-colorB1_s) + 10), 21%, 77%, 1),                 //light blue  WORKS
+  //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
 
-        yellow-c: hsla(40, 100%, 64%, 1),  //yellow
-        white-c: hsla(60, 100%, 99%, 1),           //white
-        black-blue-c: hsla(237, 24%, 16%, 1),               //black-blue
-        light-blue-clight-blue-c: hsla(cvPlus(colorB1_s), 21%, 77%, 1),                 //light blue
-        //light-blue-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
+        primary-c: hsla(40, 100%, 64%, 1),  //yellow
+        secondary-c: hsla(60, 100%, 99%, 1),           //white
+        font-c: hsla(237, 24%, 16%, 1),               //black-blue
+        bg-c: hsla(cvPlus(colorB1_s), 21%, 77%, 1),                 //light blue
+        //bg-c: hsla(calc(#{cv(colorB1_s)} + 10), 21%, 77%, 1),                 //light blue  WORKS
         bg2-c: hsla(236, 25%, 47%, 1), //dark blue
         heading-c:hsla(360, 100%, 71%, 1)    //pink
 

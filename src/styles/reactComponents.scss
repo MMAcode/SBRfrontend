@@ -1,15 +1,15 @@
 .App {
   text-align: center;
-  background-color: cv(light-blue-c, white);
+  background-color: cv(bg-c, white);
   //background: purple;
   minHeight: 100vh
 
 }
 
 .LoginPage_C {
-  background-color: cv(light-blue-c, green);
-  //background-color: cv(white-c,green);
-  //color: cv(yellow-color);
+  background-color: cv(bg-c, green);
+  //background-color: cv(secondary-c,green);
+  //color: cv(primary-color);
 }
 
 #questionReorderingActivator{
@@ -32,7 +32,7 @@
 .accordion {
   background-color: cv(bg2-c, white) !important;
   //border-bottom:3px solid gray !important;
-  border: 1px solid cv(white-c) !important;
+  border: 1px solid cv(secondary-c) !important;
 
   //border-radius:35px 35px 0 0 !important;
   border-radius: cv(border_radius) !important;
@@ -42,24 +42,10 @@
   .accordionTitlesWrappers {
     div {
       margin: 0 0 0 0;
-//background-color: red;
+
     }
   }
 }
-
-.MuiAccordionSummary-root {
-  border-radius: 10px !important;
-  &:hover {
-    //background-color: cv(black-blue-c);
-    background: linear-gradient(cv(yellow-c) 0%, cv(black-blue-c) 100%);
-    //border-color: cv(yellow-c);
-    //background-color: red;
-
-  }
-
-}
-
-
 //.mirecek{div{div{div
 //
 //{
@@ -76,7 +62,7 @@
   //align-items: center;
   //width: 100%;
   //background-color: yellowgreen;
-  //border-bottom:  1px dotted cv(white-c);
+  //border-bottom:  1px dotted cv(secondary-c);
   //transform: translateX(10);
 
   h2 {
@@ -110,8 +96,8 @@
 
 
 .question {
-  background-color: cv(white-c);
-  background-color: cv(light-blue-c);
+  background-color: cv(secondary-c);
+  background-color: cv(bg-c);
   border-radius: cv(border_radius);
   padding: 5px 20px;
   margin: 10px 0;
@@ -147,8 +133,8 @@
     //border-radius: cv(adminWrapper);
     //margin: 15px;
     //padding: 10px;
-    background-color: cv(yellow-c);
-    background-color: cv(white-c);
+    background-color: cv(primary-c);
+    background-color: cv(secondary-c);
     //background-color: orange !important;
   }
 }
@@ -167,7 +153,7 @@
 //  border-radius: 100px;
 //  //background-color: hsla(237, 24%, 16%, 0.5);
 //  background-color: rgba(50, 36, 44, 0.34);
-//  color: cv(yellow-c);
+//  color: cv(primary-c);
 //  padding:  0 15px 0 0;
 //  margin: 3px 10px;
 //}
@@ -176,7 +162,7 @@
   border-radius: 100px;
   //background-color: hsla(237, 24%, 16%, 0.5);
   background-color: rgba(50, 36, 44, 0.34);
-  color: cv(yellow-c);
+  color: cv(primary-c);
   padding: 0 15px 0 0;
   margin: 3px 10px;
   //text-align: right;
@@ -202,8 +188,8 @@ background-color:cv(heading-c);
 text-align: left;
   margin: 2rem;
   padding: 2rem;
-  color:cv(white-c);
+  color:cv(secondary-c);
   h1,h2,h3,h4,h5{
-    color:cv(white-c);
+    color:cv(secondary-c);
   }
 }

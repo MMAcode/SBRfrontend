@@ -1,5 +1,5 @@
 html{
-  background-color: cv(light-blue-c, white);
+  background-color: cv(bg-c, white);
 }
 
 h1,h2,h3,h4,h5{
@@ -8,14 +8,14 @@ h1,h2,h3,h4,h5{
 }
 
 p, button, a{
-  color:cv(black-blue-c,black);
+  color:cv(font-c,black);
 }
 
 button {
   margin: 5px;
   padding: 5px 10px;
   border-radius: cvDivide(border_radius,2);
-  background-color: cv(yellow-c);
+  background-color: cv(primary-c);
 }
 
 button:hover:enabled {
