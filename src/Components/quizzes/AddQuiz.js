@@ -18,10 +18,11 @@ export default function AddQuiz(props) {
                 title:newQuizTitleHandler[0],
                 questions:[]
             })
+            newQuizTitleHandler[1]("");
             return ({...data})
         });
 
-        newQuizTitleHandler[1]("");
+
 
     }
 
@@ -30,7 +31,7 @@ export default function AddQuiz(props) {
         <form>
             <input onChange={e => newQuizTitleHandler[1](e.target.value)} type="text" value={newQuizTitleHandler[0]}
                    placeholder="Title..."/>
-            <button onClick={addQuiz}>Add</button>
+            <button onClick={addQuiz}>Add Quiz</button>
         </form>
     );
 }

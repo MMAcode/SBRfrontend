@@ -3,7 +3,7 @@ import QuestionContext from "./question/archive/QuestionContext";
 import UpdateQuizOptions from "./UpdateQuizOptions";
 import {DragDropContext, Droppable} from "react-beautiful-dnd";
 import QuestionReorderingActivator from "./QuestionReorderingActivator";
-import {sortQuestionsByPositions, swapQuestions} from "../../../services/helperMethods";
+import {sortQuestionsByPositions, sortQuestionsByTitle, swapQuestions} from "../../../services/helperMethods";
 import {quizContextSource} from "../../../services/contextsService";
 import QuestionDragableWrapper from "./question/QuestionDragableWrapper";
 
@@ -39,8 +39,12 @@ export default function QuizBody() {
                             {/*{quiz?.questions?.map((q, position) => <QuestionContext data={q} positionInArray={position} key={position}/>)}*/}
                             {/*{quiz?.questions?.map((q, positionInArray) => <QuestionDragableWrapper2 data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
                             {/*{sortQuestionsByPositions(quiz)?.questions?.map((q, position) => <QuestionContext data={[q, position]} key={position}/>)}*/}
-                            {/*{sortQuestionsByPositions(quiz)?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
-                            {quiz?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}
+                            {sortQuestionsByPositions(quiz)?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}
+
+                            {/*{sortQuestionsByTitle(quiz)?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
+                            {/*auto sorting needs auto sorting deactiated in quizchangehandler*/}
+
+                            {/*{quiz?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
                             {provided.placeholder}
                         </div>
                     )}

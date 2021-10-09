@@ -4,12 +4,12 @@ import {userContextSource} from "../services/contextsService";
 import AppENUMS from "../services/EnumsClass";
 
 export default function ContextMonitor(props) {
-    const appContextData = React.useContext(appContextSource);
+    const appContext = React.useContext(appContextSource);
     const userContext = React.useContext(userContextSource);
 
     useEffect(() => {
-        console.log("AppContext data updated to: ", appContextData)
-    }, [appContextData])
+        console.log("APPCONTEXT data updated to: ", appContext, appContext?.data?.quizzes?.data)
+    }, [appContext])
 
     useEffect(()=>{
         console.log("userContext data updated to: ", userContext);

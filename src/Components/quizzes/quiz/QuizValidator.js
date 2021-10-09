@@ -8,15 +8,14 @@ export default function QuizValidator(props) {
     // const quizIssuesHandler = React.useState({quizTitleLength: ""});
     // let issues = [];
 
-    useEffect(() => {
-        validateQuiz()
-    }, [quiz])
-
-    useEffect(() => {
-        if (countIssues(quizIssuesHandler) > 0) {
-
-        }
-    }, [quizIssuesHandler])
+    // useEffect(() => {
+    //     validateQuiz()
+    // }, [quiz])
+    //
+    // useEffect(() => {
+    //     if (countIssues(quizIssuesHandler) > 0) {
+    //     }
+    // }, [quizIssuesHandler])
 
 
 

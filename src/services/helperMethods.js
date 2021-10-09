@@ -64,6 +64,38 @@ export const sortQuestionsByPositions=(quiz)=>{
     return quiz;
 }
 
+// export const sortQuestionsByTitle=(quiz)=>{
+//     quiz?.questions?.sort((a,b)=>(a.title > b.title) ? 1 : ((a.title < b.title) ? -1 : 0));
+//     // console.log("sortedQuiz:", quiz);
+//     // return quiz;
+//     return ""
+// }
+
+export const sortQuizzesByTitle=(quizzes)=>{
+    quizzes.sort((a,b)=> {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+    });
+    // quizzes.sort();
+    // quizzes.forEach(q=>console.log(q))
+    // console.log("sortedQuizzes:", quizzes);
+    return quizzes;
+}
+export const qizzesNeedSorting=(quizzes)=>{
+    let dummyArray = (JSON.parse(JSON.stringify(quizzes)));
+    let needSorting =false;
+    dummyArray.sort((a,b)=> {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            needSorting  =true;
+            return -1;
+        };
+    });
+    // quizzes.sort();
+    // quizzes.forEach(q=>console.log(q))
+    // console.log("sortedQuizzes:", quizzes);
+    return needSorting;
+}
+
+
 export const refreshPositionNumbersOnSortedQuestions=(quiz)=>{
     quiz.questions.forEach((q,i)=>{q.positionFrom0=i;})
     return quiz;
@@ -94,7 +126,6 @@ export function countIssues(quizIssuesHandler) {
 }
 
 export function resizableInputElement (el,base=8, factor=10) {
-    console.log(el.value.length)
     function resize() {el.style.width = ((el.value.length+base) * factor) + 'px'}
     var e = 'keyup,keypress,focus,blur,change'.split(',');
     for (var i in e) el.addEventListener(e[i],resize,false);

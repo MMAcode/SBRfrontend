@@ -60,8 +60,8 @@ export default function QuizzesWrapper(props) {
                 get quizzes
             </button>
 
-            <AsyncDataHandler status={appContext.data.quizzes.status} data={appContext.data.quizzes.data}>
-                <QuizzesLoaded data={appContext.data.quizzes.data}/>
+            <AsyncDataHandler status={appContext?.data?.quizzes?.status} data={appContext?.data?.quizzes?.data}>
+                <QuizzesLoaded data={appContext?.data?.quizzes?.data}/>
             </AsyncDataHandler>
         </div>
     );
