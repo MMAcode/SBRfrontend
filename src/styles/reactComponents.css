@@ -37,6 +37,23 @@
   background-color: rgba(255, 194, 71, 0.5);
 }
 
+.MuiAccordionSummary-content {
+  overflow: hidden;
+  display: inline;
+}
+
+.quizHead {
+  text-align: left;
+}
+.quizHead .inputHeading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: cv(heading-c);
+  overflow: hidden;
+  min-width: 50px !important;
+  max-width: 80% !important;
+  transition: width 0.25s;
+}
 .quizHead button {
   float: right;
   z-index: 10;

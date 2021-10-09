@@ -17,7 +17,7 @@ export default function QuestionReorderingActivator(props) {
         // console.log(isActivated)
 
         if (isActivated) {
-            document.querySelectorAll(".choices").forEach(e => {
+            document.querySelectorAll(".questionBody").forEach(e => {
                 e.classList.add("hideIt")
             });
 
@@ -25,7 +25,7 @@ export default function QuestionReorderingActivator(props) {
                 o.classList.remove("hideIt")
             })
         } else {
-            document.querySelectorAll(".choices").forEach(e => {
+            document.querySelectorAll(".questionBody").forEach(e => {
                 e.classList.remove("hideIt")
             });
 

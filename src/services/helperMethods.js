@@ -92,3 +92,11 @@ export function countIssues(quizIssuesHandler) {
         })
     return counter
 }
+
+export function resizableInputElement (el,base=8, factor=10) {
+    console.log(el.value.length)
+    function resize() {el.style.width = ((el.value.length+base) * factor) + 'px'}
+    var e = 'keyup,keypress,focus,blur,change'.split(',');
+    for (var i in e) el.addEventListener(e[i],resize,false);
+    resize();
+}

@@ -94,6 +94,23 @@ input {
   background-color: rgba(255, 194, 71, 0.5);
 }
 
+.MuiAccordionSummary-content {
+  overflow: hidden;
+  display: inline;
+}
+
+.quizHead {
+  text-align: left;
+}
+.quizHead .inputHeading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--pf-heading-c, );
+  overflow: hidden;
+  min-width: 50px !important;
+  max-width: 80% !important;
+  transition: width 0.25s;
+}
 .quizHead button {
   float: right;
   z-index: 10;
@@ -165,12 +182,6 @@ input {
 }
 .quizValidator h1, .quizValidator h2, .quizValidator h3, .quizValidator h4, .quizValidator h5 {
   color: var(--pf-secondary-c, );
-}
-
-.heading {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--pf-heading-c, );
 }
 
 .textDetail {

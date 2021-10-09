@@ -73,14 +73,34 @@
 //  }
 //}
 //}}}
+
+.MuiAccordionSummary-content{
+  overflow: hidden;
+  //width: 100%;
+  display: inline;
+}
 .quizHead {
   //display: flex;
   //justify-content: space-between;
   //align-items: center;
-  //width: 100%;
+ //width: 100%;
   //background-color: yellowgreen;
   //border-bottom:  1px dotted cv(secondary-c);
   //transform: translateX(10);
+  text-align: left;
+
+
+  .inputHeading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: cv(heading-c);
+    //width: 100%;
+overflow: hidden;
+    min-width:50px!important;
+    max-width:80%!important;
+    transition: width 0.25s;
+
+  }
 
   h2 {
     //display: inline;
