@@ -12,17 +12,20 @@ p, button, a{
 }
 
 button {
+  background-color: cv(primary-c);
   margin: 5px;
   padding: 5px 10px;
   border-radius: cvDivide(border_radius,2);
-  background-color: cv(primary-c);
+  transition: .1s;
+
+  &:hover:enabled {
+    opacity: 0.6;
+  }
+  &[disabled]{
+    opacity: 0.3;
+    color:gray;
+  }
 }
 
-button:hover:enabled {
-  opacity: 0.7;
-}
-button[disabled]{
-  opacity: 0.3;
-  color:gray;
-}
+
 

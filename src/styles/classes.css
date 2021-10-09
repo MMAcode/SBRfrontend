@@ -1,6 +1,4 @@
 .restrict_admin button {
-  background-color: cv(heading-c);
-  background-color: cv(secondary-c);
   color: cv(secondary-c);
   color: cv(bg2-c);
   width: auto;

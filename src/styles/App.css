@@ -30,16 +30,15 @@ p, button, a {
 }
 
 button {
+  background-color: var(--pf-primary-c, );
   margin: 5px;
   padding: 5px 10px;
   border-radius: calc( var(--pf-border_radius) / 2);
-  background-color: var(--pf-primary-c, );
+  transition: 0.1s;
 }
-
 button:hover:enabled {
-  opacity: 0.7;
+  opacity: 0.6;
 }
-
 button[disabled] {
   opacity: 0.3;
   color: gray;
@@ -155,8 +154,6 @@ button[disabled] {
 }
 
 .restrict_admin button {
-  background-color: var(--pf-heading-c, );
-  background-color: var(--pf-secondary-c, );
   color: var(--pf-secondary-c, );
   color: var(--pf-bg2-c, );
   width: auto;
