@@ -77,7 +77,7 @@
 .MuiAccordionSummary-content{
   overflow: hidden;
   //width: 100%;
-  display: inline;
+  display: inline !important;
 }
 .quizHead {
   //display: flex;

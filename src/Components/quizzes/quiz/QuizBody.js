@@ -39,7 +39,8 @@ export default function QuizBody() {
                             {/*{quiz?.questions?.map((q, position) => <QuestionContext data={q} positionInArray={position} key={position}/>)}*/}
                             {/*{quiz?.questions?.map((q, positionInArray) => <QuestionDragableWrapper2 data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
                             {/*{sortQuestionsByPositions(quiz)?.questions?.map((q, position) => <QuestionContext data={[q, position]} key={position}/>)}*/}
-                            {sortQuestionsByPositions(quiz)?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}
+                            {/*{sortQuestionsByPositions(quiz)?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}*/}
+                            {quiz?.questions?.map((q, positionInArray) => <QuestionDragableWrapper data={q} positionInArray={positionInArray} key={positionInArray}/>)}
                             {provided.placeholder}
                         </div>
                     )}

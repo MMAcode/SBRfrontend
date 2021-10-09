@@ -39,7 +39,7 @@
 
 .MuiAccordionSummary-content {
   overflow: hidden;
-  display: inline;
+  display: inline !important;
 }
 
 .quizHead {
